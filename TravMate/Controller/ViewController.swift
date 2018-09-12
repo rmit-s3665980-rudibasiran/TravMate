@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var placeHolder: UIView!
     @IBOutlet weak var faded: UILabel!
     @IBOutlet weak var aboutUs: UILabel!
-
+    @IBOutlet weak var btnStart: UIButton!
     
     var model:Model = Model()
     var showingBack = false
@@ -25,15 +25,22 @@ class ViewController: UIViewController {
     var attributedString:NSMutableAttributedString?
     var gesturesRegistered: Bool = false
     
+    @IBAction func respond(_ sender: Any) {
+        imgStart.image = UIImage(named: "palmtree.jpeg")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         imgStart.image = UIImage(named: "palmtree.jpeg")
         faded.isHidden = true
         aboutUs.isHidden = true
         aboutUs.text = ""
+        btnStart.setTitle("Welcome to TravMate", for: .normal)
         registerGestures()
      }
 
+    
+    
     fileprivate func registerGestures() {
         if(!gesturesRegistered) {
             gesturesRegistered = true

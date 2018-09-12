@@ -54,14 +54,38 @@
 		6A3C5345214907F7008A8D45 /* TravMate */ = {
 			isa = PBXGroup;
 			children = (
+				6A74D211214909AC00E4359F /* Model */,
+				6A74D213214909BB00E4359F /* View */,
+				6A74D212214909B400E4359F /* Controller */,
 				6A3C5346214907F7008A8D45 /* AppDelegate.swift */,
-				6A3C5348214907F7008A8D45 /* ViewController.swift */,
-				6A3C534A214907F7008A8D45 /* Main.storyboard */,
 				6A3C534D214907F8008A8D45 /* Assets.xcassets */,
 				6A3C534F214907F8008A8D45 /* LaunchScreen.storyboard */,
 				6A3C5352214907F8008A8D45 /* Info.plist */,
 			);
 			path = TravMate;
+			sourceTree = "<group>";
+		};
+		6A74D211214909AC00E4359F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A74D212214909B400E4359F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				6A3C5348214907F7008A8D45 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6A74D213214909BB00E4359F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A3C534A214907F7008A8D45 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

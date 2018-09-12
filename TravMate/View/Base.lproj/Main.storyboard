@@ -66,7 +66,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
-                        <outlet property="imgStart" destination="Dyt-bd-SSp" id="CHv-IR-4Rd"/>
+                        <outlet property="aboutUs" destination="QDk-hW-odX" id="CVK-Rb-jDr"/>
+                        <outlet property="faded" destination="tZv-VK-zgU" id="naR-PR-AiD"/>
+                        <outlet property="imgStart" destination="Dyt-bd-SSp" id="JV2-E4-dBI"/>
+                        <outlet property="placeHolder" destination="zc3-Ap-WIc" id="RY9-Hp-Z1D"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -11,16 +11,21 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var imgStart: UIImageView!
+    @IBOutlet weak var placeHolder: UIView!
+    @IBOutlet weak var faded: UILabel!
+    @IBOutlet weak var aboutUs: UILabel!
+    
+    var showAbout: Bool = false
     
     override func viewDidLoad() {
-        imgStart.image = UIImage(named: "palmtree.jpeg")
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        imgStart.image = UIImage(named: "palmtree.jpeg")
+     
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+   
     }
 
 

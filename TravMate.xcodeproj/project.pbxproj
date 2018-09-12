@@ -12,7 +12,7 @@
 		6A3C534C214907F7008A8D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3C534A214907F7008A8D45 /* Main.storyboard */; };
 		6A3C534E214907F8008A8D45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6A3C534D214907F8008A8D45 /* Assets.xcassets */; };
 		6A3C5351214907F8008A8D45 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3C534F214907F8008A8D45 /* LaunchScreen.storyboard */; };
-		6A787EB821493D7D00035BCC /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A787EB721493D7D00035BCC /* Model.swift */; };
+		6A6DBB4421493ED8007FA7C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DBB4321493ED8007FA7C9 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,7 +23,7 @@
 		6A3C534D214907F8008A8D45 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6A3C5350214907F8008A8D45 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6A3C5352214907F8008A8D45 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6A787EB721493D7D00035BCC /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = SOURCE_ROOT; };
+		6A6DBB4321493ED8007FA7C9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,7 +56,7 @@
 		6A3C5345214907F7008A8D45 /* TravMate */ = {
 			isa = PBXGroup;
 			children = (
-				6A74D211214909AC00E4359F /* Model */,
+				6A6DBB4221493ECC007FA7C9 /* Model */,
 				6A74D213214909BB00E4359F /* View */,
 				6A74D212214909B400E4359F /* Controller */,
 				6A3C5346214907F7008A8D45 /* AppDelegate.swift */,
@@ -67,10 +67,10 @@
 			path = TravMate;
 			sourceTree = "<group>";
 		};
-		6A74D211214909AC00E4359F /* Model */ = {
+		6A6DBB4221493ECC007FA7C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				6A787EB721493D7D00035BCC /* Model.swift */,
+				6A6DBB4321493ED8007FA7C9 /* Model.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -162,7 +162,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A787EB821493D7D00035BCC /* Model.swift in Sources */,
+				6A6DBB4421493ED8007FA7C9 /* Model.swift in Sources */,
 				6A3C5349214907F7008A8D45 /* ViewController.swift in Sources */,
 				6A3C5347214907F7008A8D45 /* AppDelegate.swift in Sources */,
 			);

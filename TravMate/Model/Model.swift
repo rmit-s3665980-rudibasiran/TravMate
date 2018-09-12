@@ -13,9 +13,9 @@ class Model {
     var about:String
     
     init(){
-        about = "\'John\' Michael Ariola Tubera (s3682951)\r\n"
-        about += "\'Wan Yi\' Beh (s3368772)\r\n"
-        about += "\'Rudi\' Basiran (s3665980)"
+        about = "\'John\' Michael Ariola Tubera\r\n"
+        about += "\'Wan Yi\' Beh\r\n"
+        about += "\'Rudi\' Basiran"
     }
     
     func getAbout() -> String {

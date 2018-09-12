@@ -22,12 +22,15 @@ class ViewController: UIViewController {
     var back:UIImageView!
     var cardView: UIView!
     var direction: UIViewAnimationOptions = UIViewAnimationOptions.transitionFlipFromLeft
+    var attributedString:NSMutableAttributedString?
     var gesturesRegistered: Bool = false
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imgStart.image = UIImage(named: "palmtree.jpeg")
+        faded.isHidden = true
+        aboutUs.isHidden = true
         registerGestures()
      }
 
@@ -71,11 +74,11 @@ class ViewController: UIViewController {
             UIView.transition(from: front, to: back, duration: 1, options: direction, completion: nil)
             showingBack = true
             imgStart.image = UIImage(named:"palmtree.jpeg")
-            aboutUs.text = model.getAbout()
             aboutUs.isHidden = false
             faded.isHidden = false
+            aboutUs.text = model.getAbout()
             
-            // formatText()
+            formatText()
         }
         else {
             UIView.transition(from: back, to: front, duration: 1, options: direction, completion: nil)
@@ -83,9 +86,49 @@ class ViewController: UIViewController {
             showingBack = false
             faded.isHidden = true
             aboutUs.isHidden = true
-     
         }
     }
+    
+    fileprivate func formatText() {
+        applyFormattingToText()
+        applyHighlightsToText()
+        aboutUs.attributedText = attributedString
+    }
+    
+    
+    func applyFormattingToText() {
+        let font = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        let textColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1)
+        
+        
+        let attributes = [NSAttributedStringKey.foregroundColor : textColor, NSAttributedStringKey.font : font]
+        
+        attributedString = NSMutableAttributedString(string: model.getAbout(), attributes: attributes)
+    }
+    
+    func applyHighlightsToText()
+    {
+        guard attributedString == nil else
+        {
+            // 1. Create a range that equals the length of the string that contains the text to be highlighted
+            let range = NSMakeRange(0, (self.attributedString?.length)!)
+            
+            // 2. Match items surrounded by single quotation marks
+            let regexStr = "(\\'\\w+(.\\s\\w+)*\\')"
+            let regex = try! NSRegularExpression(pattern: regexStr, options: [])
+            
+            // 3. Create attributes to apply to the text
+            let colourAttributes = [NSAttributedStringKey.foregroundColor : UIColor(red: 1.0, green: 0.5, blue: 0.5, alpha: 1)]
+            
+            // 4. iterate over each match, making the text red
+            regex.enumerateMatches(in: (attributedString?.string)!, options: [], range: range) {
+                match, flags, stop in let matchRange = match!.range(at: 1)
+                self.attributedString?.addAttributes(colourAttributes, range: matchRange)
+            }
+            return
+        }
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

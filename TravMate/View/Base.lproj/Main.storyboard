@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,19 +19,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Ap-WIc" userLabel="PlaceHolder">
+                            <view contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Ap-WIc" userLabel="PlaceHolder">
                                 <rect key="frame" x="30" y="45" width="316" height="526"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-bd-SSp" userLabel="imgStart">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-bd-SSp" userLabel="imgStart">
                                         <rect key="frame" x="8" y="8" width="300" height="510"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leadingMargin" id="Tz1-I4-4Ls"/>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leading" constant="8" id="fmR-yB-P3M"/>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="centerX" secondItem="zc3-Ap-WIc" secondAttribute="centerX" id="tQr-cP-Ha5"/>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="bottom" secondItem="zc3-Ap-WIc" secondAttribute="bottomMargin" id="tXs-MS-kzY"/>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="top" constant="8" id="xI2-IW-mHw"/>
+                                    <constraint firstItem="Dyt-bd-SSp" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="topMargin" id="ygI-gc-oeU"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="zc3-Ap-WIc" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2TD-vx-nH4"/>
+                            <constraint firstItem="zc3-Ap-WIc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25" id="BJp-TP-GqF"/>
+                            <constraint firstItem="Dyt-bd-SSp" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Lg3-AJ-HIu"/>
+                            <constraint firstItem="zc3-Ap-WIc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ddY-7a-aO1"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zc3-Ap-WIc" secondAttribute="bottom" constant="96" id="dqR-tR-9An"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>

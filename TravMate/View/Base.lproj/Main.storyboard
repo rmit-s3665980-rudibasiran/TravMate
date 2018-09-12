@@ -31,16 +31,26 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDk-hW-odX" userLabel="aboutDesc">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="520"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="tZv-VK-zgU" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leading" id="1xO-Sz-Qb3"/>
                                     <constraint firstAttribute="trailing" secondItem="Dyt-bd-SSp" secondAttribute="trailing" id="3Z6-72-fpc"/>
+                                    <constraint firstItem="QDk-hW-odX" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="top" id="5ea-Vv-PCK"/>
                                     <constraint firstAttribute="bottom" secondItem="tZv-VK-zgU" secondAttribute="bottom" id="5ju-Pj-H6N"/>
                                     <constraint firstAttribute="trailing" secondItem="tZv-VK-zgU" secondAttribute="trailing" id="8W5-IM-ujO"/>
                                     <constraint firstItem="Dyt-bd-SSp" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="top" id="Ior-MV-cja"/>
+                                    <constraint firstAttribute="trailing" secondItem="QDk-hW-odX" secondAttribute="trailing" id="NMp-X9-V6J"/>
                                     <constraint firstAttribute="bottom" secondItem="Dyt-bd-SSp" secondAttribute="bottom" id="fEQ-M6-fZX"/>
                                     <constraint firstItem="Dyt-bd-SSp" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leading" id="hW2-YV-0PG"/>
+                                    <constraint firstAttribute="bottom" secondItem="QDk-hW-odX" secondAttribute="bottom" id="oon-ks-2Y5"/>
+                                    <constraint firstItem="QDk-hW-odX" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leading" id="owI-Fk-Dk8"/>
                                     <constraint firstItem="tZv-VK-zgU" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="top" id="xam-gx-sTR"/>
                                 </constraints>
                             </view>

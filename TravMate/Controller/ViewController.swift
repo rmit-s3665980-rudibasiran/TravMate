@@ -38,8 +38,6 @@ class ViewController: UIViewController {
         btnStart.setTitle("Welcome to TravMate", for: .normal)
         registerGestures()
      }
-
-    
     
     fileprivate func registerGestures() {
         if(!gesturesRegistered) {

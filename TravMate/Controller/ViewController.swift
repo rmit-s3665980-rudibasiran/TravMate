@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imgStart: UIImageView!
     @IBOutlet weak var placeHolder: UIView!
     @IBOutlet weak var faded: UILabel!

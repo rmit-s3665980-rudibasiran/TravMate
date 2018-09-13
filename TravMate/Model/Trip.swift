@@ -11,13 +11,20 @@ import UIKit
 
 class Trip {
     
-    let locationName = ["Melbourne", "Sydney", "Perth"]
-    let locationDesc = ["Victoria", "New South Wales", "Western Australia"]
-    let locationImage = [UIImage(named: "melbourne"), UIImage(named: "sydney"), UIImage (named: "perth")]
+    var locationName = ["Melbourne", "Sydney", "Perth"]
+    var locationDesc = ["Victoria", "New South Wales", "Western Australia"]
+    var locationImage = [UIImage(named: "melbourne"), UIImage(named: "sydney"), UIImage (named: "perth")]
     
-    init(){
-       
+    var title: String?
+    var image: UIImage?
+    
+    init() {
+        
     }
     
+    init(title: String, image: UIImage) {
+        self.title = title;
+        self.image = image;
+    }
     
 }

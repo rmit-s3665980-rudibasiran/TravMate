@@ -162,10 +162,10 @@
             </objects>
             <point key="canvasLocation" x="2126" y="117"/>
         </scene>
-        <!--Hotel Details-->
+        <!--Hotel List-->
         <scene sceneID="eg2-9O-Nov">
             <objects>
-                <viewController id="u1z-Nr-4O9" userLabel="Hotel Details" sceneMemberID="viewController">
+                <viewController id="u1z-Nr-4O9" userLabel="Hotel List" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4l-pY-uMg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -192,16 +192,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="Y3a-IG-Bkq"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Hotel" id="mPe-s8-mR3" userLabel="Hotel"/>
+                    <tabBarItem key="tabBarItem" title="Hotel" image="tabbar_hotel" selectedImage="tabbar_hotel" id="mPe-s8-mR3" userLabel="Hotel"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P43-oa-dua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1990" y="1601"/>
         </scene>
-        <!--View Controller-->
+        <!--Hotel Details-->
         <scene sceneID="3dF-vB-wdS">
             <objects>
-                <viewController id="UHI-vm-3B9" sceneMemberID="viewController">
+                <viewController id="UHI-vm-3B9" userLabel="Hotel Details" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eBs-3m-UFa">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,10 +233,10 @@
             </objects>
             <point key="canvasLocation" x="2868" y="1629"/>
         </scene>
-        <!--Restaurant Details-->
+        <!--Restaurant List-->
         <scene sceneID="KVn-VA-M2c">
             <objects>
-                <viewController id="RIl-Pw-lXc" userLabel="Restaurant Details" sceneMemberID="viewController">
+                <viewController id="RIl-Pw-lXc" userLabel="Restaurant List" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p94-EZ-fQh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -263,16 +263,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="7Ga-Zp-h5T"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Restaurant" id="waT-LR-58L"/>
+                    <tabBarItem key="tabBarItem" title="Restaurant" image="tabbar_eat" selectedImage="tabbar_eat" id="waT-LR-58L"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXZ-MG-C8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="2307"/>
         </scene>
-        <!--View Controller-->
+        <!--Restaurant Details-->
         <scene sceneID="Weg-E1-Ton">
             <objects>
-                <viewController id="B6q-8L-XwV" sceneMemberID="viewController">
+                <viewController id="B6q-8L-XwV" userLabel="Restaurant Details" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LBt-bo-rKh">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -304,10 +304,10 @@
             </objects>
             <point key="canvasLocation" x="2938" y="2323"/>
         </scene>
-        <!--Flight Details-->
+        <!--Flight List-->
         <scene sceneID="u1L-Xs-Mf3">
             <objects>
-                <viewController id="8De-AT-qk9" userLabel="Flight Details" sceneMemberID="viewController">
+                <viewController id="8De-AT-qk9" userLabel="Flight List" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yM-L9-ztV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -334,16 +334,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="T8n-3G-nv1"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Flight" id="HG5-HI-yTL" userLabel="Flight"/>
+                    <tabBarItem key="tabBarItem" title="Flight" image="tabbar_flight" selectedImage="tabbar_flight" id="HG5-HI-yTL" userLabel="Flight"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUs-bJ-b1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1990" y="942"/>
         </scene>
-        <!--View Controller-->
+        <!--Flight Details-->
         <scene sceneID="Nxo-dv-67j">
             <objects>
-                <viewController id="yrk-M8-PNo" sceneMemberID="viewController">
+                <viewController id="yrk-M8-PNo" userLabel="Flight Details" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abo-2c-ayc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -375,10 +375,10 @@
             </objects>
             <point key="canvasLocation" x="2877" y="942"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Trip Tab Bar Controller-->
         <scene sceneID="5s3-P7-7OT">
             <objects>
-                <tabBarController id="3po-5j-DP3" sceneMemberID="viewController">
+                <tabBarController id="3po-5j-DP3" userLabel="Trip Tab Bar Controller" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9gb-WW-TA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -397,9 +397,13 @@
     </scenes>
     <resources>
         <image name="logo" width="43" height="42"/>
+        <image name="tabbar_eat" width="12" height="20"/>
+        <image name="tabbar_flight" width="20" height="20"/>
+        <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kl2-UZ-hbj"/>
-        <segue reference="Wy0-z6-3LH"/>
+        <segue reference="TGP-6M-m3A"/>
+        <segue reference="hOt-Q3-uiR"/>
+        <segue reference="W7e-eN-gap"/>
     </inferredMetricsTieBreakers>
 </document>

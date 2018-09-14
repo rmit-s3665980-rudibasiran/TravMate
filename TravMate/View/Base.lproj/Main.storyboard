@@ -114,6 +114,7 @@
                                 <rect key="frame" x="20" y="64" width="374" height="602"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4v6-uR-F8d">
                                     <size key="itemSize" width="349" height="200"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -128,7 +129,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perth" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
                                                     <rect key="frame" x="0.0" y="8" width="349" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -449,6 +450,7 @@
     </scenes>
     <resources>
         <image name="logo" width="43" height="42"/>
+        <image name="perth" width="275" height="183"/>
         <image name="tabbar_eat" width="12" height="20"/>
         <image name="tabbar_flight" width="20" height="20"/>
         <image name="tabbar_hotel" width="20" height="20"/>

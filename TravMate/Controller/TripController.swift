@@ -30,6 +30,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.hotel.hotelCheckIn.append("")
         Trip.sharedInstance.hotel.hotelCheckOut.append("")
         Trip.sharedInstance.hotel.hotelCost.append("")
+        Trip.sharedInstance.hotel.hotelAddress.append("")
         
         Trip.sharedInstance.restaurant.cafeName.append("")
         Trip.sharedInstance.restaurant.cafeNotes.append("")
@@ -64,8 +65,8 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.contentView.layer.masksToBounds = false
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
-        cell.layer.shadowRadius = 6.0
-        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowRadius = 4.0
+        cell.layer.shadowOpacity = 1.0
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         

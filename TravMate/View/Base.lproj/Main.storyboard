@@ -104,7 +104,7 @@
                                     <navigationItem title="Add a Trip" id="eeu-Mu-8bX">
                                         <barButtonItem key="rightBarButtonItem" title="+" id="jX8-7n-uub">
                                             <connections>
-                                                <segue destination="pY4-Ud-gxf" kind="show" id="ZO0-DO-JMp"/>
+                                                <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -582,7 +582,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ZO0-DO-JMp"/>
         <segue reference="Wy0-z6-3LH"/>
     </inferredMetricsTieBreakers>
 </document>

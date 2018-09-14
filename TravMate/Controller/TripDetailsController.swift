@@ -17,7 +17,9 @@ class TripDetailsController: UIViewController {
     @IBAction func saveData(_ sender: Any) {
         
         let tripDesc = tripDetlDesc.text
+        let tripName = tripDetlName.text
         Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip] = tripDesc!
+        Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = tripName!
         
         performSegue(withIdentifier: "SegueBackToTrip", sender: self)
         

@@ -13,6 +13,35 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     var trip:Trip = Trip.sharedInstance
     
+    @IBAction func addTrip(_ sender: Any) {
+        
+        
+        
+        Trip.sharedInstance.locationName.append("")
+        Trip.sharedInstance.locationDesc.append("")
+        Trip.sharedInstance.locationImage.append("defaulttripimage")
+        
+        Trip.sharedInstance.flight.flightCost.append("")
+        Trip.sharedInstance.flight.flightName.append("")
+        Trip.sharedInstance.flight.flightGo.append("")
+        Trip.sharedInstance.flight.flightReturn.append("")
+        
+        Trip.sharedInstance.hotel.hotelName.append("")
+        Trip.sharedInstance.hotel.hotelCheckIn.append("")
+        Trip.sharedInstance.hotel.hotelCheckOut.append("")
+        Trip.sharedInstance.hotel.hotelCost.append("")
+        
+        Trip.sharedInstance.restaurant.cafeName.append("")
+        Trip.sharedInstance.restaurant.cafeNotes.append("")
+        Trip.sharedInstance.restaurant.cafeRating.append("")
+        Trip.sharedInstance.restaurant.cafeCost.append("")
+        
+        Trip.sharedInstance.myCurrentTrip = trip.getSizeofData()
+        
+        performSegue(withIdentifier: "TripDetlSegue", sender: self)
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Trip.sharedInstance.myCurrentTrip = -1

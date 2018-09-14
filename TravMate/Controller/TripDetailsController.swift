@@ -18,5 +18,6 @@ class TripDetailsController: UIViewController {
         super.viewDidLoad()
         tripDetlName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
         tripDetlDesc.text = Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip]
+       
     }
 }

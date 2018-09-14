@@ -19,11 +19,18 @@ struct Trip {
                         "Perth is the capital and largest city of the Australian state of Western Australia"]
     var locationImage = ["london", "melbourne", "sydney", "perth"]
     
+    var flight:Flight = Flight ()
+    var hotel:Hotel = Hotel()
+    var restaurant:Restaurant = Restaurant ()
+    
     static var sharedInstance = Trip()
     
     init() {
     }
     
+    func geFlight() -> Flight {
+        return flight
+    }
     func getSizeofData() -> Int {
         return locationName.count
     }

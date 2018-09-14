@@ -15,7 +15,7 @@ struct Restaurant {
     var cafeCost = [33, 50, 20, 10]
     var cafeRating = [5, 4, 3, 2]
     
-    static var sharedInstance = Restaurant()
+    // static var sharedInstance = Restaurant()
     
     init() {
     }

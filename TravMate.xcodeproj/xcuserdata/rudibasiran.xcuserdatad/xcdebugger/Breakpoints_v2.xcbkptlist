@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TravMate/Controller/ViewController.swift"
-            timestampString = "558580841.09249"
+            timestampString = "558583716.003037"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "48"
             endingLineNumber = "48"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "registerGestures()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

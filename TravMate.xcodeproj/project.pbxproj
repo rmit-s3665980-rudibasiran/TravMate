@@ -15,6 +15,9 @@
 		6A4ABF51214A66F00051FD05 /* TripController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4ABF50214A66F00051FD05 /* TripController.swift */; };
 		6A4BB72A214B31DB004B7D5B /* TripCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4BB729214B31DB004B7D5B /* TripCollectionViewCell.swift */; };
 		6A6DBB4421493ED8007FA7C9 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6DBB4321493ED8007FA7C9 /* Model.swift */; };
+		6A865AEB214BB32C009888B6 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A865AEA214BB32C009888B6 /* Flight.swift */; };
+		6A865AED214BB337009888B6 /* Hotel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A865AEC214BB337009888B6 /* Hotel.swift */; };
+		6A865AEF214BB344009888B6 /* Restaurant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A865AEE214BB344009888B6 /* Restaurant.swift */; };
 		6ADBFD392149F80D006C09DA /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBFD382149F80D006C09DA /* Trip.swift */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +32,9 @@
 		6A4ABF50214A66F00051FD05 /* TripController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripController.swift; sourceTree = "<group>"; };
 		6A4BB729214B31DB004B7D5B /* TripCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TripCollectionViewCell.swift; path = TravMate/Controller/TripCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		6A6DBB4321493ED8007FA7C9 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		6A865AEA214BB32C009888B6 /* Flight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		6A865AEC214BB337009888B6 /* Hotel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hotel.swift; sourceTree = "<group>"; };
+		6A865AEE214BB344009888B6 /* Restaurant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Restaurant.swift; sourceTree = "<group>"; };
 		6ADBFD382149F80D006C09DA /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +84,9 @@
 			children = (
 				6A6DBB4321493ED8007FA7C9 /* Model.swift */,
 				6ADBFD382149F80D006C09DA /* Trip.swift */,
+				6A865AEA214BB32C009888B6 /* Flight.swift */,
+				6A865AEC214BB337009888B6 /* Hotel.swift */,
+				6A865AEE214BB344009888B6 /* Restaurant.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -173,10 +182,13 @@
 			files = (
 				6A4ABF51214A66F00051FD05 /* TripController.swift in Sources */,
 				6ADBFD392149F80D006C09DA /* Trip.swift in Sources */,
+				6A865AED214BB337009888B6 /* Hotel.swift in Sources */,
 				6A6DBB4421493ED8007FA7C9 /* Model.swift in Sources */,
 				6A3C5349214907F7008A8D45 /* ViewController.swift in Sources */,
 				6A3C5347214907F7008A8D45 /* AppDelegate.swift in Sources */,
 				6A4BB72A214B31DB004B7D5B /* TripCollectionViewCell.swift in Sources */,
+				6A865AEB214BB32C009888B6 /* Flight.swift in Sources */,
+				6A865AEF214BB344009888B6 /* Restaurant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

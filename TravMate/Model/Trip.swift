@@ -31,6 +31,15 @@ struct Trip {
     func geFlight() -> Flight {
         return flight
     }
+    
+    func geHotel() -> Hotel {
+        return hotel
+    }
+    
+    func getRestaurant() -> Restaurant {
+        return restaurant
+    }
+    
     func getSizeofData() -> Int {
         return locationName.count
     }

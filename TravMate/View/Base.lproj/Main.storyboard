@@ -18,9 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Ap-WIc" userLabel="PlaceHolder">
+                            <view contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zc3-Ap-WIc" userLabel="PlaceHolder">
                                 <rect key="frame" x="55" y="155" width="300" height="500"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dyt-bd-SSp" userLabel="imgStart">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="500"/>
@@ -45,16 +44,15 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <view contentMode="scaleAspectFit" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oB-Ou-AgH" userLabel="LogoPlacement">
+                            <view contentMode="scaleAspectFit" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0oB-Ou-AgH" userLabel="LogoPlacement">
                                 <rect key="frame" x="55" y="50" width="300" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="tDO-kb-bOX">
                                         <rect key="frame" x="8" y="27" width="71" height="42"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trav'Mate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXU-Vi-99M">
-                                        <rect key="frame" x="97" y="48.666666666666671" width="203" height="20.333333333333329"/>
+                                        <rect key="frame" x="97" y="49" width="203" height="20"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -62,7 +60,7 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-dI-g6e" userLabel="BtnStart">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-dI-g6e" userLabel="BtnStart">
                                 <rect key="frame" x="55" y="706" width="300" height="30"/>
                                 <state key="normal" title="Welcome to Trav'Mate">
                                     <color key="titleColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -75,7 +73,14 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="6MA-yi-D40"/>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="trailing" secondItem="zc3-Ap-WIc" secondAttribute="trailing" id="HWc-uA-eIN"/>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="top" secondItem="zc3-Ap-WIc" secondAttribute="bottom" constant="51" id="Hr3-VT-aBJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="XeI-dI-g6e" secondAttribute="bottom" id="de3-3k-Usf"/>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="leading" secondItem="0oB-Ou-AgH" secondAttribute="leading" id="oLP-ER-NR7"/>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="trailing" secondItem="0oB-Ou-AgH" secondAttribute="trailing" id="rB5-MX-2i2"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="XeI-dI-g6e" secondAttribute="trailing" constant="59" id="sId-cC-KTY"/>
+                            <constraint firstItem="XeI-dI-g6e" firstAttribute="leading" secondItem="zc3-Ap-WIc" secondAttribute="leading" id="wtQ-gw-Pvd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -99,47 +104,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
-                                <rect key="frame" x="20" y="64" width="374" height="602"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4v6-uR-F8d">
-                                    <size key="itemSize" width="349" height="200"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="4v6-uR-F8d">
+                                    <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TaN-Yr-ekP" customClass="TripCollectionViewCell" customModule="TravMate" customModuleProvider="target">
-                                        <rect key="frame" x="12.666666666666666" y="0.0" width="349" height="200"/>
+                                        <rect key="frame" x="32.666666666666664" y="15" width="349" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perth" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
-                                                    <rect key="frame" x="0.0" y="8" width="349" height="128"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-JI-dN2">
-                                                    <rect key="frame" x="20" y="143" width="309" height="21"/>
+                                                    <rect key="frame" x="20.000000000000078" y="50" width="309" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efn-9B-cwd">
-                                                    <rect key="frame" x="20" y="163" width="309" height="26"/>
+                                                    <rect key="frame" x="20" y="77" width="309" height="26"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Trip to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NX-GZ-8DY">
+                                                    <rect key="frame" x="20" y="35" width="42" height="17"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perth" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
+                                                    <rect key="frame" x="269" y="36" width="60" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="349" height="200"/>
+                                        <size key="customSize" width="349" height="130"/>
                                         <connections>
                                             <outlet property="tripDesc" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
                                             <outlet property="tripImage" destination="QHc-rZ-Q5G" id="BQd-S8-Pjx"/>
@@ -154,10 +165,17 @@
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Chp-iH-cff" secondAttribute="bottom" id="2ZQ-MO-QL4"/>
+                            <constraint firstItem="3Em-ZL-3wH" firstAttribute="trailing" secondItem="Chp-iH-cff" secondAttribute="trailing" id="Bw5-8x-xEQ"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="3Em-ZL-3wH" secondAttribute="leading" id="uLx-JP-ZTW"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="yYc-me-jAm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="3Em-ZL-3wH"/>
                     </view>
                     <navigationItem key="navigationItem" title="All Trips" id="HkE-uv-6cz">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="logo" style="plain" id="ked-IF-YwR">
+                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.15686274510000001" green="0.8980392157" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
@@ -179,7 +197,7 @@
             <objects>
                 <viewController id="pY4-Ud-gxf" userLabel="Trip Details" customClass="TripDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MS4-1q-fAy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
@@ -608,6 +626,7 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lxy-ZY-wCz"/>
+        <segue reference="xAD-fD-V0N"/>
+        <segue reference="EMV-5C-R1g"/>
     </inferredMetricsTieBreakers>
 </document>

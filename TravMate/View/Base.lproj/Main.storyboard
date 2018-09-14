@@ -269,11 +269,7 @@
                                                 <segue destination="Klj-KO-szE" kind="show" id="YbK-Oc-Iyi"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="pyL-fd-3ij">
-                                            <connections>
-                                                <segue destination="UHI-vm-3B9" kind="show" id="UZy-Hn-Btl"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pyL-fd-3ij"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -286,41 +282,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P43-oa-dua" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1990" y="1601"/>
-        </scene>
-        <!--Hotel Details-->
-        <scene sceneID="3dF-vB-wdS">
-            <objects>
-                <viewController id="UHI-vm-3B9" userLabel="Hotel Details" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eBs-3m-UFa">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AZV-hG-4mK">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Hotel Details" id="Ta3-Zt-Zdu">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="2wx-Qa-iID">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="XfX-kx-Z7r"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="MHY-l9-szT">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="wQT-DX-edw"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="bfM-Ig-Er6"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zt2-Lw-NDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2868" y="1629"/>
         </scene>
         <!--Restaurant List-->
         <scene sceneID="KVn-VA-M2c">
@@ -340,11 +301,7 @@
                                                 <segue destination="Klj-KO-szE" kind="show" id="W7e-eN-gap"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="X19-lm-PDu">
-                                            <connections>
-                                                <segue destination="B6q-8L-XwV" kind="show" id="nay-i8-28J"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="X19-lm-PDu"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -357,41 +314,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LXZ-MG-C8Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2001" y="2307"/>
-        </scene>
-        <!--Restaurant Details-->
-        <scene sceneID="Weg-E1-Ton">
-            <objects>
-                <viewController id="B6q-8L-XwV" userLabel="Restaurant Details" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="LBt-bo-rKh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wYh-0I-Ugr">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Restaurant Details" id="s8F-Yg-qvo">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="m86-gY-pWt">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="fJa-iI-grO"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="qEj-A8-xs0">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="KDj-Wq-5c6"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="TWf-OU-zOe"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="tLN-PE-Met" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2938" y="2323"/>
         </scene>
         <!--Flight List-->
         <scene sceneID="u1L-Xs-Mf3">
@@ -411,11 +333,7 @@
                                                 <segue destination="Klj-KO-szE" kind="show" id="EMV-5C-R1g"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="+" id="bbQ-Ni-vSs">
-                                            <connections>
-                                                <segue destination="yrk-M8-PNo" kind="show" id="TGP-6M-m3A"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="bbQ-Ni-vSs"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -428,41 +346,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUs-bJ-b1u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1990" y="942"/>
-        </scene>
-        <!--Flight Details-->
-        <scene sceneID="Nxo-dv-67j">
-            <objects>
-                <viewController id="yrk-M8-PNo" userLabel="Flight Details" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="abo-2c-ayc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dv6-yw-yzO">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem title="Flight Details" id="Iv4-px-ltT">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="hdm-qE-MCC">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="hOt-Q3-uiR"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="6IR-Kh-uIP">
-                                            <connections>
-                                                <segue destination="3po-5j-DP3" kind="show" id="ZF0-2O-ZQP"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="lOy-o5-MFk"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="epS-g6-Bsz" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2877" y="942"/>
         </scene>
         <!--Trip Tab Bar Controller-->
         <scene sceneID="5s3-P7-7OT">
@@ -492,8 +375,7 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7pN-2H-iZd"/>
         <segue reference="ZO0-DO-JMp"/>
-        <segue reference="tUD-V9-6Yf"/>
+        <segue reference="EMV-5C-R1g"/>
     </inferredMetricsTieBreakers>
 </document>

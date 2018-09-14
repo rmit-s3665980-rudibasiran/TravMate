@@ -25,6 +25,9 @@ class ViewController: UIViewController {
     var attributedString:NSMutableAttributedString?
     var gesturesRegistered: Bool = false
     
+    
+
+    
     @IBAction func respond(_ sender: Any) {
         imgStart.image = UIImage(named: "palmtree.jpeg")
     }

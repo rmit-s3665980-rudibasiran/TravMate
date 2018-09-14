@@ -73,22 +73,15 @@ enum Trip:Int
     
     static func getTripDictionary() ->[String:Trip]
     {
-        // Create a dictionary object to return to the caller
         var allTrips:[String:Trip] = [:]
-        
-        // Iterate through all the elements of the enum and add each trip
-        for trip in getTrip()
-        {
+        for trip in getTrip() {
             allTrips.updateValue(trip, forKey: trip.name)
         }
         return allTrips
     }
     
-    func getTripDescription() ->String
-    {
+    func getTripDescription() ->String {
         let interpretationMinusFullStop = String(self.interpretation.dropLast())
-        
-        // Build the string description of the trip
         var description = "My " + self.name
         description +=  " Trip: " + interpretationMinusFullStop
         return description

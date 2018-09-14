@@ -26,9 +26,18 @@ class HotelDetailsController: UIViewController {
         let hotelData = Trip.sharedInstance.geHotel()
         let i = Trip.sharedInstance.myCurrentTrip
         
-        hotelName.text = hotelData.hotelName[i]
-        checkInDate.text = hotelData.hotelCheckIn[i]
-        checkOutDate.text = hotelData.hotelCheckOut[i]
-        hotelCost.text = hotelData.hotelCost[i]
+        if (Trip.sharedInstance.myCurrentTrip >= 0) {
+            hotelName.text = hotelData.hotelName[i]
+            checkInDate.text = hotelData.hotelCheckIn[i]
+            checkOutDate.text = hotelData.hotelCheckOut[i]
+            hotelCost.text = hotelData.hotelCost[i]
+        }
+        else {
+            hotelName.text = ""
+            checkInDate.text = ""
+            checkOutDate.text = ""
+            hotelCost.text = ""
+        }
+        
     }
 }

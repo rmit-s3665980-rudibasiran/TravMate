@@ -23,12 +23,17 @@ class RestaurantDetailsController: UIViewController {
         let cafeData = Trip.sharedInstance.getRestaurant()
         let i = Trip.sharedInstance.myCurrentTrip
         
-        cafeName.text = cafeData.cafeName[i]
-        cafeNotes.text = cafeData.cafeNotes[i]
-        cafeRating.text = cafeData.cafeRating[i]
-        cafeCost.text = cafeData.cafeCost[i]
-        
-        
-        
+        if (Trip.sharedInstance.myCurrentTrip >= 0) {
+            cafeName.text = cafeData.cafeName[i]
+            cafeNotes.text = cafeData.cafeNotes[i]
+            cafeRating.text = cafeData.cafeRating[i]
+            cafeCost.text = cafeData.cafeCost[i]
+        }
+        else {
+            cafeName.text = ""
+            cafeNotes.text = ""
+            cafeRating.text = ""
+            cafeCost.text = ""
+        }
     }
 }

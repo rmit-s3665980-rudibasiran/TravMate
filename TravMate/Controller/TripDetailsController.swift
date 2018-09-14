@@ -24,8 +24,15 @@ class TripDetailsController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        tripDetlName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
-        tripDetlDesc.text = Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip]
+        
+        if (Trip.sharedInstance.myCurrentTrip >= 0) {
+            tripDetlName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
+            tripDetlDesc.text = Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip]
+        }
+        else {
+            tripDetlName.text = ""
+            tripDetlDesc.text = ""
+        }
        
     }
     

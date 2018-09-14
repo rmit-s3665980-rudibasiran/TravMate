@@ -22,9 +22,17 @@ class FlightDetailsController: UIViewController {
         let flightData = Trip.sharedInstance.geFlight()
         let i = Trip.sharedInstance.myCurrentTrip
         
-        flightName.text = flightData.flightName[i]
-        flightGo.text = flightData.flightGo[i]
-        flightReturn.text = flightData.flightReturn[i]
-        flightCost.text = flightData.flightCost[i]
+        if (Trip.sharedInstance.myCurrentTrip >= 0)  {
+            flightName.text = flightData.flightName[i]
+            flightGo.text = flightData.flightGo[i]
+            flightReturn.text = flightData.flightReturn[i]
+            flightCost.text = flightData.flightCost[i]
+        }
+        else {
+            flightName.text = ""
+            flightGo.text = ""
+            flightReturn.text = ""
+            flightCost.text = ""
+        }
     }
 }

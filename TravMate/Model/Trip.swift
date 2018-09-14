@@ -26,6 +26,7 @@ struct Trip {
     static var sharedInstance = Trip()
     
     init() {
+        myCurrentTrip = -1
     }
     
     func geFlight() -> Flight {

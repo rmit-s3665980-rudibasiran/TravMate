@@ -19,6 +19,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         
         Trip.sharedInstance.locationName.append("")
         Trip.sharedInstance.locationDesc.append("")
+        Trip.sharedInstance.locationCost.append("")
         Trip.sharedInstance.locationImage.append("defaulttripimage")
         
         Trip.sharedInstance.flight.flightCost.append("")
@@ -57,6 +58,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.tripName.text = trip.locationName[indexPath.row]
         cell.tripImage.image =  UIImage(named: trip.locationImage[indexPath.row]) 
         cell.tripDesc.text = trip.locationDesc[indexPath.row]
+        cell.tripCost.text = trip.locationCost[indexPath.row]
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

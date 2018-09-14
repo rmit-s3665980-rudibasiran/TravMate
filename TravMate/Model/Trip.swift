@@ -12,12 +12,10 @@ import UIKit
 struct Trip {
     
     var myCurrentTrip = 0;
-    var locationName = ["London", "Melbourne", "Sydney", "Perth"]
-    var locationDesc = ["London is in England, the United Kingdom",
-                        "Melbourne is the capital and most populous city of the Australian state of Victoria, and the second-most populous city in Australia and Oceania",
-                        "Sydney is the state capital of New South Wales and the most populous city in Australia and Oceania.",
-                        "Perth is the capital and largest city of the Australian state of Western Australia"]
-    var locationImage = ["london", "melbourne", "sydney", "perth"]
+    var locationName = ["LONDON, UK", "MELBOURNE, AU", "SYDNEY, AU", "PERTH, AU"]
+    var locationDesc = ["10 Days", "7 Days", "4 Days", "4 Days"]
+    var locationImage = ["trip01", "trip02", "trip03", "trip04"]
+    var locationCost = ["$3,000", "$1,000", "$400", "$700"]
     
     var flight:Flight = Flight ()
     var hotel:Hotel = Hotel()

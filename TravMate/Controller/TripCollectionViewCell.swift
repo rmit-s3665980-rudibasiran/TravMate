@@ -13,6 +13,6 @@ class TripCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var tripImage: UIImageView!
     @IBOutlet weak var tripName: UILabel!
     @IBOutlet weak var tripDesc: UILabel!
+    @IBOutlet weak var tripCost: UILabel!
     
-
 }

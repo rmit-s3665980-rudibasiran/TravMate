@@ -101,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <navigationItem title="Add a Trip" id="eeu-Mu-8bX">
+                                    <navigationItem title="ALL TRIPS" id="eeu-Mu-8bX">
                                         <barButtonItem key="rightBarButtonItem" title="+" id="jX8-7n-uub">
                                             <connections>
                                                 <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
@@ -116,42 +116,57 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="4v6-uR-F8d">
-                                    <size key="itemSize" width="349" height="200"/>
+                                    <size key="itemSize" width="349" height="144"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TaN-Yr-ekP" customClass="TripCollectionViewCell" customModule="TravMate" customModuleProvider="target">
-                                        <rect key="frame" x="12.666666666666666" y="0.0" width="349" height="200"/>
+                                        <rect key="frame" x="12.666666666666666" y="0.0" width="349" height="144"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="349" height="144"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="perth" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
-                                                    <rect key="frame" x="0.0" y="8" width="349" height="128"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="trip04" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
+                                                    <rect key="frame" x="0.0" y="0.0" width="349" height="144"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-JI-dN2">
-                                                    <rect key="frame" x="20" y="143" width="309" height="21"/>
+                                                    <rect key="frame" x="20" y="39" width="309" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Desc" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efn-9B-cwd">
-                                                    <rect key="frame" x="20" y="163" width="309" height="26"/>
+                                                    <rect key="frame" x="20" y="66" width="309" height="26"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TRIP TO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QlZ-bh-fUQ">
+                                                    <rect key="frame" x="19.999999999999964" y="20" width="57" height="18"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1y-8W-vKZ" userLabel="Price">
+                                                    <rect key="frame" x="20" y="90" width="309" height="20"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <size key="customSize" width="349" height="200"/>
+                                        <size key="customSize" width="349" height="144"/>
                                         <connections>
+                                            <outlet property="tripCost" destination="B1y-8W-vKZ" id="Pef-fs-8rB"/>
                                             <outlet property="tripDesc" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
                                             <outlet property="tripImage" destination="QHc-rZ-Q5G" id="BQd-S8-Pjx"/>
                                             <outlet property="tripName" destination="pDc-JI-dN2" id="Ugt-4u-35Z"/>
@@ -576,10 +591,10 @@
     </scenes>
     <resources>
         <image name="logo" width="43" height="42"/>
-        <image name="perth" width="275" height="183"/>
         <image name="tabbar_eat" width="12" height="20"/>
         <image name="tabbar_flight" width="20" height="20"/>
         <image name="tabbar_hotel" width="20" height="20"/>
+        <image name="trip04" width="253" height="199"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Wy0-z6-3LH"/>

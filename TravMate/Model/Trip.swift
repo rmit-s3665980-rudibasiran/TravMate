@@ -13,7 +13,7 @@ struct Trip {
     
     var myCurrentTrip = 0;
     var locationName = ["LONDON, UK", "MELBOURNE, AU", "SYDNEY, AU", "PERTH, AU"]
-    var locationDesc = ["10 Days", "7 Days", "4 Days", "4 Days"]
+    var locationDays = ["10 Days", "7 Days", "4 Days", "4 Days"]
     var locationImage = ["trip01", "trip02", "trip03", "trip04"]
     var locationCost = ["$3,000", "$1,000", "$400", "$700"]
     

@@ -38,6 +38,7 @@ class TripDetailsController: UIViewController {
         else {
             tripDetlName.text = ""
             tripNoDays.text = ""
+            tripCost.text = ""
         }
        
     }

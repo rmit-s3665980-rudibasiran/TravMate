@@ -190,12 +190,12 @@
                                     <navigationItem title="Trip Details" id="o0q-ze-zuy">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="4bl-wW-c7J">
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" id="lxy-ZY-wCz"/>
+                                                <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="lxy-ZY-wCz"/>
                                             </connections>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="fE1-GR-H1z">
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" id="tUD-V9-6Yf"/>
+                                                <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -223,9 +223,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
-                                <rect key="frame" x="150" y="686" width="114" height="30"/>
+                                <rect key="frame" x="134" y="686" width="146" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Trip Details"/>
+                                <state key="normal" title="View/Add Trip Details"/>
                                 <connections>
                                     <segue destination="3po-5j-DP3" kind="show" id="7pN-2H-iZd"/>
                                 </connections>
@@ -583,6 +583,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="ZO0-DO-JMp"/>
-        <segue reference="W7e-eN-gap"/>
+        <segue reference="lxy-ZY-wCz"/>
     </inferredMetricsTieBreakers>
 </document>

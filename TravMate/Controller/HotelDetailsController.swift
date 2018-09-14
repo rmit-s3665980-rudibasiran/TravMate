@@ -19,6 +19,9 @@ class HotelDetailsController: UIViewController {
     
     @IBOutlet weak var hotelCost: UITextField!
     
+    @IBOutlet weak var hotelAddress: UITextField!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +34,14 @@ class HotelDetailsController: UIViewController {
             checkInDate.text = hotelData.hotelCheckIn[i]
             checkOutDate.text = hotelData.hotelCheckOut[i]
             hotelCost.text = hotelData.hotelCost[i]
+            hotelAddress.text = hotelData.hotelAddress[i]
         }
         else {
             hotelName.text = ""
             checkInDate.text = ""
             checkOutDate.text = ""
             hotelCost.text = ""
+            hotelAddress.text = ""
         }
         
     }

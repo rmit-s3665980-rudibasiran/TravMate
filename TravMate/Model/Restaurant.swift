@@ -11,9 +11,11 @@ import Foundation
 struct Restaurant {
     
     var cafeName = ["Flirting Shadows", "Chorba", "Nandos", "McDonalds"]
-    var cafeRating = [5, 4, 3, 2]
     var cafeNotes = ["Good Coffee", "Best Golzame", "Chicken" , "McMuffin"]
     var cafeCost = [33, 50, 20, 10]
+    var cafeRating = [5, 4, 3, 2]
+    
+    static var sharedInstance = Restaurant()
     
     init() {
     }

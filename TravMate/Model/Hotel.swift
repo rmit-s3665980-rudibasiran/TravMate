@@ -15,6 +15,8 @@ struct Hotel {
     var hotelCheckOut = ["25 May 2018", "21 Feb 2018", "8 Aug 2018" , "11 Oct 2018"]
     var hotelCost = [200, 90, 120, 150]
     
+    static var sharedInstance = Hotel()
+    
     init() {
     }
     

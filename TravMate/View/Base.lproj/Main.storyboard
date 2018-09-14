@@ -169,7 +169,6 @@
                     </view>
                     <connections>
                         <segue destination="pY4-Ud-gxf" kind="show" identifier="TripDetlSegue" id="xAD-fD-V0N"/>
-                        <segue destination="3po-5j-DP3" kind="show" identifier="TripDataSegue" id="6s3-WJ-L62"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZq-Tj-bQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,6 +230,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
+                                <rect key="frame" x="150" y="686" width="114" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="View Trip Details"/>
+                                <connections>
+                                    <segue destination="3po-5j-DP3" kind="show" id="7pN-2H-iZd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
@@ -485,8 +492,8 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="6s3-WJ-L62"/>
-        <segue reference="xAD-fD-V0N"/>
+        <segue reference="7pN-2H-iZd"/>
+        <segue reference="ZO0-DO-JMp"/>
         <segue reference="tUD-V9-6Yf"/>
     </inferredMetricsTieBreakers>
 </document>

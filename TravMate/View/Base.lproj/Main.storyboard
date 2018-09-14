@@ -197,7 +197,7 @@
             <objects>
                 <viewController id="pY4-Ud-gxf" userLabel="Trip Details" customClass="TripDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MS4-1q-fAy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
@@ -234,9 +234,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
-                                <rect key="frame" x="134" y="686" width="146" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
+                                <rect key="frame" x="134" y="598" width="146" height="30"/>
                                 <state key="normal" title="View/Add Trip Details"/>
                                 <connections>
                                     <segue destination="3po-5j-DP3" kind="show" id="7pN-2H-iZd"/>
@@ -252,6 +251,9 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="7NE-VX-TiA" secondAttribute="bottom" constant="44" id="iFK-y1-xOs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA">
@@ -626,7 +628,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xAD-fD-V0N"/>
-        <segue reference="EMV-5C-R1g"/>
+        <segue reference="lxy-ZY-wCz"/>
     </inferredMetricsTieBreakers>
 </document>

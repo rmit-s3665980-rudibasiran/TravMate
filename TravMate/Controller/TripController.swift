@@ -11,7 +11,7 @@ import UIKit
 
 class TripController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    var trip:Trip = Trip()
+    var trip:Trip = Trip.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,5 +40,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        Trip.sharedInstance.myCurrentTrip = indexPath.row
+        performSegue(withIdentifier: "TripDetlSegue", sender: self)
     }
 }

@@ -163,18 +163,14 @@
                                     <outlet property="delegate" destination="Klj-KO-szE" id="VhG-UH-11C"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVY-4b-iau">
-                                <rect key="frame" x="175" y="674" width="64" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="View Trip"/>
-                                <connections>
-                                    <segue destination="3po-5j-DP3" kind="show" id="kl2-UZ-hbj"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="3Em-ZL-3wH"/>
                     </view>
+                    <connections>
+                        <segue destination="pY4-Ud-gxf" kind="show" identifier="TripDetlSegue" id="xAD-fD-V0N"/>
+                        <segue destination="3po-5j-DP3" kind="show" identifier="TripDataSegue" id="6s3-WJ-L62"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZq-Tj-bQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -183,7 +179,7 @@
         <!--Trip Details-->
         <scene sceneID="BV3-9S-Ukw">
             <objects>
-                <viewController id="pY4-Ud-gxf" userLabel="Trip Details" sceneMemberID="viewController">
+                <viewController id="pY4-Ud-gxf" userLabel="Trip Details" customClass="TripDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MS4-1q-fAy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -206,14 +202,47 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-tO-Jb2">
+                                <rect key="frame" x="20" y="128" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Place Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RU-6R-IU0" userLabel="TripDetlName">
+                                <rect key="frame" x="159" y="123" width="214" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-71-RV5">
+                                <rect key="frame" x="20" y="222" width="88" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0pj-f0-XAZ" userLabel="TripDetlDesc">
+                                <rect key="frame" x="159" y="222" width="231" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
+                    <connections>
+                        <outlet property="tripDetlDesc" destination="0pj-f0-XAZ" id="jQW-tj-QBL"/>
+                        <outlet property="tripDetlName" destination="6RU-6R-IU0" id="A2A-i1-CD9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9go-4Q-XDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2126" y="117"/>
+            <point key="canvasLocation" x="2124.6376811594205" y="116.57608695652175"/>
         </scene>
         <!--Hotel List-->
         <scene sceneID="eg2-9O-Nov">
@@ -456,7 +485,8 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kl2-UZ-hbj"/>
-        <segue reference="W7e-eN-gap"/>
+        <segue reference="6s3-WJ-L62"/>
+        <segue reference="xAD-fD-V0N"/>
+        <segue reference="tUD-V9-6Yf"/>
     </inferredMetricsTieBreakers>
 </document>

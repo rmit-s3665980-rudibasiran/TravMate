@@ -11,6 +11,7 @@ import UIKit
 
 struct Trip {
     
+    var myCurrentTrip = 0;
     var locationName = ["London", "Melbourne", "Sydney", "Perth"]
     var locationDesc = ["London is in England, the United Kingdom",
                         "Melbourne is the capital and most populous city of the Australian state of Victoria, and the second-most populous city in Australia and Oceania",
@@ -18,11 +19,15 @@ struct Trip {
                         "Perth is the capital and largest city of the Australian state of Western Australia"]
     var locationImage = ["london", "melbourne", "sydney", "perth"]
     
+    static var sharedInstance = Trip()
+    
     init() {
     }
     
     func getSizeofData() -> Int {
         return locationName.count
     }
+    
+   
 
 }

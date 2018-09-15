@@ -15,6 +15,12 @@ class RestaurantDetailsController: UIViewController {
     
     @IBOutlet weak var cafeAddress: UITextField!
     
+    @IBOutlet weak var cafeCost: UITextField!
+    
+    @IBOutlet weak var cafePax: UITextField!
+    
+    
+    
     
     @IBAction func cafeSave(_ sender: Any) {
     }
@@ -28,6 +34,9 @@ class RestaurantDetailsController: UIViewController {
         if (Trip.sharedInstance.myCurrentTrip >= 0) {
             cafeName.text = cafeData.cafeName[i]
             cafeAddress.text = cafeData.cafeAddress[i]
+            cafeCost.text = cafeData.cafeCost[i]
+            cafePax.text = cafeData.cafePax[i]
+            
             
         }
     }

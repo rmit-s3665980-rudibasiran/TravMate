@@ -11,6 +11,10 @@ import UIKit
 
 class HotelDetailsController: UIViewController {
     
+    @IBOutlet weak var hotelNotes: UITextView!
+    
+    @IBOutlet weak var roomType: UITextField!
+    
     @IBOutlet weak var hotelName: UITextField!
     
     @IBOutlet weak var checkInDate: UITextField!
@@ -35,13 +39,9 @@ class HotelDetailsController: UIViewController {
             checkOutDate.text = hotelData.hotelCheckOut[i]
             hotelCost.text = hotelData.hotelCost[i]
             hotelAddress.text = hotelData.hotelAddress[i]
-        }
-        else {
-            hotelName.text = ""
-            checkInDate.text = ""
-            checkOutDate.text = ""
-            hotelCost.text = ""
-            hotelAddress.text = ""
+            roomType.text = hotelData.roomType[i]
+            hotelNotes.text = hotelData.hotelNotes[i]
+            
         }
         
     }

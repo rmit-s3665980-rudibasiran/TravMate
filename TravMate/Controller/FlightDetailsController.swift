@@ -14,7 +14,6 @@ class FlightDetailsController: UIViewController {
     
     @IBOutlet weak var flightPortFrom: UITextField!
     
-    
     @IBOutlet weak var flightDepartNo: UITextField!
     
     @IBOutlet weak var flightPortTo: UITextField!
@@ -24,7 +23,6 @@ class FlightDetailsController: UIViewController {
     @IBOutlet weak var flightDepartTime: UITextField!
     
     @IBOutlet weak var flightReturnNo: UITextField!
-    
     
     @IBOutlet weak var flightReturnDate: UITextField!
     
@@ -39,16 +37,15 @@ class FlightDetailsController: UIViewController {
         let i = Trip.sharedInstance.myCurrentTrip
         
         if (Trip.sharedInstance.myCurrentTrip >= 0)  {
+            flightPortFrom.text = flightData.flightPortFrom[i]
             flightDepartNo.text = flightData.flightDepartNo[i]
+            flightReturnNo.text = flightData.flightReturnNo[i]
+            flightPortTo.text = flightData.flightPortTo[i]
             flightDepartDate.text = flightData.flightDepartDate[i]
             flightReturnDate.text = flightData.flightReturnDate[i]
+            flightDepartTime.text = flightData.flightDepartTime[i]
+            flightReturnTime.text = flightData.flightReturnTime[i]
             flightCost.text = flightData.flightCost[i]
-        }
-        else {
-            flightDepartNo.text = ""
-            flightDepartDate.text = ""
-            flightReturnDate.text = ""
-            flightCost.text = ""
         }
     }
 }

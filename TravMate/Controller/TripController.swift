@@ -19,10 +19,15 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.locationDays.append("")
         Trip.sharedInstance.locationCost.append("")
 
-        Trip.sharedInstance.flight.flightCost.append("")
         Trip.sharedInstance.flight.flightDepartNo.append("")
+        Trip.sharedInstance.flight.flightReturnNo.append("")
+        Trip.sharedInstance.flight.flightPortFrom.append("")
+        Trip.sharedInstance.flight.flightPortTo.append("")
         Trip.sharedInstance.flight.flightDepartDate.append("")
+        Trip.sharedInstance.flight.flightDepartTime.append("")
         Trip.sharedInstance.flight.flightReturnDate.append("")
+        Trip.sharedInstance.flight.flightReturnTime.append("")
+        Trip.sharedInstance.flight.flightCost.append("")
         
         Trip.sharedInstance.hotel.hotelName.append("")
         Trip.sharedInstance.hotel.hotelCheckIn.append("")

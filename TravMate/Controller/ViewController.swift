@@ -31,6 +31,11 @@ class ViewController: UIViewController {
     @IBAction func respond(_ sender: Any) {
         imgStart.image = UIImage(named: "palmtree.jpeg")
     }
+    
+    // W: To hide status bar
+    override var prefersStatusBarHidden: Bool {
+        return true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

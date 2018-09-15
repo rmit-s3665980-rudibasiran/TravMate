@@ -185,6 +185,7 @@
                                             <color key="tintColor" red="0.0" green="0.98431372549999996" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
+                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                                             <connections>
                                                 <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
                                             </connections>
@@ -196,9 +197,10 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="vlq-0I-AK0" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="0jw-b0-snG"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="bottom" secondItem="3Em-ZL-3wH" secondAttribute="bottom" id="2ax-tW-zW7"/>
                             <constraint firstItem="vlq-0I-AK0" firstAttribute="trailing" secondItem="3Em-ZL-3wH" secondAttribute="trailing" id="HoH-aM-6Kr"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="E8X-p4-465" secondAttribute="leading" id="NZI-sH-LgI"/>
-                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="vlq-0I-AK0" secondAttribute="bottom" id="am6-9E-Uqx"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" constant="96" id="hvZ-B4-XUg"/>
                             <constraint firstItem="vlq-0I-AK0" firstAttribute="leading" secondItem="3Em-ZL-3wH" secondAttribute="leading" id="ioP-CZ-Gdf"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="E8X-p4-465" secondAttribute="trailing" id="vwM-BF-qtm"/>
                         </constraints>
@@ -662,7 +664,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tYJ-fR-zVD"/>
-        <segue reference="q0j-g8-r0Z"/>
+        <segue reference="JNU-GA-zUc"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -113,7 +113,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="apc-9r-bOc"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="4v6-uR-F8d">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="4v6-uR-F8d">
                                     <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -164,7 +164,8 @@
                                         <color key="backgroundColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="customSize" width="349" height="130"/>
                                         <connections>
-                                            <outlet property="tripDesc" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
+                                            <outlet property="tripCost" destination="We8-0b-4bi" id="Lj2-SF-fET"/>
+                                            <outlet property="tripDays" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
                                             <outlet property="tripImage" destination="QHc-rZ-Q5G" id="BQd-S8-Pjx"/>
                                             <outlet property="tripName" destination="pDc-JI-dN2" id="Ugt-4u-35Z"/>
                                         </connections>

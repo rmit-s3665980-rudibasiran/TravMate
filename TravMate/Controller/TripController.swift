@@ -18,8 +18,9 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         
         
         Trip.sharedInstance.locationName.append("")
-        Trip.sharedInstance.locationDesc.append("")
-        Trip.sharedInstance.locationImage.append("defaulttripimage")
+        Trip.sharedInstance.locationDays.append("")
+        Trip.sharedInstance.locationCost.append("")
+
         
         Trip.sharedInstance.flight.flightCost.append("")
         Trip.sharedInstance.flight.flightName.append("")
@@ -56,8 +57,23 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
         
         cell.tripName.text = trip.locationName[indexPath.row]
-        cell.tripImage.image =  UIImage(named: trip.locationImage[indexPath.row]) 
-        cell.tripDesc.text = trip.locationDesc[indexPath.row]
+      
+        cell.tripDays.text = trip.locationDays[indexPath.row]
+        cell.tripCost.text = trip.locationCost[indexPath.row]
+        
+        let picture = ["icon_beijing", "icon_newyork", "icon_paris"]
+        
+        if (indexPath.row % 3 == 1) {
+            cell.backgroundColor = UIColor.green
+        }
+        else if (indexPath.row % 3 == 2) {
+            cell.backgroundColor = UIColor.blue
+        }
+        else {
+            cell.backgroundColor = UIColor.red
+        }
+        
+        cell.tripImage.image =  UIImage(named: picture[indexPath.row % 3])
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

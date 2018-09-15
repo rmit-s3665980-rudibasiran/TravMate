@@ -18,7 +18,7 @@ class TripDetailsController: UIViewController {
         
         let tripDesc = tripDetlDesc.text
         let tripName = tripDetlName.text
-        Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip] = tripDesc!
+        Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = tripDesc!
         Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = tripName!
         
         performSegue(withIdentifier: "SegueBackToTrip", sender: self)
@@ -29,7 +29,7 @@ class TripDetailsController: UIViewController {
         
         if (Trip.sharedInstance.myCurrentTrip >= 0) {
             tripDetlName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
-            tripDetlDesc.text = Trip.sharedInstance.locationDesc[Trip.sharedInstance.myCurrentTrip]
+            tripDetlDesc.text = Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip]
         }
         else {
             tripDetlName.text = ""

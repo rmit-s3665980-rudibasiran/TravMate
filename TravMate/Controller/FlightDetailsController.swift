@@ -11,6 +11,7 @@ import UIKit
 
 class FlightDetailsController: UIViewController {
     
+    @IBOutlet weak var tripName: UILabel!
     
     @IBOutlet weak var flightPortFrom: UITextField!
     
@@ -30,6 +31,22 @@ class FlightDetailsController: UIViewController {
     
     @IBOutlet weak var flightCost: UITextField!
     
+    @IBAction func saveFlight(_ sender: Any) {
+        
+        Trip.sharedInstance.flight.flightPortFrom[Trip.sharedInstance.myCurrentTrip] = flightPortFrom.text!
+        Trip.sharedInstance.flight.flightDepartNo[Trip.sharedInstance.myCurrentTrip] = flightDepartNo.text!
+        Trip.sharedInstance.flight.flightReturnNo[Trip.sharedInstance.myCurrentTrip] = flightReturnNo.text!
+        Trip.sharedInstance.flight.flightPortTo[Trip.sharedInstance.myCurrentTrip] = flightPortTo.text!
+        Trip.sharedInstance.flight.flightDepartDate[Trip.sharedInstance.myCurrentTrip] = flightDepartDate.text!
+        Trip.sharedInstance.flight.flightReturnDate[Trip.sharedInstance.myCurrentTrip] = flightReturnDate.text!
+        Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = flightDepartTime.text!
+        Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = flightReturnTime.text!
+        Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = flightCost.text!
+        
+    }
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +54,7 @@ class FlightDetailsController: UIViewController {
         let i = Trip.sharedInstance.myCurrentTrip
         
         if (Trip.sharedInstance.myCurrentTrip >= 0)  {
+            tripName.text = Trip.sharedInstance.locationName[i]
             flightPortFrom.text = flightData.flightPortFrom[i]
             flightDepartNo.text = flightData.flightDepartNo[i]
             flightReturnNo.text = flightData.flightReturnNo[i]

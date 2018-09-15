@@ -14,7 +14,11 @@ struct Trip {
     var myCurrentTrip = 0;
 
     
+<<<<<<< HEAD
     var locationName = ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
+=======
+    var locationName = ["BEIJING, CHINA", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
+>>>>>>> 049f49f60096010a40746cad76a61c4b20db0e1b
     var locationDays = ["5 days", "3 days", "15 days", "9 days"]
     var locationCost = ["$5,000" , "$7,000", "$8,000", "$500" ]
     

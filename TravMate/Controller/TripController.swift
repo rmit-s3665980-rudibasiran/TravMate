@@ -19,6 +19,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.locationDays.append("")
         Trip.sharedInstance.locationCost.append("")
 
+<<<<<<< HEAD
+=======
+        
+>>>>>>> 049f49f60096010a40746cad76a61c4b20db0e1b
         Trip.sharedInstance.flight.flightCost.append("")
         Trip.sharedInstance.flight.flightName.append("")
         Trip.sharedInstance.flight.flightGo.append("")
@@ -70,6 +74,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         let picture = ["icon_beijing", "icon_newyork", "icon_paris"]
         
         if (indexPath.row % 3 == 1) {
+<<<<<<< HEAD
             // cell color: blue
             cell.backgroundColor = uicolorFromHex(rgbValue: 0x1684FB)
         }
@@ -80,6 +85,15 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         else {
             // cell color: turquoise
             cell.backgroundColor = uicolorFromHex(rgbValue: 0x53E3DD)
+=======
+            cell.backgroundColor = UIColor.green
+        }
+        else if (indexPath.row % 3 == 2) {
+            cell.backgroundColor = UIColor.blue
+        }
+        else {
+            cell.backgroundColor = UIColor.red
+>>>>>>> 049f49f60096010a40746cad76a61c4b20db0e1b
         }
         
         cell.tripImage.image =  UIImage(named: picture[indexPath.row % 3])

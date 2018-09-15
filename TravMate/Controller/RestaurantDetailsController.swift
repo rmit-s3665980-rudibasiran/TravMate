@@ -19,7 +19,15 @@ class RestaurantDetailsController: UIViewController {
     
     @IBOutlet weak var cafePax: UITextField!
     
+    @IBOutlet weak var cafeType: UITextField!
     
+    @IBOutlet weak var item1: UITextField!
+    
+    @IBOutlet weak var item2: UITextField!
+    
+    @IBOutlet weak var item3: UITextField!
+    
+    @IBOutlet weak var cafeNotes: UITextView!
     
     
     @IBAction func cafeSave(_ sender: Any) {
@@ -36,6 +44,12 @@ class RestaurantDetailsController: UIViewController {
             cafeAddress.text = cafeData.cafeAddress[i]
             cafeCost.text = cafeData.cafeCost[i]
             cafePax.text = cafeData.cafePax[i]
+            cafeType.text = cafeData.cafeType[i]
+            item1.text = cafeData.foodItem1[i]
+            item2.text = cafeData.foodItem2[i]
+            item3.text = cafeData.foodItem3[i]
+            cafeNotes.text = cafeData.cafeNotes[i]
+            
             
             
         }

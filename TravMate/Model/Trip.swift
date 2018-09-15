@@ -14,7 +14,7 @@ struct Trip {
     var myCurrentTrip = 0;
 
     var locationName = ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
-    var locationDays = ["10 days", "11 days", "14 days", "5 days"]
+    var locationDays = ["10 Days", "11 Days", "14 Days", "5 Days"]
     var locationCost = ["$5,000" , "$7,000", "$8,000", "$500" ]
     
     var flight:Flight = Flight ()

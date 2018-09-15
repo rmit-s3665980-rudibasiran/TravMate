@@ -197,7 +197,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-vU-5gJ">
-                                <rect key="frame" x="15" y="364" width="384" height="100"/>
+                                <rect key="frame" x="15" y="314" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-xA-TNF">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -227,7 +227,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IpO-Hz-kWj">
-                                <rect key="frame" x="15" y="479" width="384" height="100"/>
+                                <rect key="frame" x="15" y="429" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-w8-vES">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -270,7 +270,7 @@
                             <constraint firstItem="IpO-Hz-kWj" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="kDc-st-v7s"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="uXd-gn-Dgc"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="bottom" secondItem="tTY-FD-TTf" secondAttribute="bottom" constant="84" id="usv-jC-tpa"/>
-                            <constraint firstItem="seJ-vU-5gJ" firstAttribute="top" secondItem="5j3-nX-gLS" secondAttribute="bottom" constant="100" id="vtx-zf-vKn"/>
+                            <constraint firstItem="seJ-vU-5gJ" firstAttribute="top" secondItem="5j3-nX-gLS" secondAttribute="bottom" constant="50" id="vtx-zf-vKn"/>
                             <constraint firstItem="dUD-9G-JYE" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="xm5-Zu-Xan"/>
                             <constraint firstItem="seJ-vU-5gJ" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="yAZ-sq-pSp"/>
                             <constraint firstItem="seJ-vU-5gJ" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="yRN-Ef-v6O"/>
@@ -688,17 +688,23 @@
                                                     <constraint firstAttribute="height" constant="30" id="Ckv-Ks-SiB"/>
                                                 </constraints>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-tJ-UmL">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="8uW-tJ-UmL">
                                                 <rect key="frame" x="0.0" y="90" width="384" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R91-QW-5Uk">
-                                                        <rect key="frame" x="0.0" y="0.0" width="192" height="30"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                                        <nil key="textColor"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="WEd-XK-2WU" userLabel="FlightCost">
-                                                        <rect key="frame" x="192" y="0.0" width="192" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="118" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Return" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h7u-2J-VD9">
+                                                        <rect key="frame" x="133" y="0.0" width="118" height="30"/>
+                                                        <nil key="textColor"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Duration" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yv3-40-9gR">
+                                                        <rect key="frame" x="266" y="0.0" width="118" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits"/>
@@ -867,6 +873,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="q0j-g8-r0Z"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

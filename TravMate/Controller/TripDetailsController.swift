@@ -12,12 +12,25 @@ import UIKit
 class TripDetailsController: UIViewController {
     
    
+   
+    
     @IBOutlet weak var tripName: UITextField!
     
     @IBOutlet weak var tripDays: UITextField!
     
     @IBOutlet weak var tripCost: UITextField!
     
+    @IBAction func clickFlight(_ sender: Any) {
+        performSegue(withIdentifier: "GoToTabSegue", sender: self)
+    }
+    
+    @IBAction func clickHotel(_ sender: Any) {
+        performSegue(withIdentifier: "GoToTabSegue", sender: self)
+    }
+    
+    @IBAction func clickRestaurant(_ sender: Any) {
+        performSegue(withIdentifier: "GoToTabSegue", sender: self)
+    }
     
     @IBAction func saveData(_ sender: Any) {
         

@@ -229,15 +229,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
-                                <rect key="frame" x="134" y="662" width="146" height="30"/>
-                                <state key="normal" title="View/Add Trip Details"/>
-                                <connections>
-                                    <segue destination="3po-5j-DP3" kind="show" id="7pN-2H-iZd"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Trip Details" id="o0q-ze-zuy">
                                         <barButtonItem key="leftBarButtonItem" title="Back" id="4bl-wW-c7J">
@@ -255,36 +249,84 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
-                                <rect key="frame" x="20" y="115" width="374" height="30"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-nX-gLS">
+                                <rect key="frame" x="20" y="105" width="374" height="131"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
-                                <rect key="frame" x="20" y="171" width="374" height="30"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
+                                        <rect key="frame" x="0.0" y="101" width="374" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-FD-TTf">
+                                <rect key="frame" x="20" y="374" width="378" height="278"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
-                                <rect key="frame" x="20" y="226" width="374" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                            </textField>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-xA-TNF">
+                                        <rect key="frame" x="0.0" y="8" width="185" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="FLIGHT" image="add_flight"/>
+                                        <connections>
+                                            <action selector="clickFlight:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="hGw-GQ-zl2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-w8-vES">
+                                        <rect key="frame" x="0.0" y="141" width="185" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="RESTAURANT" image="add_restaurant"/>
+                                        <connections>
+                                            <action selector="clickRestaurant:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="AGz-Y9-3g2"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwq-kT-CHM">
+                                        <rect key="frame" x="193" y="8" width="185" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="HOTEL" image="add_hotel"/>
+                                        <connections>
+                                            <action selector="clickHotel:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="FXC-0W-A7R"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piS-rI-oqm">
+                                        <rect key="frame" x="193" y="141" width="185" height="117"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="OTHERS..."/>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="x7e-Ti-5lG" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="Cdm-A1-Bca"/>
-                            <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="x7e-Ti-5lG" secondAttribute="centerX" id="Pqf-go-lGr"/>
-                            <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="MS4-1q-fAy" secondAttribute="centerX" id="URd-6u-EEm"/>
-                            <constraint firstAttribute="bottom" secondItem="7NE-VX-TiA" secondAttribute="bottom" constant="44" id="iFK-y1-xOs"/>
-                            <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="nBt-mX-jRs"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA"/>
@@ -292,6 +334,7 @@
                         <outlet property="tripCost" destination="PQc-5j-Tmd" id="s50-r2-d8R"/>
                         <outlet property="tripDays" destination="foN-o2-JGr" id="8ws-ay-3m7"/>
                         <outlet property="tripName" destination="ddd-Nc-cPj" id="7No-Hy-udw"/>
+                        <segue destination="3po-5j-DP3" kind="show" identifier="GoToTabSegue" id="0uH-2p-HrA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9go-4Q-XDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -640,6 +683,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="add_flight" width="30" height="30"/>
+        <image name="add_hotel" width="30" height="29"/>
+        <image name="add_restaurant" width="18" height="30"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
         <image name="tabbar_eat" width="12" height="20"/>
@@ -647,7 +693,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xAD-fD-V0N"/>
         <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -60,14 +60,14 @@
                                     </label>
                                 </subviews>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-dI-g6e" userLabel="BtnStart">
-                                <rect key="frame" x="55" y="706" width="300" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XeI-dI-g6e" userLabel="BtnStart">
+                                <rect key="frame" x="55" y="686" width="300" height="30"/>
                                 <state key="normal" title="Welcome to Trav'Mate">
                                     <color key="titleColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="respond:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8bV-qT-83r"/>
-                                    <segue destination="65F-cF-Thl" kind="show" id="Wy0-z6-3LH"/>
+                                    <segue destination="Klj-KO-szE" kind="show" id="JNU-GA-zUc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -97,20 +97,20 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="117.39130434782609" y="117.39130434782609"/>
+            <point key="canvasLocation" x="959" y="117"/>
         </scene>
         <!--Trip Controller-->
         <scene sceneID="teb-82-X76">
             <objects>
                 <viewController id="Klj-KO-szE" userLabel="Trip Controller" customClass="TripController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E8X-p4-465">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
+                                <rect key="frame" x="0.0" y="98" width="414" height="638"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
+                                <inset key="scrollIndicatorInsets" minX="0.0" minY="20" maxX="0.0" maxY="20"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="20" minimumInteritemSpacing="20" sectionInsetReference="safeArea" id="4v6-uR-F8d">
                                     <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -173,6 +173,20 @@
                                     <outlet property="delegate" destination="Klj-KO-szE" id="VhG-UH-11C"/>
                                 </connections>
                             </collectionView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlq-0I-AK0">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem title="ALL TRIPS" id="Npr-h9-ByU">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" image="logo" id="faE-Yy-gtd"/>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
+                                            <connections>
+                                                <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -187,11 +201,6 @@
                         <barButtonItem key="leftBarButtonItem" title="Item" image="logo" style="plain" id="ked-IF-YwR">
                             <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.15686274510000001" green="0.8980392157" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
-                            <connections>
-                                <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -210,18 +219,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
-                                <rect key="frame" x="0.0" y="40" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Trip Details" id="o0q-ze-zuy">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4bl-wW-c7J">
-                                            <connections>
-                                                <segue destination="65F-cF-Thl" kind="show" identifier="SegueBackToTrip" id="lxy-ZY-wCz"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-tO-Jb2">
                                 <rect key="frame" x="20" y="148" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -260,6 +257,23 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <navigationBar contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
+                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="Trip Details" id="o0q-ze-zuy">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4bl-wW-c7J">
+                                            <connections>
+                                                <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
+                                            </connections>
+                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="fE1-GR-H1z">
+                                            <connections>
+                                                <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -280,13 +294,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="fE1-GR-H1z">
-                            <connections>
-                                <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA"/>
                     <connections>
                         <outlet property="tripDetlDesc" destination="0pj-f0-XAZ" id="jQW-tj-QBL"/>
                         <outlet property="tripDetlName" destination="6RU-6R-IU0" id="A2A-i1-CD9"/>
@@ -309,11 +317,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Hotel" id="na9-Fx-Fai">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GCW-bC-h01" userLabel="Back">
-                                            <connections>
-                                                <segue destination="65F-cF-Thl" kind="show" id="YbK-Oc-Iyi"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GCW-bC-h01" userLabel="Back"/>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="pyL-fd-3ij"/>
                                     </navigationItem>
                                 </items>
@@ -425,11 +429,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Restaurant" id="70t-DX-871">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="h8C-8l-HXc" userLabel="Back">
-                                            <connections>
-                                                <segue destination="65F-cF-Thl" kind="show" id="W7e-eN-gap"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="h8C-8l-HXc" userLabel="Back"/>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="X19-lm-PDu"/>
                                     </navigationItem>
                                 </items>
@@ -526,11 +526,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Flight" id="AiO-bJ-To4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0k9-zB-JXC" userLabel="Back">
-                                            <connections>
-                                                <segue destination="65F-cF-Thl" kind="show" id="EMV-5C-R1g"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0k9-zB-JXC" userLabel="Back"/>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="bbQ-Ni-vSs"/>
                                     </navigationItem>
                                 </items>
@@ -633,31 +629,6 @@
             </objects>
             <point key="canvasLocation" x="1068" y="1272"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="bjK-1s-11Z">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="65F-cF-Thl" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="Vvl-eR-flf">
-                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                        <textAttributes key="largeTitleTextAttributes">
-                            <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Klj-KO-szE" kind="relationship" relationship="rootViewController" id="MfC-3Z-vaH"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gnF-mY-9cg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="992.75362318840587" y="116.57608695652175"/>
-        </scene>
     </scenes>
     <resources>
         <image name="logo" width="43" height="42"/>
@@ -668,6 +639,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="xAD-fD-V0N"/>
-        <segue reference="lxy-ZY-wCz"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

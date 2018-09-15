@@ -698,9 +698,14 @@
                     <tabBarItem key="tabBarItem" title="Flight" image="tabbar_flight" selectedImage="tabbar_flight" id="HG5-HI-yTL" userLabel="Flight"/>
                     <connections>
                         <outlet property="flightCost" destination="WEd-XK-2WU" id="WCF-bq-RPp"/>
-                        <outlet property="flightGo" destination="PWu-YN-H6w" id="8R9-Bi-wsn"/>
-                        <outlet property="flightName" destination="xbM-rv-3wn" id="8RI-ik-dwB"/>
-                        <outlet property="flightReturn" destination="a3F-TS-48x" id="iea-2E-Re8"/>
+                        <outlet property="flightDepartDate" destination="PWu-YN-H6w" id="8R9-Bi-wsn"/>
+                        <outlet property="flightDepartNo" destination="xbM-rv-3wn" id="8RI-ik-dwB"/>
+                        <outlet property="flightDepartTime" destination="kch-Iu-nzw" id="TOY-t8-C4j"/>
+                        <outlet property="flightPortFrom" destination="lcl-YV-sY4" id="jXW-cF-UnM"/>
+                        <outlet property="flightPortTo" destination="2OE-Ru-Sds" id="bt1-cs-01O"/>
+                        <outlet property="flightReturnDate" destination="a3F-TS-48x" id="iea-2E-Re8"/>
+                        <outlet property="flightReturnNo" destination="BlA-Jd-efJ" id="8dI-Vr-HZ1"/>
+                        <outlet property="flightReturnTime" destination="6g3-LX-o1Y" id="tAr-hJ-gKc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XUs-bJ-b1u" userLabel="First Responder" sceneMemberID="firstResponder"/>

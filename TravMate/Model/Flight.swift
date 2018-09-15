@@ -10,17 +10,21 @@ import Foundation
 
 struct Flight {
     
-    var flightName = ["British Airways 101", "Qantas 202", "JetStar 303", "Virgin 404"]
-    var flightGo = ["15 May 2018 10:00", "14 Feb 2018 08:00", "4 Aug 2018 22:00" , "7 Oct 2018 14:00"]
-    var flightReturn = ["25 May 2018 10:00", "21 Feb 2018 08:00", "8 Aug 2018 22:00" , "11 Oct 2018 14:00"]
-    var flightCost = ["2000", "300", "400", "600"]
+    var flightDepartNo = ["BA 101", "PANAM 202", "AIR FRANCE 303", "VIRGIN 404"]
+    var flightPortFrom = ["MEL", "MEL", "MEL" , "SYD"]
+    var flightPortTo = ["LDN", "NYC", "PAR" , "MEL"]
+    var flightDepartDate = ["15 May 2018", "14 Feb 2018", "4 Aug 2018" , "7 Oct 2018"]
+    var flightDepartTime = ["10:00" , "12:00", "06:00", "12:00"]
+    var flightReturnDate = ["25 May 2018", "24 Feb 2018", "18 Aug 2018" , "12 Oct 2018"]
+    var flightReturnTime = ["21:00" , "13:00", "05:00", "19:00"]
+    var flightCost = ["$3,000", "$5,000", "$6,000", "$300"]
     
     // static var sharedInstance = Flight()
     init() {
     }
     
     func getSizeofData() -> Int {
-        return flightName.count
+        return flightDepartNo.count
     }
     
 }

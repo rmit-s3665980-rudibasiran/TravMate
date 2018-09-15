@@ -11,9 +11,25 @@ import UIKit
 
 class FlightDetailsController: UIViewController {
     
-    @IBOutlet weak var flightName: UITextField!
-    @IBOutlet weak var flightGo: UITextField!
-    @IBOutlet weak var flightReturn: UITextField!
+    
+    @IBOutlet weak var flightPortFrom: UITextField!
+    
+    
+    @IBOutlet weak var flightDepartNo: UITextField!
+    
+    @IBOutlet weak var flightPortTo: UITextField!
+    
+    @IBOutlet weak var flightDepartDate: UITextField!
+    
+    @IBOutlet weak var flightDepartTime: UITextField!
+    
+    @IBOutlet weak var flightReturnNo: UITextField!
+    
+    
+    @IBOutlet weak var flightReturnDate: UITextField!
+    
+    @IBOutlet weak var flightReturnTime: UITextField!
+    
     @IBOutlet weak var flightCost: UITextField!
     
     override func viewDidLoad() {
@@ -23,15 +39,15 @@ class FlightDetailsController: UIViewController {
         let i = Trip.sharedInstance.myCurrentTrip
         
         if (Trip.sharedInstance.myCurrentTrip >= 0)  {
-            flightName.text = flightData.flightName[i]
-            flightGo.text = flightData.flightGo[i]
-            flightReturn.text = flightData.flightReturn[i]
+            flightDepartNo.text = flightData.flightDepartNo[i]
+            flightDepartDate.text = flightData.flightDepartDate[i]
+            flightReturnDate.text = flightData.flightReturnDate[i]
             flightCost.text = flightData.flightCost[i]
         }
         else {
-            flightName.text = ""
-            flightGo.text = ""
-            flightReturn.text = ""
+            flightDepartNo.text = ""
+            flightDepartDate.text = ""
+            flightReturnDate.text = ""
             flightCost.text = ""
         }
     }

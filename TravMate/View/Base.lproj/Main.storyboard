@@ -359,7 +359,11 @@
                                                 <segue destination="Klj-KO-szE" kind="show" id="WHm-Rm-d7Y"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pyL-fd-3ij"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="pyL-fd-3ij">
+                                            <connections>
+                                                <action selector="saveHotel:" destination="u1z-Nr-4O9" id="NpR-Zn-3dZ"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>

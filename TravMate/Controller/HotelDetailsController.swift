@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class HotelDetailsController: UIViewController {
+  
     
     @IBOutlet weak var hotelNotes: UITextView!
     
@@ -25,7 +26,17 @@ class HotelDetailsController: UIViewController {
     
     @IBOutlet weak var hotelAddress: UITextField!
     
-    
+    @IBAction func saveHotel(_ sender: Any) {
+        
+        Trip.sharedInstance.hotel.hotelNotes[Trip.sharedInstance.myCurrentTrip] = hotelNotes.text!
+        Trip.sharedInstance.hotel.roomType[Trip.sharedInstance.myCurrentTrip] = roomType.text!
+        Trip.sharedInstance.hotel.hotelName[Trip.sharedInstance.myCurrentTrip] = hotelName.text!
+        Trip.sharedInstance.hotel.hotelCheckIn[Trip.sharedInstance.myCurrentTrip] = checkInDate.text!
+        Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = checkOutDate.text!
+        Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = hotelAddress.text!
+        Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = hotelCost.text!
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -37,10 +37,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.hotel.roomType.append("")
         Trip.sharedInstance.hotel.hotelNotes.append("")
         
-        Trip.sharedInstance.restaurant.cafeName.append("")
-        Trip.sharedInstance.restaurant.cafeNotes.append("")
-        Trip.sharedInstance.restaurant.cafeRating.append("")
-        Trip.sharedInstance.restaurant.cafeCost.append("")
+       
         
         Trip.sharedInstance.myCurrentTrip = trip.getSizeofData()
         

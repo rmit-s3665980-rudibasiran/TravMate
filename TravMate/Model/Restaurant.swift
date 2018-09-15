@@ -10,10 +10,16 @@ import Foundation
 
 struct Restaurant {
     
-    var cafeName = ["Flirting Shadows", "Chorba", "Nandos", "McDonalds"]
-    var cafeNotes = ["Good Coffee", "Best Golzame", "Chicken" , "McMuffin"]
-    var cafeCost = ["33", "50", "20", "10"]
-    var cafeRating = ["5", "4", "3", "2"]
+    var cafeName = ["Flirting Shadows", "Angels", "Coup du Nandos", "McDonalds"]
+    var cafeAddress = ["2 Coburg", "3 Times Square", "Champ Elyse","Hay Street"]
+    var cafeType = ["Good Coffee", "Best Golzame", "Le Poullet" , "McMuffin"]
+    var cafeCost = ["$100", "$50", "$45", "$10"]
+    var cafePax = ["5", "3", "1", "2"]
+    var cafeNotes = ["Gordon Ramsey","Born in the USA","Bon Appetite","Maccas"]
+    var foodItem1 = ["Snail","Steak","Un Chicken Finger","Burger"]
+    var foodItem2 = ["Quail","Wedges","Le Petit Coke","Coke"]
+    var foodItem3 = ["Ale","Beer","Frites","Fries"]
+    
     
     // static var sharedInstance = Restaurant()
     

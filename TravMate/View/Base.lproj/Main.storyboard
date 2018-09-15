@@ -317,7 +317,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Hotel" id="na9-Fx-Fai">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GCW-bC-h01" userLabel="Back"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GCW-bC-h01" userLabel="Back">
+                                            <connections>
+                                                <segue destination="Klj-KO-szE" kind="show" id="WHm-Rm-d7Y"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="pyL-fd-3ij"/>
                                     </navigationItem>
                                 </items>
@@ -429,7 +433,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Restaurant" id="70t-DX-871">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="h8C-8l-HXc" userLabel="Back"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="h8C-8l-HXc" userLabel="Back">
+                                            <connections>
+                                                <segue destination="Klj-KO-szE" kind="show" id="q0j-g8-r0Z"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="X19-lm-PDu"/>
                                     </navigationItem>
                                 </items>
@@ -526,7 +534,11 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
                                     <navigationItem title="Flight" id="AiO-bJ-To4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0k9-zB-JXC" userLabel="Back"/>
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0k9-zB-JXC" userLabel="Back">
+                                            <connections>
+                                                <segue destination="Klj-KO-szE" kind="show" id="auT-Pk-vaS"/>
+                                            </connections>
+                                        </barButtonItem>
                                         <barButtonItem key="rightBarButtonItem" title="Save" id="bbQ-Ni-vSs"/>
                                     </navigationItem>
                                 </items>
@@ -638,7 +650,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="xAD-fD-V0N"/>
-        <segue reference="dRo-JU-ajD"/>
+        <segue reference="q0j-g8-r0Z"/>
     </inferredMetricsTieBreakers>
 </document>

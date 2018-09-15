@@ -113,7 +113,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="apc-9r-bOc"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="4v6-uR-F8d">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="4v6-uR-F8d">
                                     <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -229,27 +229,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-tO-Jb2">
-                                <rect key="frame" x="20" y="128" width="88" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Place Name" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6RU-6R-IU0" userLabel="TripDetlName">
-                                <rect key="frame" x="159" y="123" width="214" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="214" id="OCG-DF-RWt"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r4M-71-RV5">
-                                <rect key="frame" x="20" y="222" width="88" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7NE-VX-TiA">
                                 <rect key="frame" x="134" y="662" width="146" height="30"/>
                                 <state key="normal" title="View/Add Trip Details"/>
@@ -257,16 +236,6 @@
                                     <segue destination="3po-5j-DP3" kind="show" id="7pN-2H-iZd"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0pj-f0-XAZ" userLabel="TripDetlDesc">
-                                <rect key="frame" x="159" y="222" width="231" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="128" id="Wg5-u3-9wj"/>
-                                </constraints>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
@@ -286,32 +255,43 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
+                                <rect key="frame" x="20" y="115" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
+                                <rect key="frame" x="20" y="171" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
+                                <rect key="frame" x="20" y="226" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6RU-6R-IU0" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="59" id="0s8-8f-L24"/>
-                            <constraint firstItem="0pj-f0-XAZ" firstAttribute="top" secondItem="r4M-71-RV5" secondAttribute="top" id="Asg-JZ-j9h"/>
-                            <constraint firstItem="r4M-71-RV5" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="20" id="CPQ-Di-2r0"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="Cdm-A1-Bca"/>
-                            <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="6RU-6R-IU0" secondAttribute="trailing" constant="41" id="FWo-hv-YGf"/>
-                            <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="0pj-f0-XAZ" secondAttribute="trailing" constant="24" id="M86-tg-YMU"/>
-                            <constraint firstItem="0pj-f0-XAZ" firstAttribute="top" secondItem="6RU-6R-IU0" secondAttribute="bottom" constant="69" id="Naz-Ms-Ve0"/>
                             <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="x7e-Ti-5lG" secondAttribute="centerX" id="Pqf-go-lGr"/>
                             <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="MS4-1q-fAy" secondAttribute="centerX" id="URd-6u-EEm"/>
-                            <constraint firstItem="0pj-f0-XAZ" firstAttribute="leading" secondItem="r4M-71-RV5" secondAttribute="trailing" constant="51" id="blL-jQ-CwH"/>
-                            <constraint firstItem="6RU-6R-IU0" firstAttribute="leading" secondItem="1Gz-tO-Jb2" secondAttribute="trailing" constant="51" id="d4j-Yw-56r"/>
                             <constraint firstAttribute="bottom" secondItem="7NE-VX-TiA" secondAttribute="bottom" constant="44" id="iFK-y1-xOs"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="nBt-mX-jRs"/>
-                            <constraint firstItem="1Gz-tO-Jb2" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="20" id="rGn-HR-XMG"/>
-                            <constraint firstItem="6RU-6R-IU0" firstAttribute="leading" secondItem="0pj-f0-XAZ" secondAttribute="leading" id="wDJ-ek-dPX"/>
-                            <constraint firstItem="6RU-6R-IU0" firstAttribute="centerY" secondItem="1Gz-tO-Jb2" secondAttribute="centerY" id="znI-cJ-TP9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
                     <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA"/>
                     <connections>
-                        <outlet property="tripDetlDesc" destination="0pj-f0-XAZ" id="jQW-tj-QBL"/>
-                        <outlet property="tripDetlName" destination="6RU-6R-IU0" id="A2A-i1-CD9"/>
+                        <outlet property="tripCost" destination="PQc-5j-Tmd" id="s50-r2-d8R"/>
+                        <outlet property="tripDays" destination="foN-o2-JGr" id="8ws-ay-3m7"/>
+                        <outlet property="tripName" destination="ddd-Nc-cPj" id="7No-Hy-udw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9go-4Q-XDa" userLabel="First Responder" sceneMemberID="firstResponder"/>

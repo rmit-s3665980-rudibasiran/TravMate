@@ -11,31 +11,33 @@ import UIKit
 
 class TripDetailsController: UIViewController {
     
-    @IBOutlet weak var tripDetlName: UITextField!
-    @IBOutlet weak var tripDetlDesc: UITextView!
+   
+    @IBOutlet weak var tripName: UITextField!
+    
+    @IBOutlet weak var tripDays: UITextField!
+    
+    @IBOutlet weak var tripCost: UITextField!
+    
     
     @IBAction func saveData(_ sender: Any) {
         
-        let tripDesc = tripDetlDesc.text
-        let tripName = tripDetlName.text
-        Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = tripDesc!
-        Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = tripName!
+        Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = tripName.text!
+        Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = tripDays.text!
+        Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip] = tripCost.text!
+        
         
         performSegue(withIdentifier: "SegueBackToTrip", sender: self)
         
     }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         if (Trip.sharedInstance.myCurrentTrip >= 0) {
-            tripDetlName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
-            tripDetlDesc.text = Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip]
+            tripName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
+            tripDays.text = Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip]
+            tripCost.text = Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip]
         }
-        else {
-            tripDetlName.text = ""
-            tripDetlDesc.text = ""
-        }
-       
     }
     
     

@@ -557,6 +557,18 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="ECL-jF-0gy" userLabel="emoticon1">
+                                        <rect key="frame" x="313" y="300" width="41" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-Ok-RBU" userLabel="emoticon2">
+                                        <rect key="frame" x="313" y="350" width="41" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="V8Y-3v-U9f" userLabel="emoticon3">
+                                        <rect key="frame" x="313" y="401" width="41" height="40"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
@@ -776,6 +788,8 @@
         <image name="hotel" width="183" height="275"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
+        <image name="sad" width="220" height="216"/>
+        <image name="smile" width="275" height="183"/>
         <image name="tabbar_eat" width="12" height="20"/>
         <image name="tabbar_flight" width="20" height="20"/>
         <image name="tabbar_hotel" width="20" height="20"/>

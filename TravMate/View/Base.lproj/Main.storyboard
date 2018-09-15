@@ -113,7 +113,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="apc-9r-bOc"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="10" sectionInsetReference="safeArea" id="4v6-uR-F8d">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="50" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="4v6-uR-F8d">
                                     <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -130,7 +130,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-JI-dN2">
                                                     <rect key="frame" x="15.000000000000078" y="42" width="206" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -164,7 +164,8 @@
                                         <color key="backgroundColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
                                         <size key="customSize" width="349" height="130"/>
                                         <connections>
-                                            <outlet property="tripDesc" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
+                                            <outlet property="tripCost" destination="We8-0b-4bi" id="Lj2-SF-fET"/>
+                                            <outlet property="tripDays" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
                                             <outlet property="tripImage" destination="QHc-rZ-Q5G" id="BQd-S8-Pjx"/>
                                             <outlet property="tripName" destination="pDc-JI-dN2" id="Ugt-4u-35Z"/>
                                         </connections>
@@ -229,7 +230,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Place" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gz-tO-Jb2">
-                                <rect key="frame" x="20" y="128" width="42" height="21"/>
+                                <rect key="frame" x="20" y="128" width="88" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -290,6 +291,7 @@
                         <constraints>
                             <constraint firstItem="6RU-6R-IU0" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="59" id="0s8-8f-L24"/>
                             <constraint firstItem="0pj-f0-XAZ" firstAttribute="top" secondItem="r4M-71-RV5" secondAttribute="top" id="Asg-JZ-j9h"/>
+                            <constraint firstItem="r4M-71-RV5" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="20" id="CPQ-Di-2r0"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="Cdm-A1-Bca"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="6RU-6R-IU0" secondAttribute="trailing" constant="41" id="FWo-hv-YGf"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="0pj-f0-XAZ" secondAttribute="trailing" constant="24" id="M86-tg-YMU"/>
@@ -297,9 +299,10 @@
                             <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="x7e-Ti-5lG" secondAttribute="centerX" id="Pqf-go-lGr"/>
                             <constraint firstItem="7NE-VX-TiA" firstAttribute="centerX" secondItem="MS4-1q-fAy" secondAttribute="centerX" id="URd-6u-EEm"/>
                             <constraint firstItem="0pj-f0-XAZ" firstAttribute="leading" secondItem="r4M-71-RV5" secondAttribute="trailing" constant="51" id="blL-jQ-CwH"/>
-                            <constraint firstItem="6RU-6R-IU0" firstAttribute="leading" secondItem="1Gz-tO-Jb2" secondAttribute="trailing" constant="97" id="d4j-Yw-56r"/>
+                            <constraint firstItem="6RU-6R-IU0" firstAttribute="leading" secondItem="1Gz-tO-Jb2" secondAttribute="trailing" constant="51" id="d4j-Yw-56r"/>
                             <constraint firstAttribute="bottom" secondItem="7NE-VX-TiA" secondAttribute="bottom" constant="44" id="iFK-y1-xOs"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="nBt-mX-jRs"/>
+                            <constraint firstItem="1Gz-tO-Jb2" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="20" id="rGn-HR-XMG"/>
                             <constraint firstItem="6RU-6R-IU0" firstAttribute="leading" secondItem="0pj-f0-XAZ" secondAttribute="leading" id="wDJ-ek-dPX"/>
                             <constraint firstItem="6RU-6R-IU0" firstAttribute="centerY" secondItem="1Gz-tO-Jb2" secondAttribute="centerY" id="znI-cJ-TP9"/>
                         </constraints>
@@ -664,6 +667,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="JNU-GA-zUc"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

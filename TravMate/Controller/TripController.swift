@@ -15,12 +15,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func addTrip(_ sender: Any) {
         
-        
-        
         Trip.sharedInstance.locationName.append("")
-        Trip.sharedInstance.locationDesc.append("")
-        Trip.sharedInstance.locationImage.append("defaulttripimage")
-        
+        Trip.sharedInstance.locationDays.append("")
+        Trip.sharedInstance.locationCost.append("")
+
         Trip.sharedInstance.flight.flightCost.append("")
         Trip.sharedInstance.flight.flightName.append("")
         Trip.sharedInstance.flight.flightGo.append("")
@@ -43,6 +41,15 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         
     }
     
+    // W: to convert RGB to HEX
+    func uicolorFromHex(rgbValue:UInt32)->UIColor{
+        let red = CGFloat((rgbValue & 0xFF0000) >> 16)/256.0
+        let green = CGFloat((rgbValue & 0xFF00) >> 8)/256.0
+        let blue = CGFloat(rgbValue & 0xFF)/256.0
+        
+        return UIColor(red:red, green:green, blue:blue, alpha:1.0)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Trip.sharedInstance.myCurrentTrip = -1
@@ -56,8 +63,26 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
         
         cell.tripName.text = trip.locationName[indexPath.row]
-        cell.tripImage.image =  UIImage(named: trip.locationImage[indexPath.row]) 
-        cell.tripDesc.text = trip.locationDesc[indexPath.row]
+      
+        cell.tripDays.text = trip.locationDays[indexPath.row]
+        cell.tripCost.text = trip.locationCost[indexPath.row]
+        
+        let picture = ["icon_beijing", "icon_newyork", "icon_paris"]
+        
+        if (indexPath.row % 3 == 1) {
+            // cell color: blue
+            cell.backgroundColor = uicolorFromHex(rgbValue: 0x1684FB)
+        }
+        else if (indexPath.row % 3 == 2) {
+            // cell color: purple
+            cell.backgroundColor = uicolorFromHex(rgbValue: 0x7A70E4)
+        }
+        else {
+            // cell color: turquoise
+            cell.backgroundColor = uicolorFromHex(rgbValue: 0x53E3DD)
+        }
+        
+        cell.tripImage.image =  UIImage(named: picture[indexPath.row % 3])
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

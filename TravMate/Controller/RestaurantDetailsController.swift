@@ -31,16 +31,21 @@ class RestaurantDetailsController: UIViewController {
     
     
     @IBAction func cafeSave(_ sender: Any) {
-        
         Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = cafeName.text!
         Trip.sharedInstance.restaurant.cafeAddress[Trip.sharedInstance.myCurrentTrip] = cafeAddress.text!
+        
         Trip.sharedInstance.restaurant.cafeType[Trip.sharedInstance.myCurrentTrip] = cafeType.text!
         Trip.sharedInstance.restaurant.cafeCost[Trip.sharedInstance.myCurrentTrip] = cafeCost.text!
+
+        Trip.sharedInstance.restaurant.cafePax[Trip.sharedInstance.myCurrentTrip] = cafePax.text!
+        
         Trip.sharedInstance.restaurant.foodItem1[Trip.sharedInstance.myCurrentTrip] = item1.text!
         Trip.sharedInstance.restaurant.foodItem2[Trip.sharedInstance.myCurrentTrip] = item2.text!
         Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = item3.text!
+        
         Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = cafeNotes.text!
         
+       
     }
     
     override func viewDidLoad() {

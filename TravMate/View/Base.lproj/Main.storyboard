@@ -167,18 +167,8 @@
                                     <constraint firstAttribute="height" constant="150" id="4y4-VJ-xah"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-FD-TTf">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-FD-TTf">
                                 <rect key="frame" x="15" y="364" width="384" height="288"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
-                                        <rect key="frame" x="167" y="238" width="50" height="50"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <state key="normal" title="Button" image="trash"/>
-                                        <connections>
-                                            <action selector="trachClick:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="dLw-co-YkN"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
@@ -263,6 +253,22 @@
                                     <constraint firstAttribute="height" constant="100" id="6Er-D8-4eC"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-bl-YKl">
+                                <rect key="frame" x="15" y="656" width="384" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
+                                        <rect key="frame" x="177" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="W42-ae-RWP"/>
+                                            <constraint firstAttribute="height" constant="30" id="ewt-d6-wmc"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="trash"/>
+                                        <connections>
+                                            <action selector="trachClick:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="dLw-co-YkN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -271,14 +277,16 @@
                             <constraint firstItem="5j3-nX-gLS" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="50" id="4Ud-wo-Xe5"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" id="4io-uH-9gQ"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="IpO-Hz-kWj" secondAttribute="trailing" constant="15" id="9CD-SM-6c2"/>
+                            <constraint firstItem="QcQ-bl-YKl" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="Haq-lm-z8k"/>
                             <constraint firstItem="5j3-nX-gLS" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="KSp-ct-05I"/>
+                            <constraint firstAttribute="bottom" secondItem="QcQ-bl-YKl" secondAttribute="bottom" constant="50" id="MHO-5d-Xvg"/>
                             <constraint firstItem="tTY-FD-TTf" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="Unh-0d-c0A"/>
                             <constraint firstItem="5j3-nX-gLS" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="bg2-wX-KAB"/>
                             <constraint firstItem="dUD-9G-JYE" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="50" id="cvY-i2-AI4"/>
                             <constraint firstItem="tTY-FD-TTf" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="dWn-cn-T9Q"/>
                             <constraint firstItem="dUD-9G-JYE" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="ezh-5F-nQD"/>
-                            <constraint firstItem="tTY-FD-TTf" firstAttribute="top" secondItem="5j3-nX-gLS" secondAttribute="bottom" constant="100" id="hf6-nr-KJm"/>
                             <constraint firstItem="IpO-Hz-kWj" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="kDc-st-v7s"/>
+                            <constraint firstAttribute="trailing" secondItem="QcQ-bl-YKl" secondAttribute="trailing" constant="15" id="oH3-cM-lX4"/>
                             <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="uXd-gn-Dgc"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="bottom" secondItem="tTY-FD-TTf" secondAttribute="bottom" constant="84" id="usv-jC-tpa"/>
                             <constraint firstItem="seJ-vU-5gJ" firstAttribute="top" secondItem="5j3-nX-gLS" secondAttribute="bottom" constant="50" id="vtx-zf-vKn"/>
@@ -972,7 +980,7 @@
         <image name="tabbar_eat" width="12" height="20"/>
         <image name="tabbar_flight" width="20" height="20"/>
         <image name="tabbar_hotel" width="20" height="20"/>
-        <image name="trash" width="512" height="512"/>
+        <image name="trash" width="22" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dRo-JU-ajD"/>

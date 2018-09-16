@@ -17,7 +17,7 @@ class TripDetailsController: UIViewController {
    
     @IBAction func trachClick(_ sender: Any) {
         
-        let alert = UIAlertController(title: "DELETE", message: "Deletion of trip only available by Subscription", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete a Trip?", message: "Trip can only be deleted via subscription", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             

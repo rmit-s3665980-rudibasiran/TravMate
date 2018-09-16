@@ -28,6 +28,7 @@ struct Restaurant {
     var foodItemSmiley1 = [true, true, true, true]
     var foodItemSmiley2 = [true, true, true, true]
     var foodItemSmiley3 = [true, true, true, true]
+    var cafeRating = [1,2,3,4]
 
     
     

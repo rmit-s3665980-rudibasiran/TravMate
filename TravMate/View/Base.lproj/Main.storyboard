@@ -495,7 +495,7 @@
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="P11-tn-BX6">
                                                 <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="150"/>
                                             </imageView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-nC-Y1J">
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-nC-Y1J">
                                                 <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cafe Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-2d-a1a" userLabel="CafeName">
@@ -508,7 +508,7 @@
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-jg-02F">
-                                                        <rect key="frame" x="0.0" y="45" width="184.33333333333334" height="30"/>
+                                                        <rect key="frame" x="0.0" y="40" width="184.33333333333334" height="30"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="30" id="Gl8-JU-jmh"/>
                                                         </constraints>
@@ -516,9 +516,31 @@
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4-star-rating" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-7E-DLP" userLabel="Rating">
-                                                        <rect key="frame" x="0.0" y="90" width="184.33333333333334" height="60"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="b2G-oD-xbn" userLabel="cafeRating" customClass="RestaurantRatingController" customModule="TravMate" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="80" width="184.33333333333334" height="70"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lSG-Iu-gWQ" userLabel="star1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="70"/>
+                                                                <state key="normal" image="star_empty"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Nb-id-ENX" userLabel="star2">
+                                                                <rect key="frame" x="36.666666666666686" y="0.0" width="37" height="70"/>
+                                                                <state key="normal" image="star_empty"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yqy-no-e7s" userLabel="star3">
+                                                                <rect key="frame" x="73.666666666666657" y="0.0" width="37" height="70"/>
+                                                                <state key="normal" image="star_empty"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xgm-rX-SFp" userLabel="star4">
+                                                                <rect key="frame" x="110.66666666666667" y="0.0" width="36.666666666666671" height="70"/>
+                                                                <state key="normal" image="star_empty"/>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Wj-9h-lFv" userLabel="star5">
+                                                                <rect key="frame" x="147.33333333333334" y="0.0" width="37" height="70"/>
+                                                                <state key="normal" image="star_empty"/>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -656,6 +678,7 @@
                         <outlet property="cafeName" destination="TpX-2d-a1a" id="Ndx-Sp-Uz3"/>
                         <outlet property="cafeNotes" destination="BMl-ff-KMS" id="C1S-ew-TAC"/>
                         <outlet property="cafePax" destination="2OO-N6-Iz7" id="gah-Tc-jey"/>
+                        <outlet property="cafeRating" destination="b2G-oD-xbn" id="DQe-GU-JcV"/>
                         <outlet property="cafeType" destination="Aah-SG-zoE" id="XcJ-6M-7Vi"/>
                         <outlet property="foodBtn1Img" destination="O8e-HA-54P" id="yIt-MB-lTm"/>
                         <outlet property="foodBtn2Img" destination="B9z-lf-DYG" id="0Rc-aj-jkv"/>
@@ -900,7 +923,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="4-star-rating" width="600" height="113"/>
         <image name="add_flight" width="30" height="30"/>
         <image name="add_hotel" width="30" height="29"/>
         <image name="add_restaurant" width="18" height="30"/>

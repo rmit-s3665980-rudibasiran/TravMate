@@ -58,6 +58,7 @@ class RestaurantDetailsController: UIViewController {
         
     }
     
+    @IBOutlet weak var cafeRating: RestaurantRatingController!
     var foodITem1isOn =  Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip]
     var foodITem2isOn =  Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip]
     var foodITem3isOn =  Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip]
@@ -79,6 +80,8 @@ class RestaurantDetailsController: UIViewController {
         Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = foodITem1isOn
         Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = foodITem2isOn
         Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = foodITem3isOn
+        
+        Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = cafeRating.starsRating
         
        
     }

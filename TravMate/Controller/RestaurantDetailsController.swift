@@ -58,6 +58,7 @@ class RestaurantDetailsController: UIViewController {
         
     }
     
+    @IBOutlet weak var cafeRating: RestaurantRatingController!
     var foodITem1isOn =  Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip]
     var foodITem2isOn =  Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip]
     var foodITem3isOn =  Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip]
@@ -80,7 +81,24 @@ class RestaurantDetailsController: UIViewController {
         Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = foodITem2isOn
         Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = foodITem3isOn
         
+        Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = cafeRating.starsRating
+        
        
+    }
+    
+    // W: Share button
+    @IBAction func shareSocial(_ sender: Any) {
+        print("Share image")
+        
+        let bounds = UIScreen.main.bounds
+        UIGraphicsBeginImageContextWithOptions(bounds.size, true, 0.0)
+        self.view.drawHierarchy(in: bounds, afterScreenUpdates: false)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        let activityViewController = UIActivityViewController(activityItems: [image!], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.barButtonItem = navigationItem.rightBarButtonItem
+        present(activityViewController, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {

@@ -1,5 +1,5 @@
 //
-//  HotelRatingController.swift
+//  RestaurantRatingController.swift
 //  TravMate
 //
 //  Created by Rudi Basiran on 16/9/18.
@@ -7,22 +7,21 @@
 //
 
 import Foundation
-
 import UIKit
 
-class HotelRatingController: UIStackView {
+class RestaurantRatingController: UIStackView {
     
     
     // set to what is in the data or 0 for initial
-    var starsRating = Trip.sharedInstance.geHotel().hotelRating[Trip.sharedInstance.myCurrentTrip]
-
+    var starsRating = Trip.sharedInstance.getRestaurant().cafeRating[Trip.sharedInstance.myCurrentTrip]
+    
     var starsEmptyPicName = "star_empty" // change it to your empty star picture name
     var starsFilledPicName = "star_filled" // change it to your filled star picture name
     
     override func draw(_ rect: CGRect) {
-        let hotelRating = self.subviews.filter{$0 is UIButton}
+        let cafeRating = self.subviews.filter{$0 is UIButton}
         var starTag = 1
-        for button in hotelRating {
+        for button in cafeRating {
             if let button = button as? UIButton{
                 button.setImage(UIImage(named: starsEmptyPicName), for: .normal)
                 button.addTarget(self, action: #selector(self.pressed(sender:)), for: .touchUpInside)
@@ -50,3 +49,4 @@ class HotelRatingController: UIStackView {
         setStarsRating(rating: sender.tag)
     }
 }
+

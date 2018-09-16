@@ -151,7 +151,7 @@
                                                 <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z">
+                                        <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z" userLabel="BtnSaveTrip">
                                             <color key="tintColor" red="0.94509803920000002" green="0.79607843140000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
@@ -176,6 +176,7 @@
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="TripName"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
@@ -258,6 +259,9 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
                                         <rect key="frame" x="177" y="0.0" width="30" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="BtnDeleteTrip" label="BtnDeleteTrip">
+                                            <accessibilityTraits key="traits" button="YES" staticText="YES"/>
+                                        </accessibility>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="30" id="W42-ae-RWP"/>
                                             <constraint firstAttribute="height" constant="30" id="ewt-d6-wmc"/>

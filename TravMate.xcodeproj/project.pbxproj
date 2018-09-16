@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6A0A0DAF214E80D90012EDC2 /* TravMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0DAE214E80D90012EDC2 /* TravMateUITests.swift */; };
 		6A3C5347214907F7008A8D45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C5346214907F7008A8D45 /* AppDelegate.swift */; };
 		6A3C5349214907F7008A8D45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C5348214907F7008A8D45 /* ViewController.swift */; };
 		6A3C534C214907F7008A8D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3C534A214907F7008A8D45 /* Main.storyboard */; };
@@ -27,7 +28,20 @@
 		6ADBFD392149F80D006C09DA /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ADBFD382149F80D006C09DA /* Trip.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		6A0A0DB1214E80D90012EDC2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6A3C533B214907F7008A8D45 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6A3C5342214907F7008A8D45;
+			remoteInfo = TravMate;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		6A0A0DAC214E80D90012EDC2 /* TravMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6A0A0DAE214E80D90012EDC2 /* TravMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravMateUITests.swift; sourceTree = "<group>"; };
+		6A0A0DB0214E80D90012EDC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3C5343214907F7008A8D45 /* TravMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3C5346214907F7008A8D45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A3C5348214907F7008A8D45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -51,6 +65,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		6A0A0DA9214E80D90012EDC2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A3C5340214907F7008A8D45 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -61,10 +82,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6A0A0DAD214E80D90012EDC2 /* TravMateUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6A0A0DAE214E80D90012EDC2 /* TravMateUITests.swift */,
+				6A0A0DB0214E80D90012EDC2 /* Info.plist */,
+			);
+			path = TravMateUITests;
+			sourceTree = "<group>";
+		};
 		6A3C533A214907F7008A8D45 = {
 			isa = PBXGroup;
 			children = (
 				6A3C5345214907F7008A8D45 /* TravMate */,
+				6A0A0DAD214E80D90012EDC2 /* TravMateUITests */,
 				6A3C5344214907F7008A8D45 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -73,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				6A3C5343214907F7008A8D45 /* TravMate.app */,
+				6A0A0DAC214E80D90012EDC2 /* TravMateUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +162,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		6A0A0DAB214E80D90012EDC2 /* TravMateUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A0A0DB5214E80D90012EDC2 /* Build configuration list for PBXNativeTarget "TravMateUITests" */;
+			buildPhases = (
+				6A0A0DA8214E80D90012EDC2 /* Sources */,
+				6A0A0DA9214E80D90012EDC2 /* Frameworks */,
+				6A0A0DAA214E80D90012EDC2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6A0A0DB2214E80D90012EDC2 /* PBXTargetDependency */,
+			);
+			name = TravMateUITests;
+			productName = TravMateUITests;
+			productReference = 6A0A0DAC214E80D90012EDC2 /* TravMateUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		6A3C5342214907F7008A8D45 /* TravMate */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6A3C5355214907F8008A8D45 /* Build configuration list for PBXNativeTarget "TravMate" */;
@@ -157,6 +207,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = RMIT;
 				TargetAttributes = {
+					6A0A0DAB214E80D90012EDC2 = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = 6A3C5342214907F7008A8D45;
+					};
 					6A3C5342214907F7008A8D45 = {
 						CreatedOnToolsVersion = 9.4.1;
 					};
@@ -176,11 +230,19 @@
 			projectRoot = "";
 			targets = (
 				6A3C5342214907F7008A8D45 /* TravMate */,
+				6A0A0DAB214E80D90012EDC2 /* TravMateUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		6A0A0DAA214E80D90012EDC2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A3C5341214907F7008A8D45 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -194,6 +256,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		6A0A0DA8214E80D90012EDC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0A0DAF214E80D90012EDC2 /* TravMateUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		6A3C533F214907F7008A8D45 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -218,6 +288,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		6A0A0DB2214E80D90012EDC2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6A3C5342214907F7008A8D45 /* TravMate */;
+			targetProxy = 6A0A0DB1214E80D90012EDC2 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		6A3C534A214907F7008A8D45 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -238,6 +316,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		6A0A0DB3214E80D90012EDC2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TravMateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.rmit.s3665980.TravMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravMate;
+			};
+			name = Debug;
+		};
+		6A0A0DB4214E80D90012EDC2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = TravMateUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = au.edu.rmit.s3665980.TravMateUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TravMate;
+			};
+			name = Release;
+		};
 		6A3C5353214907F8008A8D45 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -395,6 +509,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		6A0A0DB5214E80D90012EDC2 /* Build configuration list for PBXNativeTarget "TravMateUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6A0A0DB3214E80D90012EDC2 /* Debug */,
+				6A0A0DB4214E80D90012EDC2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		6A3C533E214907F7008A8D45 /* Build configuration list for PBXProject "TravMate" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

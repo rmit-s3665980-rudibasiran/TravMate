@@ -31,7 +31,11 @@ class FlightDetailsController: UIViewController {
     
     @IBOutlet weak var flightReturnTime: UITextField!
     
+    @IBOutlet weak var flightType: UITextField!
+    
     @IBOutlet weak var flightCost: UITextField!
+    
+    @IBOutlet weak var flightDuration: UITextField!
     
     @IBAction func saveFlight(_ sender: Any) {
         
@@ -44,6 +48,9 @@ class FlightDetailsController: UIViewController {
         Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = flightDepartTime.text!
         Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = flightReturnTime.text!
         Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = flightCost.text!
+        Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = flightDuration.text!
+        Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = flightType.text!
+        
         
     }
     
@@ -79,6 +86,8 @@ class FlightDetailsController: UIViewController {
             flightDepartTime.text = flightData.flightDepartTime[i]
             flightReturnTime.text = flightData.flightReturnTime[i]
             flightCost.text = flightData.flightCost[i]
+            flightDuration.text = flightData.flightDuration[i]
+            flightType.text = flightData.flightType[i]
         }
     }
 }

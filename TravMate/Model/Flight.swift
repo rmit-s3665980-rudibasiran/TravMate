@@ -21,6 +21,8 @@ struct Flight {
     var flightReturnDate = ["25 May 2018", "24 Feb 2018", "18 Aug 2018" , "12 Oct 2018"]
     var flightReturnTime = ["21:00" , "13:00", "05:00", "19:00"]
     var flightCost = ["$3,000", "$5,000", "$6,000", "$300"]
+    var flightType = ["Return","Single","Return","Domestic"]
+    var flightDuration = ["14 hrs", "12 hrs", "12 hrs", "3 hrs"]
     
     // static var sharedInstance = Flight()
     init() {

@@ -151,8 +151,8 @@
                                                 <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="fE1-GR-H1z">
-                                            <color key="tintColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z">
+                                            <color key="tintColor" red="0.94509803920000002" green="0.79607843140000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
                                             </connections>
@@ -484,7 +484,7 @@
                                         </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Save" image="navbar_save" id="X19-lm-PDu">
-                                                <color key="tintColor" red="0.99215686274509807" green="0.79607843137254897" blue="0.25882352941176473" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="tintColor" red="0.94509803921568625" green="0.79607843137254897" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <connections>
                                                     <action selector="cafeSave:" destination="RIl-Pw-lXc" id="5gy-o1-1uQ"/>
                                                 </connections>
@@ -961,6 +961,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WHm-Rm-d7Y"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

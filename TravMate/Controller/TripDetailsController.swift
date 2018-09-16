@@ -34,16 +34,30 @@ class TripDetailsController: UIViewController {
     
     @IBAction func saveData(_ sender: Any) {
         
-        Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = tripName.text!
-        Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = tripDays.text!
-        Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip] = tripCost.text!
+        let alert = UIAlertController(title: "TRIP", message: "Save Data?", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = self.tripName.text!
+            Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = self.tripDays.text!
+            Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip] = self.tripCost.text!
+            
+            self.performSegue(withIdentifier: "GoToTabSegue", sender: self)
+        })
         
+        let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            self.performSegue(withIdentifier: "SegueBackToTrip", sender: self)
+        })
         
-        performSegue(withIdentifier: "SegueBackToTrip", sender: self)
+        alert.addAction(CancelAction)
+        alert.addAction(OKAction)
+ 
+        self.present(alert, animated: true, completion: nil)
+ 
         
     }
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         if (Trip.sharedInstance.myCurrentTrip >= 0) {

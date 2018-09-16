@@ -106,14 +106,14 @@
 		6A74D212214909B400E4359F /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6A4BB729214B31DB004B7D5B /* TripCollectionViewCell.swift */,
 				6A3C5348214907F7008A8D45 /* ViewController.swift */,
 				6A4ABF50214A66F00051FD05 /* TripController.swift */,
 				6A865AF2214BC7D8009888B6 /* TripDetailsController.swift */,
+				6A4BB729214B31DB004B7D5B /* TripCollectionViewCell.swift */,
 				6A865AF4214BD0E4009888B6 /* FlightDetailsController.swift */,
 				6A865AF6214BD127009888B6 /* HotelDetailsController.swift */,
-				6A865AF8214BD145009888B6 /* RestaurantDetailsController.swift */,
 				6A7C10BD214DF41F006FC48F /* HotelRatingController.swift */,
+				6A865AF8214BD145009888B6 /* RestaurantDetailsController.swift */,
 				6A456485214E3BE0003229D7 /* RestaurantRatingController.swift */,
 			);
 			path = Controller;

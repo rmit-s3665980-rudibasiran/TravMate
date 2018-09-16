@@ -320,60 +320,57 @@
                                 <rect key="frame" x="15" y="94" width="384" height="540"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-4X-0vz">
-                                        <rect key="frame" x="0.0" y="0.0" width="381" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="381" height="112"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-VQ-H36" userLabel="hotelImage">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183" height="112"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7rH-g8-jcW">
-                                                <rect key="frame" x="198" y="0.0" width="183" height="150"/>
+                                                <rect key="frame" x="198" y="0.0" width="183" height="112"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hotel Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nI-w4-r21" userLabel="HotelName">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="40.333333333333336"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kU-sS-MS3">
-                                                        <rect key="frame" x="0.0" y="55.333333333333343" width="183" height="40"/>
+                                                        <rect key="frame" x="0.0" y="45" width="183" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-m0-6Ft" userLabel="starButtons" customClass="HotelRatingController" customModule="TravMate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="110.33333333333336" width="183" height="39.666666666666671"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-m0-6Ft" userLabel="starButtons" customClass="HotelRatingController" customModule="TravMate" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="90" width="183" height="22"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djC-gq-bSo" userLabel="star1">
-                                                                <rect key="frame" x="0.0" y="0.0" width="20" height="39.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djC-gq-bSo" userLabel="star1">
+                                                                <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vt-bq-Ax2" userLabel="star2">
-                                                                <rect key="frame" x="20" y="0.0" width="20" height="39.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vt-bq-Ax2" userLabel="star2">
+                                                                <rect key="frame" x="36.666666666666657" y="0.0" width="36.666666666666657" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-kn-5yf" userLabel="star3">
-                                                                <rect key="frame" x="40" y="0.0" width="20" height="39.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-kn-5yf" userLabel="star3">
+                                                                <rect key="frame" x="73.333333333333314" y="0.0" width="36.333333333333343" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uea-m1-xIw" userLabel="star4">
-                                                                <rect key="frame" x="60" y="0.0" width="20" height="39.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uea-m1-xIw" userLabel="star4">
+                                                                <rect key="frame" x="109.6666666666667" y="0.0" width="36.666666666666671" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FdQ-wo-yMc" userLabel="star5">
-                                                                <rect key="frame" x="80" y="0.0" width="103" height="39.666666666666664"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-Po-6XY" userLabel="star5">
+                                                                <rect key="frame" x="146.33333333333331" y="0.0" width="36.666666666666657" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="150" id="QGb-k4-pgh"/>
-                                                </constraints>
                                             </stackView>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="BPj-f5-vhQ">
-                                        <rect key="frame" x="0.0" y="165" width="384" height="30"/>
+                                        <rect key="frame" x="0.0" y="127" width="384" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cost" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LWU-6Z-ZBW" userLabel="HotelCost">
                                                 <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="30"/>
@@ -390,7 +387,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="uHH-ME-ejm">
-                                        <rect key="frame" x="0.0" y="210" width="384" height="30"/>
+                                        <rect key="frame" x="0.0" y="172" width="384" height="30"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Check In Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Giz-db-cSA" userLabel="CheckInDate">
                                                 <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="30"/>
@@ -407,7 +404,7 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="VHN-xz-hXe">
-                                        <rect key="frame" x="0.0" y="255" width="384" height="60"/>
+                                        <rect key="frame" x="0.0" y="217" width="384" height="60"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="f6v-pR-Zb2"/>
@@ -417,7 +414,7 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="LX1-7Z-mDB">
-                                        <rect key="frame" x="0.0" y="330" width="384" height="210"/>
+                                        <rect key="frame" x="0.0" y="292" width="384" height="248"/>
                                     </mapView>
                                 </subviews>
                                 <constraints>

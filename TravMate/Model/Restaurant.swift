@@ -25,6 +25,10 @@ struct Restaurant {
     var foodItem1 = ["Snail","Steak","Un Chicken Finger","Burger"]
     var foodItem2 = ["Quail","Wedges","Le Petit Coke","Coke"]
     var foodItem3 = ["Ale","Beer","Frites","Fries"]
+    var foodItemSmiley1 = [true, true, true, true]
+    var foodItemSmiley2 = [true, true, true, true]
+    var foodItemSmiley3 = [true, true, true, true]
+
     
     
     // static var sharedInstance = Restaurant()

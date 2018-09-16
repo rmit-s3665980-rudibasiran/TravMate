@@ -546,20 +546,18 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etw-Gi-7VB" userLabel="orderItem1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="30" id="dNi-Cv-Kam"/>
-                                                        </constraints>
+                                                        <rect key="frame" x="0.0" y="0.0" width="265.33333333333331" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="ECL-jF-0gy" userLabel="emoticon1">
-                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="JcE-fM-9sf"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8e-HA-54P">
+                                                        <rect key="frame" x="280.33333333333331" y="0.0" width="103.66666666666669" height="30"/>
+                                                        <state key="normal" image="smile"/>
+                                                        <connections>
+                                                            <action selector="foodBtn1:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="kaE-7L-8nf"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="4kc-im-Pxg"/>
@@ -569,17 +567,18 @@
                                                 <rect key="frame" x="0.0" y="45" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 2" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eQ-eN-f4Z" userLabel="orderItem2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="266.66666666666669" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="smile" translatesAutoresizingMaskIntoConstraints="NO" id="Twz-Ok-RBU" userLabel="emoticon2">
-                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="GFa-JZ-ZVA"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-lf-DYG">
+                                                        <rect key="frame" x="281.66666666666669" y="0.0" width="102.33333333333331" height="30"/>
+                                                        <state key="normal" image="smile"/>
+                                                        <connections>
+                                                            <action selector="foodBtn2:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="PSN-Xd-lx2"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="b0N-cZ-ee5"/>
@@ -589,17 +588,18 @@
                                                 <rect key="frame" x="0.0" y="90" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 3" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-gi-Rfe" userLabel="orderItem3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad" translatesAutoresizingMaskIntoConstraints="NO" id="V8Y-3v-U9f" userLabel="emoticon3">
-                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="30" id="hBS-2j-I67"/>
-                                                        </constraints>
-                                                    </imageView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnn-VQ-agg">
+                                                        <rect key="frame" x="282" y="0.0" width="102" height="30"/>
+                                                        <state key="normal" image="smile"/>
+                                                        <connections>
+                                                            <action selector="foodBtn3:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="Dwv-si-ChV"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="h2J-SE-ANc"/>
@@ -637,6 +637,9 @@
                         <outlet property="cafeNotes" destination="BMl-ff-KMS" id="C1S-ew-TAC"/>
                         <outlet property="cafePax" destination="2OO-N6-Iz7" id="gah-Tc-jey"/>
                         <outlet property="cafeType" destination="Aah-SG-zoE" id="XcJ-6M-7Vi"/>
+                        <outlet property="foodBtn1Img" destination="O8e-HA-54P" id="yIt-MB-lTm"/>
+                        <outlet property="foodBtn2Img" destination="B9z-lf-DYG" id="0Rc-aj-jkv"/>
+                        <outlet property="foodBtn3Img" destination="Wnn-VQ-agg" id="Hzz-hO-mte"/>
                         <outlet property="item1" destination="etw-Gi-7VB" id="uke-XP-RtW"/>
                         <outlet property="item2" destination="4eQ-eN-f4Z" id="QiV-Ek-iQk"/>
                         <outlet property="item3" destination="2L6-gi-Rfe" id="Hj9-AZ-Vde"/>
@@ -886,7 +889,6 @@
         <image name="hotel" width="183" height="275"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
-        <image name="sad" width="30" height="30"/>
         <image name="smile" width="30" height="30"/>
         <image name="star_empty" width="20" height="20"/>
         <image name="tabbar_eat" width="12" height="20"/>
@@ -894,6 +896,6 @@
         <image name="tabbar_hotel" width="20" height="20"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WHm-Rm-d7Y"/>
+        <segue reference="q0j-g8-r0Z"/>
     </inferredMetricsTieBreakers>
 </document>

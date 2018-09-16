@@ -47,6 +47,9 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.restaurant.foodItem1.append("")
         Trip.sharedInstance.restaurant.foodItem2.append("")
         Trip.sharedInstance.restaurant.foodItem3.append("")
+        Trip.sharedInstance.restaurant.foodItemSmiley1.append(true)
+        Trip.sharedInstance.restaurant.foodItemSmiley2.append(true)
+        Trip.sharedInstance.restaurant.foodItemSmiley3.append(true)
         
        
         

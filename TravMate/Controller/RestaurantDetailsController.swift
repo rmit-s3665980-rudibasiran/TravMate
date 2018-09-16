@@ -29,6 +29,38 @@ class RestaurantDetailsController: UIViewController {
     
     @IBOutlet weak var cafeNotes: UITextView!
     
+    @IBOutlet weak var foodBtn1Img: UIButton!
+    
+    @IBAction func foodBtn1(_ sender: Any) {
+       foodITem1isOn = !foodITem1isOn
+        setButtonImage(foodBtn1Img, bool: foodITem1isOn)
+    }
+    
+    
+    @IBOutlet weak var foodBtn2Img: UIButton!
+    
+    
+    @IBAction func foodBtn2(_ sender: Any) {
+        
+        foodITem2isOn = !foodITem2isOn
+        setButtonImage(foodBtn2Img, bool: foodITem2isOn)
+        
+    }
+    
+    
+    @IBOutlet weak var foodBtn3Img: UIButton!
+    
+    
+    @IBAction func foodBtn3(_ sender: Any) {
+        
+        foodITem3isOn = !foodITem3isOn
+        setButtonImage(foodBtn3Img, bool: foodITem3isOn)
+        
+    }
+    
+    var foodITem1isOn =  Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip]
+    var foodITem2isOn =  Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip]
+    var foodITem3isOn =  Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip]
     
     @IBAction func cafeSave(_ sender: Any) {
         Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = cafeName.text!
@@ -44,6 +76,9 @@ class RestaurantDetailsController: UIViewController {
         Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = item3.text!
         
         Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = cafeNotes.text!
+        Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = foodITem1isOn
+        Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = foodITem2isOn
+        Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = foodITem3isOn
         
        
     }
@@ -64,9 +99,18 @@ class RestaurantDetailsController: UIViewController {
             item2.text = cafeData.foodItem2[i]
             item3.text = cafeData.foodItem3[i]
             cafeNotes.text = cafeData.cafeNotes[i]
-            
+            setButtonImage(foodBtn1Img, bool: foodITem1isOn)
+            setButtonImage(foodBtn2Img, bool: foodITem2isOn)
+            setButtonImage(foodBtn3Img, bool: foodITem3isOn) 
             
             
         }
     }
+    
+    func setButtonImage(_ btn:UIButton, bool:Bool) {
+        let imgName = bool ? "smile" : "sad"
+        let image = UIImage(named: imgName)!
+        btn.setImage(image, for: .normal)
+    }
+    
 }

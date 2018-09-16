@@ -169,6 +169,16 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tTY-FD-TTf">
                                 <rect key="frame" x="15" y="364" width="384" height="288"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
+                                        <rect key="frame" x="167" y="238" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="Button" image="trash"/>
+                                        <connections>
+                                            <action selector="trachClick:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="dLw-co-YkN"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
@@ -962,8 +972,9 @@
         <image name="tabbar_eat" width="12" height="20"/>
         <image name="tabbar_flight" width="20" height="20"/>
         <image name="tabbar_hotel" width="20" height="20"/>
+        <image name="trash" width="512" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="auT-Pk-vaS"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

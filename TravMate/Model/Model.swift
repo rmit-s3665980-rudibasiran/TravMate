@@ -13,21 +13,16 @@ import Foundation
 class Model {
     
     var about:String
-    
-    var myCurrentTrip = 0;
-    
+  
     init(){
-        about = "\'John\' Michael Ariola Tubera\r\n"
-        about += "\'Wan Yi\' Beh\r\n"
-        about += "\'Rudi\' Basiran"
+        about = "John Michael Ariola Tubera"
+        about += "Wan Yi Beh"
+        about += "Rudi Basiran"
     }
     
     func getAbout() -> String {
         return about
     }
-    
-    func getCurrentTrip() -> Int {
-        return myCurrentTrip
-    }
+  
     
 }

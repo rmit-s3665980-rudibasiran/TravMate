@@ -66,24 +66,46 @@ class RestaurantDetailsController: UIViewController {
     var foodITem3isOn =  Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip]
     
     @IBAction func cafeSave(_ sender: Any) {
-        Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = cafeName.text!
-        Trip.sharedInstance.restaurant.cafeAddress[Trip.sharedInstance.myCurrentTrip] = cafeAddress.text!
         
-        Trip.sharedInstance.restaurant.cafeType[Trip.sharedInstance.myCurrentTrip] = cafeType.text!
-        Trip.sharedInstance.restaurant.cafeCost[Trip.sharedInstance.myCurrentTrip] = cafeCost.text!
-
-        Trip.sharedInstance.restaurant.cafePax[Trip.sharedInstance.myCurrentTrip] = cafePax.text!
+        let alert = UIAlertController(title: "RESTAURANT", message: "Save Data?", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = self.cafeName.text!
+            Trip.sharedInstance.restaurant.cafeAddress[Trip.sharedInstance.myCurrentTrip] = self.cafeAddress.text!
+            
+            Trip.sharedInstance.restaurant.cafeType[Trip.sharedInstance.myCurrentTrip] = self.cafeType.text!
+            Trip.sharedInstance.restaurant.cafeCost[Trip.sharedInstance.myCurrentTrip] = self.cafeCost.text!
+            
+            Trip.sharedInstance.restaurant.cafePax[Trip.sharedInstance.myCurrentTrip] = self.cafePax.text!
+            
+            Trip.sharedInstance.restaurant.foodItem1[Trip.sharedInstance.myCurrentTrip] = self.item1.text!
+            Trip.sharedInstance.restaurant.foodItem2[Trip.sharedInstance.myCurrentTrip] = self.item2.text!
+            Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = self.item3.text!
+            
+            Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = self.cafeNotes.text!
+            Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = self.foodITem1isOn
+            Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = self.foodITem2isOn
+            Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = self.foodITem3isOn
+            
+            Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = self.cafeRating.starsRating
+            
+            
+        })
         
-        Trip.sharedInstance.restaurant.foodItem1[Trip.sharedInstance.myCurrentTrip] = item1.text!
-        Trip.sharedInstance.restaurant.foodItem2[Trip.sharedInstance.myCurrentTrip] = item2.text!
-        Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = item3.text!
+        let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            self.do_load ()
+            
+        })
         
-        Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = cafeNotes.text!
-        Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = foodITem1isOn
-        Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = foodITem2isOn
-        Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = foodITem3isOn
+        alert.addAction(CancelAction)
+        alert.addAction(OKAction)
         
-        Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = cafeRating.starsRating
+        self.present(alert, animated: true, completion: nil)
+        
+        
         
        
     }
@@ -103,9 +125,8 @@ class RestaurantDetailsController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    
+    func do_load () {
         let cafeData = Trip.sharedInstance.getRestaurant()
         let i = Trip.sharedInstance.myCurrentTrip
         
@@ -121,10 +142,15 @@ class RestaurantDetailsController: UIViewController {
             cafeNotes.text = cafeData.cafeNotes[i]
             setButtonImage(foodBtn1Img, bool: foodITem1isOn)
             setButtonImage(foodBtn2Img, bool: foodITem2isOn)
-            setButtonImage(foodBtn3Img, bool: foodITem3isOn) 
-            
+            setButtonImage(foodBtn3Img, bool: foodITem3isOn)
             
         }
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.do_load()
+        
     }
     
     func setButtonImage(_ btn:UIButton, bool:Bool) {

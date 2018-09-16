@@ -12,18 +12,18 @@ import Foundation
 
 struct Restaurant {
     
-    var cafeName = ["Le Clec", "Spudbar", "Coup du Nandos", "McDonalds"]
-    var cafeAddress = ["727 Glenferrie Road", "36 Swanston Street", "45 Champ Elyse Road","2 Hay Street"]
+    var cafeName = ["Le Clec", "Spudbar", "Coup du Poullet", "McDonalds"]
+    var cafeAddress = ["727 Glenferrie Road", "36 Swanston Street", "45 Champ Elyse","2 Hay Street"]
     var cafeType = ["Fusion, Coffee and Tea, Cafe Food",
                     "Healthy Food, Fast Food, Salad",
-                    "Portuguese" ,
+                    "French Nandos" ,
                     "American, Fast Food"]
     var cafeCost = ["$100", "$50", "$45", "$10"]
     var cafePax = ["5", "3", "1", "2"]
     var cafeNotes = ["It is good! The staff were friendly and very attentive. Very polite and professional in their service.",
                      "Service was very quick. Student deals are available so bring your student card for a $7 spud!",
-                     "Good food but the price was a bit high for a bowl of rice. Really enjoyed it tho! Would’ve loved it even more if it was less crowdy/ noisy.",
-                     "Can't go wrong with maccas, best with fries and sundae."]
+                     "Bon Appetit. Good food but the price was a bit high for just chicken. Really enjoyed it tho! Would’ve loved it even more if it was less crowdy/ noisy.",
+                     "Can't go wrong with Maccas, best with fries and sundae."]
     var foodItem1 = ["Snail","Steak","Un Chicken Finger","Burger"]
     var foodItem2 = ["Quail","Wedges","Le Petit Coke","Coke"]
     var foodItem3 = ["Ale","Beer","Frites","Fries"]

@@ -20,6 +20,7 @@ struct Hotel {
                       "Welcome to IBIS NYC!" ,
                       "Crown Hotels - a class of its own" ,
                       "Hays Apartment - Right at the doorstep of ..."]
+    var hotelRating = [1,2,3,4]
     
     // static var sharedInstance = Hotel()
     

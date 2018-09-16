@@ -36,6 +36,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.hotel.hotelAddress.append("")
         Trip.sharedInstance.hotel.roomType.append("")
         Trip.sharedInstance.hotel.hotelNotes.append("")
+        Trip.sharedInstance.hotel.hotelRating.append(0)
         
         Trip.sharedInstance.restaurant.cafeName.append("")
         Trip.sharedInstance.restaurant.cafeAddress.append("")

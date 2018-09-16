@@ -12,6 +12,8 @@ import UIKit
 class HotelDetailsController: UIViewController {
   
     
+    @IBOutlet weak var hotelRating: HotelRatingController!
+    
     @IBOutlet weak var hotelNotes: UITextView!
     
     @IBOutlet weak var roomType: UITextField!
@@ -35,6 +37,7 @@ class HotelDetailsController: UIViewController {
         Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = checkOutDate.text!
         Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = hotelAddress.text!
         Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = hotelCost.text!
+        Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = hotelRating.starsRating
         
     }
     

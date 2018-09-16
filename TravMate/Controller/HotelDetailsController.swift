@@ -32,14 +32,34 @@ class HotelDetailsController: UIViewController {
     
     @IBAction func saveHotel(_ sender: Any) {
         
-        Trip.sharedInstance.hotel.hotelNotes[Trip.sharedInstance.myCurrentTrip] = hotelNotes.text!
-        Trip.sharedInstance.hotel.roomType[Trip.sharedInstance.myCurrentTrip] = roomType.text!
-        Trip.sharedInstance.hotel.hotelName[Trip.sharedInstance.myCurrentTrip] = hotelName.text!
-        Trip.sharedInstance.hotel.hotelCheckIn[Trip.sharedInstance.myCurrentTrip] = checkInDate.text!
-        Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = checkOutDate.text!
-        Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = hotelAddress.text!
-        Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = hotelCost.text!
-        Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = hotelRating.starsRating
+        let alert = UIAlertController(title: "HOTEL", message: "Save Data?", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            Trip.sharedInstance.hotel.hotelNotes[Trip.sharedInstance.myCurrentTrip] = self.hotelNotes.text!
+            Trip.sharedInstance.hotel.roomType[Trip.sharedInstance.myCurrentTrip] = self.roomType.text!
+            Trip.sharedInstance.hotel.hotelName[Trip.sharedInstance.myCurrentTrip] = self.hotelName.text!
+            Trip.sharedInstance.hotel.hotelCheckIn[Trip.sharedInstance.myCurrentTrip] = self.checkInDate.text!
+            Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = self.checkOutDate.text!
+            Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = self.hotelAddress.text!
+            Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = self.hotelCost.text!
+            Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = self.hotelRating.starsRating
+            
+            
+        })
+        
+        let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            self.do_load ()
+            
+        })
+        
+        alert.addAction(CancelAction)
+        alert.addAction(OKAction)
+        
+        self.present(alert, animated: true, completion: nil)
+
         
     }
     
@@ -57,10 +77,7 @@ class HotelDetailsController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func do_load () {
         let hotelData = Trip.sharedInstance.geHotel()
         let i = Trip.sharedInstance.myCurrentTrip
         
@@ -74,6 +91,12 @@ class HotelDetailsController: UIViewController {
             hotelNotes.text = hotelData.hotelNotes[i]
             
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.do_load()
+        
         
     }
 }

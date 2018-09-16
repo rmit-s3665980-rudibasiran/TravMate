@@ -55,13 +55,13 @@ class FlightDetailsController: UIViewController {
             Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = self.flightDuration.text!
             Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = self.flightType.text!
             
-            // self.performSegue(withIdentifier: "GoToTabSegue", sender: self)
         })
         
         let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
             (_)in
             
-            // do_cancel ()
+            self.do_load()
+            
         })
         
         alert.addAction(CancelAction)
@@ -86,9 +86,7 @@ class FlightDetailsController: UIViewController {
         present(activityViewController, animated: true, completion: nil)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
+    func do_load () {
         let flightData = Trip.sharedInstance.geFlight()
         let i = Trip.sharedInstance.myCurrentTrip
         
@@ -106,5 +104,11 @@ class FlightDetailsController: UIViewController {
             flightDuration.text = flightData.flightDuration[i]
             flightType.text = flightData.flightType[i]
         }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.do_load()
+        
     }
 }

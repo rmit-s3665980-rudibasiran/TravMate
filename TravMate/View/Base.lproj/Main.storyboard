@@ -145,7 +145,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Trip Details" id="o0q-ze-zuy">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="4bl-wW-c7J">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="4bl-wW-c7J">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
@@ -302,7 +302,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Hotel" id="na9-Fx-Fai">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="GCW-bC-h01" userLabel="Back">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="GCW-bC-h01" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="Klj-KO-szE" kind="show" id="WHm-Rm-d7Y"/>
@@ -476,7 +476,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Restaurant" id="70t-DX-871">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="h8C-8l-HXc" userLabel="Back">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="h8C-8l-HXc" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="Klj-KO-szE" kind="show" id="q0j-g8-r0Z"/>
@@ -717,7 +717,7 @@
                                 <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Flight" id="AiO-bJ-To4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" id="0k9-zB-JXC" userLabel="Back">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="0k9-zB-JXC" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
                                                 <segue destination="Klj-KO-szE" kind="show" id="auT-Pk-vaS"/>
@@ -952,6 +952,7 @@
         <image name="hotel" width="1000" height="750"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
+        <image name="navbar_back" width="12" height="20"/>
         <image name="navbar_save" width="15" height="15"/>
         <image name="navbar_share" width="13" height="15"/>
         <image name="smile" width="30" height="30"/>

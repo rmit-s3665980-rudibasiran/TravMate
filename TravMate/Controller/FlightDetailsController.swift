@@ -39,18 +39,35 @@ class FlightDetailsController: UIViewController {
     
     @IBAction func saveFlight(_ sender: Any) {
         
-        Trip.sharedInstance.flight.flightPortFrom[Trip.sharedInstance.myCurrentTrip] = flightPortFrom.text!
-        Trip.sharedInstance.flight.flightDepartNo[Trip.sharedInstance.myCurrentTrip] = flightDepartNo.text!
-        Trip.sharedInstance.flight.flightReturnNo[Trip.sharedInstance.myCurrentTrip] = flightReturnNo.text!
-        Trip.sharedInstance.flight.flightPortTo[Trip.sharedInstance.myCurrentTrip] = flightPortTo.text!
-        Trip.sharedInstance.flight.flightDepartDate[Trip.sharedInstance.myCurrentTrip] = flightDepartDate.text!
-        Trip.sharedInstance.flight.flightReturnDate[Trip.sharedInstance.myCurrentTrip] = flightReturnDate.text!
-        Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = flightDepartTime.text!
-        Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = flightReturnTime.text!
-        Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = flightCost.text!
-        Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = flightDuration.text!
-        Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = flightType.text!
+        let alert = UIAlertController(title: "TRIP", message: "Save Data?", preferredStyle: .alert)
+        let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            Trip.sharedInstance.flight.flightPortFrom[Trip.sharedInstance.myCurrentTrip] = self.flightPortFrom.text!
+            Trip.sharedInstance.flight.flightDepartNo[Trip.sharedInstance.myCurrentTrip] = self.flightDepartNo.text!
+            Trip.sharedInstance.flight.flightReturnNo[Trip.sharedInstance.myCurrentTrip] = self.flightReturnNo.text!
+            Trip.sharedInstance.flight.flightPortTo[Trip.sharedInstance.myCurrentTrip] = self.flightPortTo.text!
+            Trip.sharedInstance.flight.flightDepartDate[Trip.sharedInstance.myCurrentTrip] = self.flightDepartDate.text!
+            Trip.sharedInstance.flight.flightReturnDate[Trip.sharedInstance.myCurrentTrip] = self.flightReturnDate.text!
+            Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = self.flightDepartTime.text!
+            Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = self.flightReturnTime.text!
+            Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = self.flightCost.text!
+            Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = self.flightDuration.text!
+            Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = self.flightType.text!
+            
+            // self.performSegue(withIdentifier: "GoToTabSegue", sender: self)
+        })
         
+        let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {
+            (_)in
+            
+            // do_cancel ()
+        })
+        
+        alert.addAction(CancelAction)
+        alert.addAction(OKAction)
+        
+        self.present(alert, animated: true, completion: nil)
         
     }
     

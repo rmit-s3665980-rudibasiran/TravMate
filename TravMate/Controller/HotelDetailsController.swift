@@ -3,6 +3,8 @@
 //  TravMate
 //
 //  Created by Rudi Basiran on 14/9/18.
+//  - Wan Yi Beh
+//  - John Michael Ariola Tubera
 //  Copyright © 2018 RMIT. All rights reserved.
 //
 

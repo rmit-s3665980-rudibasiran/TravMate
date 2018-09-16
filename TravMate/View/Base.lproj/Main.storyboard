@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -320,47 +321,47 @@
                                 <rect key="frame" x="15" y="94" width="384" height="540"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-4X-0vz">
-                                        <rect key="frame" x="0.0" y="0.0" width="381" height="112"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="112"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-VQ-H36" userLabel="hotelImage">
-                                                <rect key="frame" x="0.0" y="0.0" width="183" height="112"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel" translatesAutoresizingMaskIntoConstraints="NO" id="JEJ-VQ-H36" userLabel="hotelImage">
+                                                <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="112"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="7rH-g8-jcW">
-                                                <rect key="frame" x="198" y="0.0" width="183" height="112"/>
+                                                <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="112"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Hotel Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5nI-w4-r21" userLabel="HotelName">
-                                                        <rect key="frame" x="0.0" y="0.0" width="183" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8kU-sS-MS3">
-                                                        <rect key="frame" x="0.0" y="45" width="183" height="30"/>
+                                                        <rect key="frame" x="0.0" y="45" width="184.33333333333334" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="VCP-m0-6Ft" userLabel="starButtons" customClass="HotelRatingController" customModule="TravMate" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="90" width="183" height="22"/>
+                                                        <rect key="frame" x="0.0" y="90" width="184.33333333333334" height="22"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="djC-gq-bSo" userLabel="star1">
                                                                 <rect key="frame" x="0.0" y="0.0" width="36.666666666666664" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5vt-bq-Ax2" userLabel="star2">
-                                                                <rect key="frame" x="36.666666666666657" y="0.0" width="36.666666666666657" height="22"/>
+                                                                <rect key="frame" x="36.666666666666686" y="0.0" width="37" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zu4-kn-5yf" userLabel="star3">
-                                                                <rect key="frame" x="73.333333333333314" y="0.0" width="36.333333333333343" height="22"/>
+                                                                <rect key="frame" x="73.666666666666657" y="0.0" width="37" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uea-m1-xIw" userLabel="star4">
-                                                                <rect key="frame" x="109.6666666666667" y="0.0" width="36.666666666666671" height="22"/>
+                                                                <rect key="frame" x="110.66666666666667" y="0.0" width="36.666666666666671" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r4x-Po-6XY" userLabel="star5">
-                                                                <rect key="frame" x="146.33333333333331" y="0.0" width="36.666666666666657" height="22"/>
+                                                                <rect key="frame" x="147.33333333333334" y="0.0" width="37" height="22"/>
                                                                 <state key="normal" image="star_empty"/>
                                                             </button>
                                                         </subviews>
@@ -473,12 +474,15 @@
                                                 <segue destination="Klj-KO-szE" kind="show" id="q0j-g8-r0Z"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" id="X19-lm-PDu">
-                                            <color key="tintColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="cafeSave:" destination="RIl-Pw-lXc" id="5gy-o1-1uQ"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <rightBarButtonItems>
+                                            <barButtonItem title="Save" id="X19-lm-PDu">
+                                                <color key="tintColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <connections>
+                                                    <action selector="cafeSave:" destination="RIl-Pw-lXc" id="5gy-o1-1uQ"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem systemItem="action" id="AbR-08-81D"/>
+                                        </rightBarButtonItems>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -488,26 +492,32 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-Q5-6tz">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="P11-tn-BX6">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="P11-tn-BX6">
                                                 <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="150"/>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="UVB-nC-Y1J">
                                                 <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="150"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Cafe Name" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TpX-2d-a1a" userLabel="CafeName">
-                                                        <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="22.333333333333332"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="184.33333333333334" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="kuE-7K-zPR"/>
+                                                        </constraints>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gUd-jg-02F">
-                                                        <rect key="frame" x="0.0" y="37.333333333333343" width="184.33333333333334" height="22"/>
+                                                        <rect key="frame" x="0.0" y="45" width="184.33333333333334" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="Gl8-JU-jmh"/>
+                                                        </constraints>
                                                         <nil key="textColor"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4-star-rating" translatesAutoresizingMaskIntoConstraints="NO" id="CpH-7E-DLP" userLabel="Rating">
-                                                        <rect key="frame" x="0.0" y="74.333333333333343" width="184.33333333333334" height="75.666666666666657"/>
+                                                        <rect key="frame" x="0.0" y="90" width="184.33333333333334" height="60"/>
                                                     </imageView>
                                                 </subviews>
                                             </stackView>
@@ -546,13 +556,17 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 1" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="etw-Gi-7VB" userLabel="orderItem1">
-                                                        <rect key="frame" x="0.0" y="0.0" width="265.33333333333331" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O8e-HA-54P">
-                                                        <rect key="frame" x="280.33333333333331" y="0.0" width="103.66666666666669" height="30"/>
+                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="DXw-qX-rbj"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                         <state key="normal" image="smile"/>
                                                         <connections>
                                                             <action selector="foodBtn1:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="kaE-7L-8nf"/>
@@ -567,13 +581,16 @@
                                                 <rect key="frame" x="0.0" y="45" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 2" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4eQ-eN-f4Z" userLabel="orderItem2">
-                                                        <rect key="frame" x="0.0" y="0.0" width="266.66666666666669" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9z-lf-DYG">
-                                                        <rect key="frame" x="281.66666666666669" y="0.0" width="102.33333333333331" height="30"/>
+                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="NRm-aC-Dah"/>
+                                                        </constraints>
                                                         <state key="normal" image="smile"/>
                                                         <connections>
                                                             <action selector="foodBtn2:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="PSN-Xd-lx2"/>
@@ -588,13 +605,16 @@
                                                 <rect key="frame" x="0.0" y="90" width="384" height="30"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Order Item 3" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2L6-gi-Rfe" userLabel="orderItem3">
-                                                        <rect key="frame" x="0.0" y="0.0" width="267" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="339" height="30"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wnn-VQ-agg">
-                                                        <rect key="frame" x="282" y="0.0" width="102" height="30"/>
+                                                        <rect key="frame" x="354" y="0.0" width="30" height="30"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="30" id="BR0-gF-h9N"/>
+                                                        </constraints>
                                                         <state key="normal" image="smile"/>
                                                         <connections>
                                                             <action selector="foodBtn3:" destination="RIl-Pw-lXc" eventType="touchUpInside" id="Dwv-si-ChV"/>
@@ -886,7 +906,7 @@
         <image name="add_restaurant" width="18" height="30"/>
         <image name="fly" width="492" height="78"/>
         <image name="food" width="2295" height="1526"/>
-        <image name="hotel" width="183" height="275"/>
+        <image name="hotel" width="1000" height="750"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
         <image name="smile" width="30" height="30"/>

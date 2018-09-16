@@ -84,7 +84,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.tripDays.text = trip.locationDays[indexPath.row]
         cell.tripCost.text = trip.locationCost[indexPath.row]
         
-        let picture = ["icon_beijing", "icon_newyork", "icon_paris"]
+        let picture = ["icon_london", "icon_newyork", "icon_paris", "icon_melbourne"]
         
         if (indexPath.row % 3 == 1) {
             // cell color: blue
@@ -99,7 +99,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
             cell.backgroundColor = uicolorFromHex(rgbValue: 0x53E3DD)
         }
         
-        cell.tripImage.image =  UIImage(named: picture[indexPath.row % 3])
+        cell.tripImage.image =  UIImage(named: picture[indexPath.row % 4])
         
         cell.contentView.layer.cornerRadius = 4.0
         cell.contentView.layer.borderWidth = 1.0

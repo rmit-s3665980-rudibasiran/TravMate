@@ -951,7 +951,7 @@
         <!--Trip Tab Bar Controller-->
         <scene sceneID="5s3-P7-7OT">
             <objects>
-                <tabBarController id="3po-5j-DP3" userLabel="Trip Tab Bar Controller" sceneMemberID="viewController">
+                <tabBarController id="3po-5j-DP3" userLabel="Trip Tab Bar Controller" customClass="TabbyController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9gb-WW-TA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>

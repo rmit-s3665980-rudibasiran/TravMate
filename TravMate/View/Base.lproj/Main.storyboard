@@ -126,6 +126,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="tripsCollection" destination="Chp-iH-cff" id="5eP-kV-THN"/>
                         <segue destination="pY4-Ud-gxf" kind="show" identifier="TripDetlSegue" id="xAD-fD-V0N"/>
                     </connections>
                 </viewController>
@@ -987,6 +988,6 @@
         <image name="trash" width="22" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="auT-Pk-vaS"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

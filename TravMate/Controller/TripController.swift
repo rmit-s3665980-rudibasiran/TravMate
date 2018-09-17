@@ -13,6 +13,8 @@ import UIKit
 
 class TripController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
+    @IBOutlet weak var tripsCollection: UICollectionView!
+    
     var trip:Trip = Trip.sharedInstance
     
     @IBAction func addTrip(_ sender: Any) {
@@ -77,6 +79,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         super.viewDidLoad()
         Trip.sharedInstance.myCurrentTrip = -1
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.tripsCollection.reloadData()
+//    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trip.getSizeofData()

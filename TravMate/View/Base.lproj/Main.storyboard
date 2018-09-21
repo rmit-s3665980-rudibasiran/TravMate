@@ -19,7 +19,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -33,10 +33,10 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TaN-Yr-ekP" customClass="TripCollectionViewCell" customModule="TravMate" customModuleProvider="target">
-                                        <rect key="frame" x="32.666666666666664" y="30" width="349" height="130"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <rect key="frame" x="34.666666666666664" y="30" width="345" height="130"/>
+                                        <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="349" height="130"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="130"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-JI-dN2">
@@ -60,10 +60,6 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_newyork" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
-                                                    <rect key="frame" x="240" y="0.0" width="97" height="130"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Days" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="efn-9B-cwd">
                                                     <rect key="frame" x="15.000000000000078" y="73" width="204" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,10 +67,13 @@
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_newyork" translatesAutoresizingMaskIntoConstraints="NO" id="QHc-rZ-Q5G">
+                                                    <rect key="frame" x="228" y="0.0" width="97" height="130"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" red="0.0" green="0.99998110529999995" blue="0.87056411700000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <size key="customSize" width="349" height="130"/>
                                         <connections>
                                             <outlet property="tripCost" destination="We8-0b-4bi" id="Lj2-SF-fET"/>
                                             <outlet property="tripDays" destination="efn-9B-cwd" id="Rf0-po-8RJ"/>
@@ -92,11 +91,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="bottom" secondItem="3Em-ZL-3wH" secondAttribute="bottom" id="2ax-tW-zW7"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="3Em-ZL-3wH" secondAttribute="leading" id="E46-Vx-1yV"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="3Em-ZL-3wH" secondAttribute="trailing" id="FNq-Ei-vIq"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="E8X-p4-465" secondAttribute="leading" id="NZI-sH-LgI"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="W9X-5l-Hil"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="pcn-XM-SAE"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="E8X-p4-465" secondAttribute="trailing" id="vwM-BF-qtm"/>
+                            <constraint firstAttribute="bottom" secondItem="Chp-iH-cff" secondAttribute="bottom" id="wf1-5d-zu3"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Em-ZL-3wH"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="2ax-tW-zW7"/>
+                                <exclude reference="NZI-sH-LgI"/>
+                                <exclude reference="pcn-XM-SAE"/>
+                                <exclude reference="vwM-BF-qtm"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="All Trips" id="HkE-uv-6cz">
                         <barButtonItem key="leftBarButtonItem" title="Item" image="logo" style="plain" id="ked-IF-YwR">
@@ -587,13 +598,13 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Known For" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-SG-zoE" userLabel="CafeType">
-                                        <rect key="frame" x="0.0" y="210" width="384" height="30"/>
+                                        <rect key="frame" x="0.0" y="210" width="384" height="119"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-bL-jll">
-                                        <rect key="frame" x="0.0" y="255" width="384" height="120"/>
+                                        <rect key="frame" x="0.0" y="344" width="384" height="120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-xk-tOS">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
@@ -671,7 +682,7 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-ff-KMS">
-                                        <rect key="frame" x="0.0" y="390" width="384" height="139"/>
+                                        <rect key="frame" x="0.0" y="479" width="384" height="50"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -992,6 +1003,6 @@
         <image name="trash" width="22" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WHm-Rm-d7Y"/>
+        <segue reference="dRo-JU-ajD"/>
     </inferredMetricsTieBreakers>
 </document>

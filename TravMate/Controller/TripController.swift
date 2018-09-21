@@ -80,9 +80,9 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.myCurrentTrip = -1
     }
     
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.tripsCollection.reloadData()
-//    }
+    override func viewWillAppear(_ animated: Bool) {
+        self.tripsCollection.reloadData()
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trip.getSizeofData()
@@ -119,7 +119,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.layer.shadowColor = UIColor.gray.cgColor
         cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
         cell.layer.shadowRadius = 4.0
-        cell.layer.shadowOpacity = 1.0
+        cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
         

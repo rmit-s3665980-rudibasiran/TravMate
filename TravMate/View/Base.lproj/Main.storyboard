@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Klj-KO-szE">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fXC-Nw-aYp">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="Klj-KO-szE" userLabel="Trip Controller" customClass="TripController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E8X-p4-465">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
-                                <rect key="frame" x="0.0" y="116" width="414" height="620"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="apc-9r-bOc"/>
@@ -29,11 +29,11 @@
                                     <size key="itemSize" width="345" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="15" minY="15" maxX="15" maxY="15"/>
+                                    <inset key="sectionInset" minX="0.0" minY="30" maxX="0.0" maxY="30"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="TaN-Yr-ekP" customClass="TripCollectionViewCell" customModule="TravMate" customModuleProvider="target">
-                                        <rect key="frame" x="32.666666666666664" y="15" width="349" height="130"/>
+                                        <rect key="frame" x="32.666666666666664" y="30" width="349" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                             <rect key="frame" x="0.0" y="0.0" width="349" height="130"/>
@@ -42,7 +42,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pDc-JI-dN2">
                                                     <rect key="frame" x="15.000000000000078" y="42" width="206" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -88,33 +88,12 @@
                                     <outlet property="delegate" destination="Klj-KO-szE" id="VhG-UH-11C"/>
                                 </connections>
                             </collectionView>
-                            <navigationBar contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" barStyle="black" translucent="NO" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vlq-0I-AK0">
-                                <rect key="frame" x="0.0" y="20" width="414" height="96"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <items>
-                                    <navigationItem title="All Trips" id="Npr-h9-ByU">
-                                        <barButtonItem key="leftBarButtonItem" title="Item" image="logo" id="faE-Yy-gtd">
-                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                            <color key="tintColor" red="0.0" green="0.98431372549999996" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
-                                            <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
-                                            <connections>
-                                                <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="vlq-0I-AK0" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="0jw-b0-snG"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="bottom" secondItem="3Em-ZL-3wH" secondAttribute="bottom" id="2ax-tW-zW7"/>
-                            <constraint firstItem="vlq-0I-AK0" firstAttribute="trailing" secondItem="3Em-ZL-3wH" secondAttribute="trailing" id="HoH-aM-6Kr"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="E8X-p4-465" secondAttribute="leading" id="NZI-sH-LgI"/>
-                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" constant="96" id="hvZ-B4-XUg"/>
-                            <constraint firstItem="vlq-0I-AK0" firstAttribute="leading" secondItem="3Em-ZL-3wH" secondAttribute="leading" id="ioP-CZ-Gdf"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="pcn-XM-SAE"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="E8X-p4-465" secondAttribute="trailing" id="vwM-BF-qtm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3Em-ZL-3wH"/>
@@ -124,6 +103,11 @@
                             <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="0.0"/>
                             <color key="tintColor" red="0.15686274510000001" green="0.8980392157" blue="0.84705882349999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="jX8-7n-uub">
+                            <connections>
+                                <action selector="addTrip:" destination="Klj-KO-szE" id="g0I-yX-d4q"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tripsCollection" destination="Chp-iH-cff" id="5eP-kV-THN"/>
@@ -132,37 +116,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fZq-Tj-bQe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900.0000000000002" y="116.57608695652175"/>
+            <point key="canvasLocation" x="2807.2463768115945" y="116.57608695652175"/>
         </scene>
         <!--Trip Details-->
         <scene sceneID="BV3-9S-Ukw">
             <objects>
                 <viewController id="pY4-Ud-gxf" userLabel="Trip Details" customClass="TripDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MS4-1q-fAy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Trip Details" id="o0q-ze-zuy">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="4bl-wW-c7J">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z" userLabel="BtnSaveTrip">
-                                            <color key="tintColor" red="0.94509803920000002" green="0.79607843140000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
+                                                <segue destination="fXC-Nw-aYp" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-nX-gLS">
-                                <rect key="frame" x="15" y="114" width="384" height="150"/>
+                                <rect key="frame" x="15" y="94" width="384" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4y4-VJ-xah"/>
@@ -173,7 +151,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
-                                <rect key="frame" x="15" y="114" width="384" height="150"/>
+                                <rect key="frame" x="15" y="94" width="384" height="150"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
@@ -200,7 +178,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-vU-5gJ">
-                                <rect key="frame" x="15" y="314" width="384" height="100"/>
+                                <rect key="frame" x="15" y="294" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-xA-TNF">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -230,7 +208,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IpO-Hz-kWj">
-                                <rect key="frame" x="15" y="429" width="384" height="100"/>
+                                <rect key="frame" x="15" y="409" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-w8-vES">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -256,7 +234,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-bl-YKl">
-                                <rect key="frame" x="15" y="656" width="384" height="30"/>
+                                <rect key="frame" x="15" y="592" width="384" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
                                         <rect key="frame" x="177" y="0.0" width="30" height="30"/>
@@ -301,7 +279,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA"/>
+                    <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA">
+                        <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z" userLabel="BtnSaveTrip">
+                            <color key="tintColor" red="0.94509803920000002" green="0.79607843140000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <connections>
+                                <action selector="saveData:" destination="pY4-Ud-gxf" id="iOm-Zp-ZHs"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tripCost" destination="PQc-5j-Tmd" id="s50-r2-d8R"/>
                         <outlet property="tripDays" destination="foN-o2-JGr" id="8ws-ay-3m7"/>
@@ -311,24 +296,24 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9go-4Q-XDa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.884057971015" y="116.57608695652175"/>
+            <point key="canvasLocation" x="3939.130434782609" y="116.57608695652175"/>
         </scene>
         <!--Hotel List-->
         <scene sceneID="eg2-9O-Nov">
             <objects>
                 <viewController id="u1z-Nr-4O9" userLabel="Hotel List" customClass="HotelDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u4l-pY-uMg">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0ek-Zg-hYd">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Hotel" id="na9-Fx-Fai">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="GCW-bC-h01" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" id="WHm-Rm-d7Y"/>
+                                                <segue destination="fXC-Nw-aYp" kind="show" id="WHm-Rm-d7Y"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -349,7 +334,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ali-7L-BWi">
-                                <rect key="frame" x="15" y="94" width="384" height="540"/>
+                                <rect key="frame" x="15" y="74" width="384" height="540"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Yhz-4X-0vz">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="112"/>
@@ -492,17 +477,17 @@
             <objects>
                 <viewController id="RIl-Pw-lXc" userLabel="Restaurant List" customClass="RestaurantDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="p94-EZ-fQh">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvO-5G-0I3">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Restaurant" id="70t-DX-871">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="h8C-8l-HXc" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" id="q0j-g8-r0Z"/>
+                                                <segue destination="fXC-Nw-aYp" kind="show" id="q0j-g8-r0Z"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -523,7 +508,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="NAj-2X-jFg">
-                                <rect key="frame" x="15" y="94" width="384" height="573"/>
+                                <rect key="frame" x="15" y="74" width="384" height="529"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="gTe-Q5-6tz">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="150"/>
@@ -602,13 +587,13 @@
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Known For" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Aah-SG-zoE" userLabel="CafeType">
-                                        <rect key="frame" x="0.0" y="210" width="384" height="53"/>
+                                        <rect key="frame" x="0.0" y="210" width="384" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="fbg-bL-jll">
-                                        <rect key="frame" x="0.0" y="278" width="384" height="120"/>
+                                        <rect key="frame" x="0.0" y="255" width="384" height="120"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="N4H-xk-tOS">
                                                 <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
@@ -686,7 +671,7 @@
                                         </subviews>
                                     </stackView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BMl-ff-KMS">
-                                        <rect key="frame" x="0.0" y="413" width="384" height="160"/>
+                                        <rect key="frame" x="0.0" y="390" width="384" height="139"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -733,17 +718,17 @@
             <objects>
                 <viewController id="8De-AT-qk9" userLabel="Flight List" customClass="FlightDetailsController" customModule="TravMate" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1yM-L9-ztV">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W2s-Gc-Nyb">
-                                <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Flight" id="AiO-bJ-To4">
                                         <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="0k9-zB-JXC" userLabel="Back">
                                             <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <connections>
-                                                <segue destination="Klj-KO-szE" kind="show" id="auT-Pk-vaS"/>
+                                                <segue destination="fXC-Nw-aYp" kind="show" id="auT-Pk-vaS"/>
                                             </connections>
                                         </barButtonItem>
                                         <rightBarButtonItems>
@@ -764,7 +749,7 @@
                                 </items>
                             </navigationBar>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="KpH-5h-aeB">
-                                <rect key="frame" x="15" y="94" width="384" height="500"/>
+                                <rect key="frame" x="15" y="74" width="384" height="500"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Bps-QY-k2L">
                                         <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
@@ -965,7 +950,26 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b2k-PC-X2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3994" y="117"/>
+            <point key="canvasLocation" x="4900" y="116.57608695652175"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IAW-Zb-N8l">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fXC-Nw-aYp" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" translucent="NO" largeTitles="YES" id="PBm-Tu-Pc9">
+                        <rect key="frame" x="0.0" y="20" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="0.99215686270000003" green="0.79607843140000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Klj-KO-szE" kind="relationship" relationship="rootViewController" id="Iam-xm-lb6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rKE-Vg-h3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1900.0000000000002" y="116.57608695652175"/>
         </scene>
     </scenes>
     <resources>
@@ -988,6 +992,6 @@
         <image name="trash" width="22" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dRo-JU-ajD"/>
+        <segue reference="WHm-Rm-d7Y"/>
     </inferredMetricsTieBreakers>
 </document>

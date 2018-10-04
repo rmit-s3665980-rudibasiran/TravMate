@@ -100,8 +100,11 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
         
-
-        cell.tripName.text = trip.locationName[indexPath.row]
+        
+        let tripLocation = Trip.sharedInstance.getLocation()
+   
+        cell.tripName.text = tripLocation[indexPath.row]
+        // cell.tripName.text = trip.locationName[indexPath.row]
         cell.tripDays.text = trip.locationDays[indexPath.row]
         cell.tripCost.text = trip.locationCost[indexPath.row] + " | " + Trip.sharedInstance.dummy
         

@@ -31,6 +31,10 @@ struct Trip {
         myCurrentTrip = -1
     }
     
+    func getLocation() -> [String] {
+        return locationName
+    }
+    
     func geFlight() -> Flight {
         return flight
     }

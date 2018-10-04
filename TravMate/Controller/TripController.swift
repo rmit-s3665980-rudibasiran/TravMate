@@ -76,21 +76,14 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Trip.sharedInstance.dummy = "2nd"
+ 
         Trip.sharedInstance.myCurrentTrip = -1
     }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         Trip.sharedInstance.myCurrentTrip = -1
-        
-        self.tripsCollection.collectionViewLayout.collectionView?.reloadData()
-        Trip.sharedInstance.dummy = "3rd"
-        
-//        DispatchQueue.main.async {
-//            self.tripsCollection.collectionViewLayout.collectionView?.reloadData()
-//            Trip.sharedInstance.dummy = "3rd"
-//        }
+        self.tripsCollection.reloadData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -99,14 +92,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
-        
-        
-        let tripLocation = Trip.sharedInstance.getLocation()
    
-        cell.tripName.text = tripLocation[indexPath.row]
-        // cell.tripName.text = trip.locationName[indexPath.row]
-        cell.tripDays.text = trip.locationDays[indexPath.row]
-        cell.tripCost.text = trip.locationCost[indexPath.row] + " | " + Trip.sharedInstance.dummy
+        cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
+        cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
+        cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]
         
         let picture = ["icon_london", "icon_newyork", "icon_paris", "icon_melbourne"]
         

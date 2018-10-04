@@ -58,7 +58,6 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.restaurant.foodItemSmiley2.append(true)
         Trip.sharedInstance.restaurant.foodItemSmiley3.append(true)
         Trip.sharedInstance.restaurant.cafeRating.append(0)
-        
        
         Trip.sharedInstance.myCurrentTrip = trip.getSizeofData()
         
@@ -77,25 +76,23 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Trip.sharedInstance.dummy = "2nd"
         Trip.sharedInstance.myCurrentTrip = -1
     }
-    
-    
+   
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-//        self.tripsCollection.reloadItems(at: self.tripsCollection.indexPathsForVisibleItems)
+        Trip.sharedInstance.myCurrentTrip = -1
         
-        DispatchQueue.main.async {
-            self.tripsCollection.reloadData()
-        }
-        self.tripsCollection.reloadData()
+        self.tripsCollection.collectionViewLayout.collectionView?.reloadData()
+        Trip.sharedInstance.dummy = "3rd"
+        
+//        DispatchQueue.main.async {
+//            self.tripsCollection.collectionViewLayout.collectionView?.reloadData()
+//            Trip.sharedInstance.dummy = "3rd"
+//        }
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        tripsCollection.collectionViewLayout.invalidateLayout()
-    }
-    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trip.getSizeofData()
     }
@@ -103,9 +100,10 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
         
+
         cell.tripName.text = trip.locationName[indexPath.row]
         cell.tripDays.text = trip.locationDays[indexPath.row]
-        cell.tripCost.text = trip.locationCost[indexPath.row]
+        cell.tripCost.text = trip.locationCost[indexPath.row] + " | " + Trip.sharedInstance.dummy
         
         let picture = ["icon_london", "icon_newyork", "icon_paris", "icon_melbourne"]
         
@@ -142,4 +140,5 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.myCurrentTrip = indexPath.row
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
     }
+    
 }

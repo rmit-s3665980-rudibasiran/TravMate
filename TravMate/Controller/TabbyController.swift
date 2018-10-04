@@ -17,7 +17,7 @@ class TabbyController: UITabBarController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.selectedIndex = 2
+        self.selectedIndex = Trip.sharedInstance.myCurrentTab
     }
 
     override func didReceiveMemoryWarning() {

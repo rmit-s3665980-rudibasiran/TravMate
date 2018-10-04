@@ -36,14 +36,17 @@ class TripDetailsController: UIViewController {
     @IBOutlet weak var tripCost: UITextField!
     
     @IBAction func clickFlight(_ sender: Any) {
+        Trip.sharedInstance.myCurrentTab = 0
         performSegue(withIdentifier: "GoToTabSegue", sender: self)
     }
     
     @IBAction func clickHotel(_ sender: Any) {
+        Trip.sharedInstance.myCurrentTab = 1
         performSegue(withIdentifier: "GoToTabSegue", sender: self)
     }
     
     @IBAction func clickRestaurant(_ sender: Any) {
+        Trip.sharedInstance.myCurrentTab = 2
         performSegue(withIdentifier: "GoToTabSegue", sender: self)
     }
     

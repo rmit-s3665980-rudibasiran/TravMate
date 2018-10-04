@@ -14,6 +14,7 @@ import UIKit
 struct Trip {
     
     var myCurrentTrip = 0;
+    var myCurrentTab = 0
 
     var locationName = ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
     var locationDays = ["10 Days", "11 Days", "14 Days", "5 Days"]

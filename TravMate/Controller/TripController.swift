@@ -80,10 +80,22 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.myCurrentTrip = -1
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+//        self.tripsCollection.reloadItems(at: self.tripsCollection.indexPathsForVisibleItems)
+        
+        DispatchQueue.main.async {
+            self.tripsCollection.reloadData()
+        }
         self.tripsCollection.reloadData()
     }
 
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        tripsCollection.collectionViewLayout.invalidateLayout()
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return trip.getSizeofData()
     }

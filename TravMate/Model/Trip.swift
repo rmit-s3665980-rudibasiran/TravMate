@@ -14,7 +14,7 @@ import UIKit
 struct Trip {
     
     var myCurrentTrip = 0
-    var myCurrentTab = tabs.flight
+    var myCurrentTab = TripTabController.flight
 
     var locationName = ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
     var locationDays = ["10 Days", "11 Days", "14 Days", "5 Days"]

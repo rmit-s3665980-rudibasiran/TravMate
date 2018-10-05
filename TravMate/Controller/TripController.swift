@@ -75,15 +75,20 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         return UIColor(red:red, green:green, blue:blue, alpha:1.0)
     }
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         Trip.sharedInstance.myCurrentTrip = -1
+        Trip.sharedInstance.clearEmptyData()
+        
     }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         Trip.sharedInstance.myCurrentTrip = -1
         self.tripsCollection.reloadData()
+        Trip.sharedInstance.clearEmptyData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -93,6 +98,8 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
    
+        
+            
         cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
         cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
         cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]

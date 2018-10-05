@@ -19,6 +19,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBAction func addTrip(_ sender: Any) {
         
+        // init new array for new trip
         Trip.sharedInstance.locationName.append("")
         Trip.sharedInstance.locationDays.append("")
         Trip.sharedInstance.locationCost.append("")
@@ -76,7 +77,6 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
         Trip.sharedInstance.myCurrentTrip = -1
     }
    
@@ -87,7 +87,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trip.getSizeofData()
+        return Trip.sharedInstance.getSizeofData()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

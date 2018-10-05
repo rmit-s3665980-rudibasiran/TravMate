@@ -95,6 +95,7 @@ class HotelDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.hotel
         
         
     }

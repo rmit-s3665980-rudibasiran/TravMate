@@ -102,9 +102,6 @@ class RestaurantDetailsController: UIViewController {
         alert.addAction(OKAction)
         
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
        
     }
     
@@ -148,6 +145,7 @@ class RestaurantDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.restaurant
         
     }
     

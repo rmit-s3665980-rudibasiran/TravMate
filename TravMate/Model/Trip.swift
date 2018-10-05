@@ -10,8 +10,11 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 struct Trip {
+    
+    static var sharedInstance = Trip()
     
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
@@ -24,10 +27,24 @@ struct Trip {
     var hotel:Hotel = Hotel()
     var restaurant:Restaurant = Restaurant ()
     
-    static var sharedInstance = Trip()
+    var vacationDB = [Vacation]()
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    let managedContext: NSManagedObjectContext
     
+  
     init() {
         myCurrentTrip = -1
+        managedContext = appDelegate.persistentContainer.viewContext
+        // populateDB()
+        // getVacationFromCoreData()
+        deleteAllData()
+        
+    }
+    
+    mutating func populateDB() {
+        for (index, value) in locationName.enumerated() {
+            saveVacation(tVacationName: (value), tVacationDay: locationDays[(index)], tVacationCost: locationCost[(index)], existing: nil)
+        }
     }
     
     func geFlight() -> Flight {
@@ -140,4 +157,83 @@ struct Trip {
         Trip.sharedInstance.restaurant.cafeRating.remove(at: i)
     }
 
+    mutating func deleteAllData() {
+        // let fetchRequest = NSFetchRequest(entityName: "Vacation")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vacation")
+        
+        // Configure Fetch Request
+        fetchRequest.includesPropertyValues = false
+        
+        do {
+            let items = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
+
+            for item in items {
+                managedContext.delete(item)
+            }
+            
+            try managedContext.save()
+            
+        } catch let error as NSError {
+            print("Could not delete all \(error), \(error.userInfo)")
+        }
+        
+    }
+    
+    func updateDatabase() {
+        do {
+            try managedContext.save()
+        }
+        catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
+    }
+    
+    mutating func deleteVacation(_ indexPath: IndexPath) {
+        let vacation = vacationDB[indexPath.item]
+        vacationDB.remove(at: indexPath.item)
+        managedContext.delete(vacation)
+        updateDatabase()
+    }
+    
+    mutating func getVacationFromCoreData () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vacation")
+            let results = try managedContext.fetch(fetchRequest)
+            vacationDB = results as! [Vacation]
+        }
+        catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
+    mutating func saveVacation(tVacationName: String, tVacationDay: String, tVacationCost: String, existing: Vacation?) {
+        let entity = NSEntityDescription.entity(forEntityName: "Vacation", in: managedContext)
+        
+        if let _ = existing {
+            existing!.vacationName = tVacationName
+            existing!.vacationDays = tVacationDay
+            existing!.vacationCost = tVacationCost
+        }
+        else {
+            let vacation = NSManagedObject(entity: entity!, insertInto: managedContext) as! Vacation
+            vacation.setValue(tVacationName, forKey: "vacationName")
+            vacation.setValue(tVacationDay, forKey: "vacationDays")
+            vacation.setValue(tVacationCost, forKey: "vacationCost")
+            vacationDB.append(vacation)
+        }
+        updateDatabase()
+    }
+    
+    func getVacation(_ indexPath: IndexPath) -> Vacation {
+        return vacationDB[indexPath.row]
+    }
+    
 }
+
+
+enum TripTabController: Int {
+    case flight = 0
+    case hotel = 1
+    case restaurant = 2
+}
+

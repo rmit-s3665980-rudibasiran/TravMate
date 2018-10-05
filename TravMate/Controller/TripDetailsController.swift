@@ -19,9 +19,7 @@ class TripDetailsController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             Trip.sharedInstance.clearData()
-            self.tripName.text = ""
-            self.tripDays.text = ""
-            self.tripCost.text = ""
+            self.navigationController?.popToRootViewController(animated: true)
       
         })
         

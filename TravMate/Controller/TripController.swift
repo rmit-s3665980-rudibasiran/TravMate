@@ -17,6 +17,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     var trip:Trip = Trip.sharedInstance
     
+    
     @IBAction func addTrip(_ sender: Any) {
         
         // init new array for new trip
@@ -98,8 +99,12 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
    
+//        let currentVacation = Trip.sharedInstance.vacationDB[indexPath.item]
+//
+//        cell.tripName.text = currentVacation.vacationName!
+//        cell.tripDays.text = currentVacation.vacationDays!
+//        cell.tripCost.text = currentVacation.vacationCost!
         
-            
         cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
         cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
         cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]

@@ -18,6 +18,7 @@ struct Trip {
     
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
+    var useCoreData = false
 
     var locationName = ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"]
     var locationDays = ["10 Days", "11 Days", "14 Days", "5 Days"]
@@ -27,7 +28,7 @@ struct Trip {
     var hotel:Hotel = Hotel()
     var restaurant:Restaurant = Restaurant ()
     
-    var vacationDB = [Vacation]()
+    var dbTrip = [DBTrip]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let managedContext: NSManagedObjectContext
     
@@ -35,15 +36,17 @@ struct Trip {
     init() {
         myCurrentTrip = -1
         managedContext = appDelegate.persistentContainer.viewContext
-        // populateDB()
-        // getVacationFromCoreData()
-        deleteAllData()
         
+        if (useCoreData) {
+            populateDB()
+            getTripFromCoreData()
+            deleteAllData()
+        }
     }
     
     mutating func populateDB() {
         for (index, value) in locationName.enumerated() {
-            saveVacation(tVacationName: (value), tVacationDay: locationDays[(index)], tVacationCost: locationCost[(index)], existing: nil)
+            saveTrip(pLocationName: (value), pLocationDay: locationDays[(index)], pLocationCost: locationCost[(index)], existing: nil)
         }
     }
     
@@ -159,7 +162,7 @@ struct Trip {
 
     mutating func deleteAllData() {
         // let fetchRequest = NSFetchRequest(entityName: "Vacation")
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vacation")
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBTrip")
         
         // Configure Fetch Request
         fetchRequest.includesPropertyValues = false
@@ -188,44 +191,44 @@ struct Trip {
         }
     }
     
-    mutating func deleteVacation(_ indexPath: IndexPath) {
-        let vacation = vacationDB[indexPath.item]
-        vacationDB.remove(at: indexPath.item)
+    mutating func deleteTrip(_ indexPath: IndexPath) {
+        let vacation = dbTrip[indexPath.item]
+        dbTrip.remove(at: indexPath.item)
         managedContext.delete(vacation)
         updateDatabase()
     }
     
-    mutating func getVacationFromCoreData () {
+    mutating func getTripFromCoreData () {
         do {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Vacation")
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBTrip")
             let results = try managedContext.fetch(fetchRequest)
-            vacationDB = results as! [Vacation]
+            dbTrip = results as! [DBTrip]
         }
         catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
     }
     
-    mutating func saveVacation(tVacationName: String, tVacationDay: String, tVacationCost: String, existing: Vacation?) {
-        let entity = NSEntityDescription.entity(forEntityName: "Vacation", in: managedContext)
+    mutating func saveTrip(pLocationName: String, pLocationDay: String, pLocationCost: String, existing: DBTrip?) {
+        let entity = NSEntityDescription.entity(forEntityName: "DBTrip", in: managedContext)
         
         if let _ = existing {
-            existing!.vacationName = tVacationName
-            existing!.vacationDays = tVacationDay
-            existing!.vacationCost = tVacationCost
+            existing!.dbLocationName = pLocationName
+            existing!.dbLocationDays = pLocationDay
+            existing!.dbLocationCost = pLocationCost
         }
         else {
-            let vacation = NSManagedObject(entity: entity!, insertInto: managedContext) as! Vacation
-            vacation.setValue(tVacationName, forKey: "vacationName")
-            vacation.setValue(tVacationDay, forKey: "vacationDays")
-            vacation.setValue(tVacationCost, forKey: "vacationCost")
-            vacationDB.append(vacation)
+            let vacation = NSManagedObject(entity: entity!, insertInto: managedContext) as! DBTrip
+            vacation.setValue(pLocationName, forKey: "dbLocationName")
+            vacation.setValue(pLocationDay, forKey: "dbLocationDays")
+            vacation.setValue(pLocationCost, forKey: "dbLocationCost")
+            dbTrip.append(vacation)
         }
         updateDatabase()
     }
     
-    func getVacation(_ indexPath: IndexPath) -> Vacation {
-        return vacationDB[indexPath.row]
+    func getTrip(_ indexPath: IndexPath) -> DBTrip {
+        return dbTrip[indexPath.row]
     }
     
 }

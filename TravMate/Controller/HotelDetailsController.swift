@@ -45,7 +45,6 @@ class HotelDetailsController: UIViewController {
             Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = self.hotelCost.text!
             Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = self.hotelRating.starsRating
             
-            
         })
         
         let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {

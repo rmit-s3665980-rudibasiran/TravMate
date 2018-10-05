@@ -43,12 +43,10 @@ class RestaurantDetailsController: UIViewController {
     
     
     @IBAction func foodBtn2(_ sender: Any) {
-        
         foodITem2isOn = !foodITem2isOn
         setButtonImage(foodBtn2Img, bool: foodITem2isOn)
         
     }
-    
     
     @IBOutlet weak var foodBtn3Img: UIButton!
     

@@ -18,9 +18,11 @@ class TripDetailsController: UIViewController {
         let alert = UIAlertController(title: "TRIP", message: "Delete Data?", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
-            Trip.sharedInstance.deleteArray(Trip.sharedInstance.myCurrentTrip)
-            Trip.sharedInstance.myCurrentTrip = -1
-            self.performSegue(withIdentifier: "SegueBackToTrip", sender: self)
+            Trip.sharedInstance.clearData()
+            self.tripName.text = ""
+            self.tripDays.text = ""
+            self.tripCost.text = ""
+      
         })
         
         let CancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.default, handler: {

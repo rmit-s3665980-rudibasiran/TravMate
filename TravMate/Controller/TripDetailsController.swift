@@ -98,7 +98,7 @@ class TripDetailsController: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // print ("myCurrentTrip = " +  String(Trip.sharedInstance.myCurrentTrip))
+        print ("myCurrentTrip = " +  String(Trip.sharedInstance.myCurrentTrip))
         if (Trip.sharedInstance.myCurrentTrip >= 0) {
             tripName.text = Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip]
             tripDays.text = Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip]

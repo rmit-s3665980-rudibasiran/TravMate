@@ -60,7 +60,8 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.restaurant.foodItemSmiley3.append(true)
         Trip.sharedInstance.restaurant.cafeRating.append(0)
        
-        Trip.sharedInstance.myCurrentTrip = Trip.sharedInstance.getSizeofData()
+        print ("Sizeofdata: " + String (Trip.sharedInstance.getSizeofData()))
+        Trip.sharedInstance.myCurrentTrip = Trip.sharedInstance.getSizeofData() - 1
         
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
         

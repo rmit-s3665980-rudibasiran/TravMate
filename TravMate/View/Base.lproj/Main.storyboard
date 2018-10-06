@@ -588,6 +588,8 @@
                     <connections>
                         <outlet property="checkInDate" destination="Giz-db-cSA" id="sz7-0d-fnl"/>
                         <outlet property="checkOutDate" destination="9hZ-Dc-Yex" id="RQw-qG-uvJ"/>
+                        <outlet property="hiddenHotelCost" destination="QB0-fx-37X" id="3mX-fo-WEl"/>
+                        <outlet property="hiddenRoomType" destination="EJz-Sl-Oyq" id="6eE-mj-S5r"/>
                         <outlet property="hotelAddress" destination="8kU-sS-MS3" id="Jix-Nk-0yx"/>
                         <outlet property="hotelCost" destination="LWU-6Z-ZBW" id="vNs-1L-U3d"/>
                         <outlet property="hotelName" destination="5nI-w4-r21" id="xQ8-hy-cGP"/>

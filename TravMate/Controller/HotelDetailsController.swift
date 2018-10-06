@@ -28,6 +28,10 @@ class HotelDetailsController: UIViewController {
     
     @IBOutlet weak var hotelCost: UITextField!
     
+    @IBOutlet weak var hiddenHotelCost: UITextField!
+    
+    @IBOutlet weak var hiddenRoomType: UITextField!
+    
     @IBOutlet weak var hotelAddress: UITextField!
     
     @IBAction func saveHotel(_ sender: Any) {
@@ -91,6 +95,9 @@ class HotelDetailsController: UIViewController {
             hotelAddress.text = hotelData.hotelAddress[i]
             roomType.text = hotelData.roomType[i]
             hotelNotes.text = hotelData.hotelNotes[i]
+            
+            hiddenHotelCost.text = hotelData.hotelCost[i]
+            hiddenRoomType.text = hotelData.roomType[i]
             
         }
     }

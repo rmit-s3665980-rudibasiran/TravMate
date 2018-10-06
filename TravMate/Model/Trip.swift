@@ -40,7 +40,7 @@ struct Trip {
     var dCurrentHotel = DBHotel ()
     var dCurrentCafe = DBCafe ()
     
-    var startUpType = StartUpType.spankingNew     // control what kind of startup to begin with
+    var startUpType:StartUpType    // control what kind of startup to begin with
   
     init() {
         myCurrentTrip = -1
@@ -53,6 +53,9 @@ struct Trip {
             print ("dbCafe [a]: " + String(dbCafe.count))
         }
   
+        // change according to either of these:
+        // loadDummyData, run app, make changes, exit app, doPersistence
+        // spankingNew, run app, make changes, exit app, doPersistence
         startUpType = StartUpType.loadDummyData
         
         if (startUpType == StartUpType.loadDummyData) {

@@ -15,10 +15,11 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     @IBOutlet weak var tripsCollection: UICollectionView!
     
-    var trip:Trip = Trip.sharedInstance
+    // var trip:Trip = Trip.sharedInstance
     
     @IBAction func addTrip(_ sender: Any) {
         
+        // init new array for new trip
         Trip.sharedInstance.locationName.append("")
         Trip.sharedInstance.locationDays.append("")
         Trip.sharedInstance.locationCost.append("")
@@ -59,7 +60,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.restaurant.foodItemSmiley3.append(true)
         Trip.sharedInstance.restaurant.cafeRating.append(0)
        
-        Trip.sharedInstance.myCurrentTrip = trip.getSizeofData()
+        Trip.sharedInstance.myCurrentTrip = Trip.sharedInstance.getSizeofData()
         
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
         
@@ -76,27 +77,37 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
         Trip.sharedInstance.myCurrentTrip = -1
+        Trip.sharedInstance.clearEmptyData()
     }
    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         Trip.sharedInstance.myCurrentTrip = -1
         self.tripsCollection.reloadData()
+        Trip.sharedInstance.clearEmptyData()
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return trip.getSizeofData()
+        return Trip.sharedInstance.getSizeofData()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
    
-        cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
-        cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
-        cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]
-        
+        if (Trip.sharedInstance.useCoreData) {
+            let currentVacation = Trip.sharedInstance.dbTrip[indexPath.item]
+            
+            cell.tripName.text = currentVacation.dbLocationName!
+            cell.tripDays.text = currentVacation.dbLocationDays!
+            cell.tripCost.text = currentVacation.dbLocationCost!
+        }
+        else {
+            cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
+            cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
+            cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]
+        }
+      
         let picture = ["icon_london", "icon_newyork", "icon_paris", "icon_melbourne"]
         
         if (indexPath.row % 3 == 1) {

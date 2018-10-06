@@ -108,6 +108,7 @@ class FlightDetailsController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Trip.sharedInstance.myCurrentTab = TripTabController.flight
         self.do_load()
         
     }

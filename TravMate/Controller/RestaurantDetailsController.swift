@@ -43,12 +43,10 @@ class RestaurantDetailsController: UIViewController {
     
     
     @IBAction func foodBtn2(_ sender: Any) {
-        
         foodITem2isOn = !foodITem2isOn
         setButtonImage(foodBtn2Img, bool: foodITem2isOn)
         
     }
-    
     
     @IBOutlet weak var foodBtn3Img: UIButton!
     
@@ -104,9 +102,6 @@ class RestaurantDetailsController: UIViewController {
         alert.addAction(OKAction)
         
         self.present(alert, animated: true, completion: nil)
-        
-        
-        
        
     }
     
@@ -150,6 +145,7 @@ class RestaurantDetailsController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.restaurant
         
     }
     

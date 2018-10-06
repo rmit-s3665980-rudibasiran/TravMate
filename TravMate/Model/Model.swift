@@ -9,11 +9,13 @@
 //
 
 import Foundation
+import CoreData
+import UIKit
 
 class Model {
-    
+
     var about:String
-  
+    
     init(){
         about = "John Michael Ariola Tubera"
         about += "Wan Yi Beh"
@@ -23,12 +25,8 @@ class Model {
     func getAbout() -> String {
         return about
     }
-  
+
     
 }
 
-enum TripTabController: Int {
-    case flight = 0
-    case hotel = 1
-    case restaurant = 2
-}
+

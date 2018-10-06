@@ -137,21 +137,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x7e-Ti-5lG">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
-                                <items>
-                                    <navigationItem title="Trip Details" id="o0q-ze-zuy">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="4bl-wW-c7J">
-                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="fXC-Nw-aYp" kind="show" identifier="SegueBackToTrip" id="dRo-JU-ajD"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
                             <view contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5j3-nX-gLS">
-                                <rect key="frame" x="15" y="94" width="384" height="150"/>
+                                <rect key="frame" x="15" y="150" width="384" height="150"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="4y4-VJ-xah"/>
@@ -161,35 +148,8 @@
                                 <rect key="frame" x="15" y="364" width="384" height="288"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
-                                <rect key="frame" x="15" y="94" width="384" height="150"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
-                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
-                                        <accessibility key="accessibilityConfiguration" label="TripName"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
-                                        <rect key="frame" x="0.0" y="60" width="384" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                    </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
-                                        <rect key="frame" x="0.0" y="120" width="384" height="30"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
-                                    </textField>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="150" id="WGo-iH-Tum"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-vU-5gJ">
-                                <rect key="frame" x="15" y="294" width="384" height="100"/>
+                                <rect key="frame" x="15" y="350" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-xA-TNF">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -219,7 +179,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IpO-Hz-kWj">
-                                <rect key="frame" x="15" y="409" width="384" height="100"/>
+                                <rect key="frame" x="15" y="465" width="384" height="100"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-w8-vES">
                                         <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="100"/>
@@ -263,25 +223,49 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
+                                <rect key="frame" x="15" y="38" width="384" height="150"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
+                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                                        <accessibility key="accessibilityConfiguration" label="TripName"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
+                                        <rect key="frame" x="0.0" y="60" width="384" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
+                                        <rect key="frame" x="0.0" y="120" width="384" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="WGo-iH-Tum"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x7e-Ti-5lG" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" id="0pq-1u-5iE"/>
                             <constraint firstItem="IpO-Hz-kWj" firstAttribute="top" secondItem="seJ-vU-5gJ" secondAttribute="bottom" constant="15" id="12y-D4-rkj"/>
-                            <constraint firstItem="5j3-nX-gLS" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="50" id="4Ud-wo-Xe5"/>
-                            <constraint firstItem="x7e-Ti-5lG" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" id="4io-uH-9gQ"/>
+                            <constraint firstItem="seJ-vU-5gJ" firstAttribute="top" secondItem="dUD-9G-JYE" secondAttribute="bottom" constant="106" id="5vo-3w-hoL"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="trailing" secondItem="IpO-Hz-kWj" secondAttribute="trailing" constant="15" id="9CD-SM-6c2"/>
                             <constraint firstItem="QcQ-bl-YKl" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="Haq-lm-z8k"/>
                             <constraint firstItem="5j3-nX-gLS" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="KSp-ct-05I"/>
                             <constraint firstAttribute="bottom" secondItem="QcQ-bl-YKl" secondAttribute="bottom" constant="50" id="MHO-5d-Xvg"/>
                             <constraint firstItem="tTY-FD-TTf" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="Unh-0d-c0A"/>
                             <constraint firstItem="5j3-nX-gLS" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="bg2-wX-KAB"/>
-                            <constraint firstItem="dUD-9G-JYE" firstAttribute="top" secondItem="x7e-Ti-5lG" secondAttribute="bottom" constant="50" id="cvY-i2-AI4"/>
                             <constraint firstItem="tTY-FD-TTf" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="dWn-cn-T9Q"/>
                             <constraint firstItem="dUD-9G-JYE" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="ezh-5F-nQD"/>
+                            <constraint firstItem="X6R-4U-KNe" firstAttribute="top" secondItem="dUD-9G-JYE" secondAttribute="bottom" constant="-244" id="jfm-hZ-gjV"/>
                             <constraint firstItem="IpO-Hz-kWj" firstAttribute="leading" secondItem="X6R-4U-KNe" secondAttribute="leading" constant="15" id="kDc-st-v7s"/>
                             <constraint firstAttribute="trailing" secondItem="QcQ-bl-YKl" secondAttribute="trailing" constant="15" id="oH3-cM-lX4"/>
-                            <constraint firstItem="x7e-Ti-5lG" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="uXd-gn-Dgc"/>
                             <constraint firstItem="X6R-4U-KNe" firstAttribute="bottom" secondItem="tTY-FD-TTf" secondAttribute="bottom" constant="84" id="usv-jC-tpa"/>
                             <constraint firstItem="seJ-vU-5gJ" firstAttribute="top" secondItem="5j3-nX-gLS" secondAttribute="bottom" constant="50" id="vtx-zf-vKn"/>
                             <constraint firstItem="dUD-9G-JYE" firstAttribute="trailing" secondItem="X6R-4U-KNe" secondAttribute="trailing" constant="-15" id="xm5-Zu-Xan"/>
@@ -290,7 +274,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="X6R-4U-KNe"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Add a Trip" largeTitleDisplayMode="never" id="iBq-97-sBA">
+                    <navigationItem key="navigationItem" title="Trip" largeTitleDisplayMode="never" id="iBq-97-sBA">
                         <barButtonItem key="rightBarButtonItem" title="Save" image="navbar_save" id="fE1-GR-H1z" userLabel="BtnSaveTrip">
                             <color key="tintColor" red="0.94509803920000002" green="0.79607843140000001" blue="0.43529411759999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>
@@ -321,12 +305,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Hotel" id="na9-Fx-Fai">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="GCW-bC-h01" userLabel="Back">
-                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="fXC-Nw-aYp" kind="show" id="WHm-Rm-d7Y"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Save" image="navbar_save" id="pyL-fd-3ij">
                                                 <color key="tintColor" red="0.99215686270000003" green="0.79607843140000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -495,12 +473,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Restaurant" id="70t-DX-871">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="h8C-8l-HXc" userLabel="Back">
-                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="fXC-Nw-aYp" kind="show" id="q0j-g8-r0Z"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Save" image="navbar_save" id="X19-lm-PDu">
                                                 <color key="tintColor" red="0.94509803921568625" green="0.79607843137254897" blue="0.43529411764705883" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -736,12 +708,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                 <items>
                                     <navigationItem title="Flight" id="AiO-bJ-To4">
-                                        <barButtonItem key="leftBarButtonItem" title="Back" image="navbar_back" id="0k9-zB-JXC" userLabel="Back">
-                                            <color key="tintColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <connections>
-                                                <segue destination="fXC-Nw-aYp" kind="show" id="auT-Pk-vaS"/>
-                                            </connections>
-                                        </barButtonItem>
                                         <rightBarButtonItems>
                                             <barButtonItem title="Save" image="navbar_save" id="bbQ-Ni-vSs">
                                                 <color key="tintColor" red="0.99215686270000003" green="0.79607843140000001" blue="0.25882352939999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -992,7 +958,6 @@
         <image name="hotel" width="1000" height="750"/>
         <image name="icon_newyork" width="97" height="130"/>
         <image name="logo" width="43" height="42"/>
-        <image name="navbar_back" width="12" height="20"/>
         <image name="navbar_save" width="15" height="15"/>
         <image name="navbar_share" width="13" height="15"/>
         <image name="smile" width="30" height="30"/>
@@ -1002,7 +967,10 @@
         <image name="tabbar_hotel" width="20" height="20"/>
         <image name="trash" width="22" height="30"/>
     </resources>
+<<<<<<< HEAD
     <inferredMetricsTieBreakers>
         <segue reference="WHm-Rm-d7Y"/>
     </inferredMetricsTieBreakers>
+=======
+>>>>>>> 76ab721d67dc8f15225f2c7545931ea33c99b3d2
 </document>

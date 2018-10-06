@@ -2,7 +2,9 @@
 //  TabbyController.swift
 //  TravMate
 //
-//  Created by wanyii on 17/9/18.
+//  Created by Wan Yi Beh on 17/9/18.
+//  - Rudi Basiran
+//  - John Michael Ariola Tubera
 //  Copyright © 2018 RMIT. All rights reserved.
 //
 

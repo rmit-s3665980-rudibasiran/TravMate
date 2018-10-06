@@ -43,17 +43,19 @@ class FlightDetailsController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             
-            Trip.sharedInstance.flight.flightPortFrom[Trip.sharedInstance.myCurrentTrip] = self.flightPortFrom.text!
-            Trip.sharedInstance.flight.flightDepartNo[Trip.sharedInstance.myCurrentTrip] = self.flightDepartNo.text!
-            Trip.sharedInstance.flight.flightReturnNo[Trip.sharedInstance.myCurrentTrip] = self.flightReturnNo.text!
-            Trip.sharedInstance.flight.flightPortTo[Trip.sharedInstance.myCurrentTrip] = self.flightPortTo.text!
-            Trip.sharedInstance.flight.flightDepartDate[Trip.sharedInstance.myCurrentTrip] = self.flightDepartDate.text!
-            Trip.sharedInstance.flight.flightReturnDate[Trip.sharedInstance.myCurrentTrip] = self.flightReturnDate.text!
-            Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = self.flightDepartTime.text!
-            Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = self.flightReturnTime.text!
-            Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = self.flightCost.text!
-            Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = self.flightDuration.text!
-            Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = self.flightType.text!
+            Trip.sharedInstance.saveFlight(
+                tFlightDepartNo: self.flightDepartNo.text!,
+                tFlightReturnNo: self.flightReturnNo.text!,
+                tFlightPortFrom: self.flightPortFrom.text!,
+                tFlightPortTo: self.flightPortTo.text!,
+                tFlightDepartDate: self.flightDepartDate.text!,
+                tFlightDepartTime: self.flightDepartTime.text!,
+                tFlightReturnDate: self.flightReturnDate.text!,
+                tFlightReturnTime: self.flightReturnTime.text!,
+                tFlightCost: self.flightCost.text!,
+                tFlightType: self.flightType.text!,
+                tFlightDuration: self.flightDuration.text!)
+         
             
         })
         

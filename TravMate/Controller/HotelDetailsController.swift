@@ -36,14 +36,17 @@ class HotelDetailsController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             
-            Trip.sharedInstance.hotel.hotelNotes[Trip.sharedInstance.myCurrentTrip] = self.hotelNotes.text!
-            Trip.sharedInstance.hotel.roomType[Trip.sharedInstance.myCurrentTrip] = self.roomType.text!
-            Trip.sharedInstance.hotel.hotelName[Trip.sharedInstance.myCurrentTrip] = self.hotelName.text!
-            Trip.sharedInstance.hotel.hotelCheckIn[Trip.sharedInstance.myCurrentTrip] = self.checkInDate.text!
-            Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = self.checkOutDate.text!
-            Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = self.hotelAddress.text!
-            Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = self.hotelCost.text!
-            Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = self.hotelRating.starsRating
+            Trip.sharedInstance.saveHotel(
+                tHotelName: self.hotelName.text!,
+                tHotelCheckIn: self.checkInDate.text!,
+                tHotelCheckOut: self.checkOutDate.text!,
+                tHotelCost: self.hotelCost.text!,
+                tHotelAddress: self.hotelAddress.text!,
+                tHotelroomType: self.roomType.text!,
+                tHotelNotes: self.hotelNotes.text!,
+                tHotelRating: Int16(self.hotelRating.starsRating))
+            
+            
             
         })
         

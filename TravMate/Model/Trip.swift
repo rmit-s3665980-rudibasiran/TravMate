@@ -21,7 +21,6 @@ struct Trip {
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
   
-    
     var locationName:[String] = []
     var locationDays:[String] = []
     var locationCost:[String] = []
@@ -142,6 +141,77 @@ struct Trip {
         locationName[myCurrentTrip] = tLocationName
         locationDays[myCurrentTrip] = tLocationDay
         locationCost[myCurrentTrip] = tLocationCost
+        
+    }
+    
+    mutating func saveFlight(
+        tFlightDepartNo: String,
+        tFlightReturnNo: String,
+        tFlightPortFrom: String,
+        tFlightPortTo: String,
+        tFlightDepartDate: String,
+        tFlightDepartTime: String,
+        tFlightReturnDate: String,
+        tFlightReturnTime: String,
+        tFlightCost: String,
+        tFlightType: String,
+        tFlightDuration: String) {
+        
+        saveFlightToDB(pFlightDepartNo: tFlightDepartNo,
+                       pFlightReturnNo: tFlightReturnNo,
+                       pFlightPortFrom: tFlightPortFrom,
+                       pFlightPortTo: tFlightPortTo,
+                       pFlightDepartDate: tFlightDepartDate,
+                       pFlightDepartTime: tFlightDepartTime,
+                       pFlightReturnDate: tFlightReturnDate,
+                       pFlightReturnTime: tFlightReturnTime,
+                       pFlightCost: tFlightCost,
+                       pFlightType: tFlightType,
+                       pFlightDuration: tFlightDuration,
+                       existing: dCurrentFlight)
+        
+        flight.flightPortFrom[myCurrentTrip] = tFlightPortFrom
+        flight.flightDepartNo[myCurrentTrip] = tFlightDepartNo
+        flight.flightReturnNo[myCurrentTrip] = tFlightReturnNo
+        flight.flightPortTo[myCurrentTrip] = tFlightPortTo
+        flight.flightDepartDate[myCurrentTrip] = tFlightDepartDate
+        flight.flightReturnDate[myCurrentTrip] = tFlightReturnDate
+        flight.flightDepartTime[myCurrentTrip] = tFlightDepartTime
+        flight.flightReturnTime[myCurrentTrip] = tFlightReturnTime
+        flight.flightCost[myCurrentTrip] = tFlightCost
+        flight.flightDuration[myCurrentTrip] = tFlightDuration
+        flight.flightType[myCurrentTrip] = tFlightType
+    }
+    
+    mutating func saveHotel(
+        tHotelName: String,
+        tHotelCheckIn: String,
+        tHotelCheckOut: String,
+        tHotelCost: String,
+        tHotelAddress: String,
+        tHotelroomType: String,
+        tHotelNotes: String,
+        tHotelRating: Int16) {
+        
+        saveHotelToDB(
+            pHotelName: tHotelName,
+            pHotelCheckIn: tHotelCheckIn,
+            pHotelCheckOut: tHotelCheckOut,
+            pHotelCost: tHotelCost,
+            pHotelAddress: tHotelAddress,
+            pHotelroomType: tHotelroomType,
+            pHotelNotes: tHotelNotes,
+            pHotelRating: tHotelRating,
+            existing: dCurrentHotel)
+        
+        hotel.hotelNotes[myCurrentTrip] = tHotelNotes
+        hotel.roomType[myCurrentTrip] = tHotelroomType
+        hotel.hotelName[myCurrentTrip] = tHotelName
+        hotel.hotelCheckIn[myCurrentTrip] = tHotelCheckIn
+        hotel.hotelCheckOut[myCurrentTrip] = tHotelCheckOut
+        hotel.hotelAddress[myCurrentTrip] = tHotelAddress
+        hotel.hotelCost[myCurrentTrip] = tHotelCost
+        hotel.hotelRating[myCurrentTrip] = Int(tHotelRating)
         
     }
     

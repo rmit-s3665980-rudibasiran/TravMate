@@ -25,8 +25,12 @@ class Model {
     func getAbout() -> String {
         return about
     }
+}
 
-    
+enum TripTabController: Int {
+    case flight = 0
+    case hotel = 1
+    case restaurant = 2
 }
 
 

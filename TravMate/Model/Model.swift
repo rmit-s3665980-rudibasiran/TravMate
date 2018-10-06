@@ -33,5 +33,12 @@ enum TripTabController: Int {
     case restaurant = 2
 }
 
+enum StartUpType : Int {
+    case spankingNew = 0
+    case loadDummyData = 1
+    case doPersistence = 2
+
+}
+
 
 

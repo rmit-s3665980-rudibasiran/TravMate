@@ -17,7 +17,6 @@ struct Trip {
     static var sharedInstance = Trip()
     
     var debugMode = true
-    var startFromScratch = false // change to true to init; false to test persistent data
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
   
@@ -41,6 +40,7 @@ struct Trip {
     var dCurrentHotel = DBHotel ()
     var dCurrentCafe = DBCafe ()
     
+    var startUpType = StartUpType.spankingNew     // control what kind of startup to begin with
   
     init() {
         myCurrentTrip = -1
@@ -53,7 +53,9 @@ struct Trip {
             print ("dbCafe [a]: " + String(dbCafe.count))
         }
   
-        if (startFromScratch) {
+        startUpType = StartUpType.loadDummyData
+        
+        if (startUpType == StartUpType.loadDummyData) {
             deleteDataFromDB("DBTrip")
             deleteDataFromDB("DBFlight")
             deleteDataFromDB("DBHotel")
@@ -61,12 +63,18 @@ struct Trip {
             loadDatafromArrayforTesting()
             populateDBfromInitialArray()
         }
-        else {
+        else if (startUpType == StartUpType.doPersistence) {
             getTripFromCoreData()
             getFlightFromCoreData()
             getHotelFromCoreData()
             getCafeFromCoreData()
             loadDataFromCoreToArray()
+        }
+        else if (startUpType == StartUpType.spankingNew) {
+            deleteDataFromDB("DBTrip")
+            deleteDataFromDB("DBFlight")
+            deleteDataFromDB("DBHotel")
+            deleteDataFromDB("DBCafe")
         }
         
         if (debugMode) {
@@ -80,9 +88,44 @@ struct Trip {
     mutating func loadDataFromCoreToArray() {
         
         // clear array of data
-        for i in 0 ..< locationName.count {
-            deleteArray(i)
-        }
+        locationName.removeAll()
+        locationCost.removeAll()
+        locationDays.removeAll()
+        
+        flight.flightDepartNo.removeAll()
+        flight.flightReturnNo.removeAll()
+        flight.flightPortFrom.removeAll()
+        flight.flightPortTo.removeAll()
+        flight.flightDepartDate.removeAll()
+        flight.flightDepartTime.removeAll()
+        flight.flightReturnDate.removeAll()
+        flight.flightReturnTime.removeAll()
+        flight.flightCost.removeAll()
+        flight.flightType.removeAll()
+        flight.flightDuration.removeAll()
+        
+        hotel.hotelName.removeAll()
+        hotel.hotelCheckIn.removeAll()
+        hotel.hotelCheckOut.removeAll()
+        hotel.hotelCost.removeAll()
+        hotel.hotelAddress.removeAll()
+        hotel.roomType.removeAll()
+        hotel.hotelNotes.removeAll()
+        hotel.hotelRating.removeAll()
+        
+        restaurant.cafeName.removeAll()
+        restaurant.cafeAddress.removeAll()
+        restaurant.cafeType.removeAll()
+        restaurant.cafeCost.removeAll()
+        restaurant.cafePax.removeAll()
+        restaurant.cafeNotes.removeAll()
+        restaurant.foodItem1.removeAll()
+        restaurant.foodItem2.removeAll()
+        restaurant.foodItem3.removeAll()
+        restaurant.foodItemSmiley1.removeAll()
+        restaurant.foodItemSmiley2.removeAll()
+        restaurant.foodItemSmiley3.removeAll()
+        restaurant.cafeRating.removeAll()
         
         for i in 0 ..< dbTrip.count {
             locationName.append(dbTrip[i].dbLocationName!)
@@ -347,7 +390,44 @@ struct Trip {
         }
     }
     
+    mutating func clearDBofItem() {
+        
+        if (debugMode) {
+            print ("dbTrip [del i]: " + String(dbTrip.count))
+            print ("dbFlight [del i]: " + String(dbFlight.count))
+            print ("dbHotal [del i]: " + String(dbHotel.count))
+            print ("dbCafe [del i]: " + String(dbCafe.count))
+        }
+        
+
+        managedContext.delete(dCurrentTrip)
+        updateDatabase()
+       
+        managedContext.delete(dCurrentFlight)
+        updateDatabase()
+        
+        managedContext.delete(dCurrentHotel)
+        updateDatabase()
+        
+        managedContext.delete(dCurrentCafe)
+        updateDatabase()
+        
+        getTripFromCoreData()
+        getFlightFromCoreData()
+        getHotelFromCoreData()
+        getCafeFromCoreData()
+        loadDataFromCoreToArray()
+        
+        if (debugMode) {
+            print ("dbTrip [del ii]: " + String(dbTrip.count))
+            print ("dbFlight [del ii]: " + String(dbFlight.count))
+            print ("dbHotal [del ii]: " + String(dbHotel.count))
+            print ("dbCafe [del ii]: " + String(dbCafe.count))
+        }
+    }
+    
     mutating func clearData() {
+        
         locationName[myCurrentTrip] = ""
         locationDays[myCurrentTrip] = ""
         locationCost[myCurrentTrip] = ""
@@ -484,6 +564,7 @@ struct Trip {
     }
     
     mutating func getTripFromCoreData () {
+        dbTrip.removeAll()
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBTrip")
             let results = try managedContext.fetch(fetchRequest)
@@ -495,6 +576,7 @@ struct Trip {
     }
     
     mutating func getFlightFromCoreData () {
+        dbFlight.removeAll()
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBFlight")
             let results = try managedContext.fetch(fetchRequest)
@@ -506,6 +588,7 @@ struct Trip {
     }
     
     mutating func getHotelFromCoreData () {
+        dbHotel.removeAll()
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBHotel")
             let results = try managedContext.fetch(fetchRequest)
@@ -517,6 +600,7 @@ struct Trip {
     }
     
     mutating func getCafeFromCoreData () {
+        dbCafe.removeAll()
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBCafe")
             let results = try managedContext.fetch(fetchRequest)

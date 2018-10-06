@@ -18,7 +18,9 @@ class TripDetailsController: UIViewController {
         let alert = UIAlertController(title: "TRIP", message: "Delete Data?", preferredStyle: .alert)
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
+            
             Trip.sharedInstance.clearData()
+            Trip.sharedInstance.clearDBofItem()
             self.navigationController?.popToRootViewController(animated: true)
       
         })

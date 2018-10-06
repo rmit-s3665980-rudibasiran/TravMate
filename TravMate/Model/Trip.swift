@@ -266,7 +266,11 @@ struct Trip {
         }
     }
     
-    mutating func saveTrip(pLocationName: String, pLocationDay: String, pLocationCost: String, existing: DBTrip?) {
+    mutating func saveTrip(
+        pLocationName: String,
+        pLocationDay: String,
+        pLocationCost: String,
+        existing: DBTrip?) {
         
         let entity = NSEntityDescription.entity(forEntityName: "DBTrip", in: managedContext)
         
@@ -284,6 +288,55 @@ struct Trip {
         }
         updateDatabase()
     }
+    
+    mutating func saveFlight(
+        pFlightDepartNo: String,
+        pFlightReturnNo: String,
+        pFlightPortFrom: String,
+        pFlightPortTo: String,
+        pFlightDepartDate: String,
+        pFlightDepartTime: String,
+        pFlightReturnDate: String,
+        pFlightReturnTime: String,
+        pFlightCost: String,
+        pFlightType: String,
+        pFlightDuration: String,
+        existing: DBFlight?) {
+        
+        let entity = NSEntityDescription.entity(forEntityName: "DBFlight", in: managedContext)
+        
+        if let _ = existing {
+            existing!.dbFlightDepartNo = pFlightDepartNo
+            existing!.dbFlightReturnNo = pFlightReturnNo
+            existing!.dbFlightPortFrom = pFlightPortFrom
+            existing!.dbFlightPortTo = pFlightPortTo
+            existing!.dbFlightDepartDate = pFlightDepartDate
+            existing!.dbFlightDepartTime = pFlightDepartTime
+            existing!.dbFlightReturnDate = pFlightReturnDate
+            existing!.dbFlightReturnTime = pFlightReturnTime
+            existing!.dbFlightCost = pFlightCost
+            existing!.dbFlightType = pFlightType
+            existing!.dbFlightDuration = pFlightDuration
+        }
+        else {
+            let flight = NSManagedObject(entity: entity!, insertInto: managedContext) as! DBFlight
+            flight.setValue(pFlightDepartNo, forKey: "dbFlightDepartNo")
+            flight.setValue(pFlightReturnNo, forKey: "dbFlightReturnNo")
+            flight.setValue(pFlightPortFrom, forKey: "dbFlightPortFrom")
+            flight.setValue(pFlightPortTo, forKey: "dbFlightPortTo")
+            flight.setValue(pFlightDepartDate, forKey: "dbFlightDepartDate")
+            flight.setValue(pFlightDepartTime, forKey: "dbFlightDepartTime")
+            flight.setValue(pFlightReturnDate, forKey: "dbFlightReturnDate")
+            flight.setValue(pFlightReturnTime, forKey: "dbFlightReturnTime")
+            flight.setValue(pFlightCost, forKey: "dbFlightCost")
+            flight.setValue(pFlightType, forKey: "dbFlightType")
+            flight.setValue(pFlightDuration, forKey: "dbFlightDuration")
+            
+            dbFlight.append(flight)
+        }
+        updateDatabase()
+    }
+
     
     func getTrip(_ indexPath: IndexPath) -> DBTrip {
         return dbTrip[indexPath.row]

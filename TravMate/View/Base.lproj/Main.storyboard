@@ -322,6 +322,10 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4pD-ut-X9s">
+                                <rect key="frame" x="87" y="272" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </scrollView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Ali-7L-BWi">
                                 <rect key="frame" x="15" y="74" width="384" height="540"/>
                                 <subviews>
@@ -967,10 +971,4 @@
         <image name="tabbar_hotel" width="20" height="20"/>
         <image name="trash" width="22" height="30"/>
     </resources>
-<<<<<<< HEAD
-    <inferredMetricsTieBreakers>
-        <segue reference="WHm-Rm-d7Y"/>
-    </inferredMetricsTieBreakers>
-=======
->>>>>>> 76ab721d67dc8f15225f2c7545931ea33c99b3d2
 </document>

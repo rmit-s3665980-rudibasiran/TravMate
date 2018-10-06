@@ -16,9 +16,11 @@ struct Trip {
     
     static var sharedInstance = Trip()
     
+    var debugMode = true
+    var startFromScratch = true // change to true to init; false to test persistent data
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
-    var useCoreData = false // change to true or false to test persistent data
+    var useCoreData = false
     
     var locationName:[String] = []
     var locationDays:[String] = []
@@ -40,25 +42,44 @@ struct Trip {
         myCurrentTrip = -1
         managedContext = appDelegate.persistentContainer.viewContext
         
-        if (useCoreData) {
-            deleteAllData()
-            populateDB()
+        if (debugMode) {
+            print ("dbTrip [a]: " + String(dbTrip.count))
+            print ("dbFlight [a]: " + String(dbFlight.count))
+            print ("dbHotal [a]: " + String(dbHotel.count))
+            print ("dbCafe [a]: " + String(dbCafe.count))
+        }
+  
+        if (startFromScratch) {
+            deleteDataFromDB("DBTrip")
+            deleteDataFromDB("DBFlight")
+            deleteDataFromDB("DBHotel")
+            deleteDataFromDB("DBCafe")
+            loadDatafromArrayforTesting()
+            populateDBfromInitialArray()
+            useCoreData = true
+        }
+        else {
             getTripFromCoreData()
             getFlightFromCoreData()
             getHotelFromCoreData()
             getCafeFromCoreData()
         }
-        else {
-            loadDataforTesting()
+        
+        if (debugMode) {
+            print ("dbTrip [b]: " + String(dbTrip.count))
+            print ("dbFlight [b]: " + String(dbFlight.count))
+            print ("dbHotal [b]: " + String(dbHotel.count))
+            print ("dbCafe [b]: " + String(dbCafe.count))
         }
     }
     
-    
-    
-    mutating func populateDB() {
+    mutating func populateDBfromInitialArray() {
         for (index, value) in locationName.enumerated() {
-            saveTrip(pLocationName: (value), pLocationDay: locationDays[(index)], pLocationCost: locationCost[(index)], existing: nil)
+            saveTrip(pLocationName: (value),
+                     pLocationDay: locationDays[(index)],
+                     pLocationCost: locationCost[(index)], existing: nil)
         }
+   
         for (indexF, valueF) in flight.flightDepartNo.enumerated() {
             saveFlight(pFlightDepartNo: (valueF),
                        pFlightReturnNo: flight.flightReturnNo[(indexF)],
@@ -73,6 +94,7 @@ struct Trip {
                        pFlightDuration: flight.flightDuration[(indexF)],
                        existing: nil)
         }
+       
         for (indexH, valueH) in hotel.hotelName.enumerated() {
             saveHotel(pHotelName: (valueH),
                       pHotelCheckIn: hotel.hotelCheckIn[(indexH)],
@@ -84,6 +106,7 @@ struct Trip {
                       pHotelRating: Int16(hotel.hotelRating[(indexH)]),
                       existing: nil)
         }
+        
         for (indexC, valueC) in restaurant.cafeName.enumerated() {
             saveCafe(pCafeName: (valueC),
                      pCafeAddress: restaurant.cafeAddress[(indexC)],
@@ -212,27 +235,22 @@ struct Trip {
         Trip.sharedInstance.restaurant.cafeRating.remove(at: i)
     }
 
-    mutating func deleteAllData() {
-        // let fetchRequest = NSFetchRequest(entityName: "Vacation")
-        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBTrip")
-        
-        // Configure Fetch Request
+    mutating func deleteDataFromDB(_ eName:String) {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: eName)
         fetchRequest.includesPropertyValues = false
         
-        do {
-            let items = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
-
+        do { let items = try managedContext.fetch(fetchRequest) as! [NSManagedObject]
             for item in items {
                 managedContext.delete(item)
             }
-            
             try managedContext.save()
             
         } catch let error as NSError {
-            print("Could not delete all \(error), \(error.userInfo)")
+            print("Could not delete all \(eName) \(error), \(error.userInfo)")
         }
-        
     }
+    
+    
     
     func updateDatabase() {
         do {
@@ -474,7 +492,7 @@ struct Trip {
             cafe.setValue(pCafefoodItem2, forKey: "dbCafefoodItem2")
             cafe.setValue(pCafefoodItem3, forKey: "dbCafefoodItem3")
             cafe.setValue(pCafefoodItemSmiley1, forKey: "dbCafefoodItemSmiley1")
-            cafe.setValue(pCafefoodItemSmiley2, forKey: "dbCafefoodItemSmiley2bb")
+            cafe.setValue(pCafefoodItemSmiley2, forKey: "dbCafefoodItemSmiley2")
             cafe.setValue(pCafefoodItemSmiley3, forKey: "dbCafefoodItemSmiley3")
             cafe.setValue(pCafeRating, forKey: "dbCafeRating")
             
@@ -499,7 +517,7 @@ struct Trip {
         return dbCafe[indexPath.row]
     }
     
-    mutating func loadDataforTesting() {
+    mutating func loadDatafromArrayforTesting() {
         print ("loading data 1")
         locationName.append(contentsOf: ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"])
         locationDays.append(contentsOf: ["10 Days", "11 Days", "14 Days", "5 Days"])

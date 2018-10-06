@@ -98,7 +98,6 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
    
         if (Trip.sharedInstance.useCoreData) {
             let currentVacation = Trip.sharedInstance.dbTrip[indexPath.item]
-            
             cell.tripName.text = currentVacation.dbLocationName!
             cell.tripDays.text = currentVacation.dbLocationDays!
             cell.tripCost.text = currentVacation.dbLocationCost!

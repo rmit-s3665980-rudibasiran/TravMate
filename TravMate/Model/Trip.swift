@@ -806,12 +806,10 @@ struct Trip {
     }
     
     mutating func loadDatafromArrayforTesting() {
-        print ("loading data 1")
         locationName.append(contentsOf: ["LONDON, ENGLAND", "NEW YORK, USA", "PARIS, FRANCE", "MEBOURNE, AUSTRALIA"])
         locationDays.append(contentsOf: ["10 Days", "11 Days", "14 Days", "5 Days"])
         locationCost.append(contentsOf: ["$5,000" , "$7,000", "$8,000", "$500"])
-        
-        print ("loading data 2")
+
         flight.flightDepartNo.append(
             contentsOf: ["BA 101", "PANAM 202", "AIR FRANCE 303", "VIRGIN 404"])
         flight.flightReturnNo.append(
@@ -834,10 +832,12 @@ struct Trip {
             contentsOf: ["Return","Single","Return","Domestic"])
         flight.flightDuration.append(
             contentsOf: ["14 hrs", "12 hrs", "12 hrs", "3 hrs"])
-        
-        print ("loading data 3")
+
         hotel.hotelName.append(
-            contentsOf:  ["Le Méridien", "IBIS NYC", "Crown Hotels", "Hays Apartment"])
+            contentsOf:  ["Park Plaza Westminster Bridge Hotel",
+                          "The Empire Hotel",
+                          "Hôtel Europe St Severin",
+                          "Batman Apartments"])
         hotel.hotelCheckIn.append(
             contentsOf: ["15 May 2018", "14 Feb 2018", "4 Aug 2018" , "7 Oct 2018"])
         hotel.hotelCheckOut.append(
@@ -847,16 +847,18 @@ struct Trip {
         hotel.hotelCost.append(
             contentsOf: ["$200", "$90", "$120", "$150"])
         hotel.hotelAddress.append(
-            contentsOf: ["1 Cambridge Street", "2 Times Square", "3 Reu du Mar", "4 Hay Street"])
+            contentsOf: ["200 Westminster Bridge Road, SE1 7UT, London, United Kingdom",
+                         "44 West 63rd Street, 10023, New York, USA",
+                         "38-40, rue St Séverin, Paris 75005, France",
+                         "53 Gaffney Street, Coburg 3058, Victoria, Australia"])
         hotel.hotelNotes.append(
-            contentsOf: ["Stay at our chic Le Méridien made for the creative and inspired",
-                         "Welcome to IBIS NYC!" ,
-                         "Crown Hotels - a class of its own" ,
-                         "Hays Apartment - Right at the doorstep of ..."])
+            contentsOf: ["Stay at at Westminster Bridge Hotel to experience British hospitality",
+                         "Welcome to Empire Hotel, minutes away from the Statue of Liberty" ,
+                         "Europe St Severin - made for the creative and inspired" ,
+                         "Batman Apartments - Right at the doorstep of ..."])
         hotel.hotelRating.append(
             contentsOf:[1,2,3,4])
         
-        print ("loading data 4")
         restaurant.cafeName.append(
             contentsOf:  ["Le Clec", "Spudbar", "Coup du Poullet", "McDonalds"])
         restaurant.cafeAddress.append(
@@ -890,7 +892,7 @@ struct Trip {
             contentsOf:  [true, true, true, true])
         restaurant.cafeRating.append(
             contentsOf:  [1,2,3,4])
-        print ("loading data 5")
+
     }
 }
 

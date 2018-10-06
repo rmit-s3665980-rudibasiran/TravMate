@@ -10,6 +10,7 @@
 
 import Foundation
 import UIKit
+import MapKit
 
 class HotelDetailsController: UIViewController {
   
@@ -33,6 +34,9 @@ class HotelDetailsController: UIViewController {
     @IBOutlet weak var hiddenRoomType: UITextField!
     
     @IBOutlet weak var hotelAddress: UITextField!
+    
+    
+    @IBOutlet weak var mapView: MKMapView!
     
     @IBAction func saveHotel(_ sender: Any) {
         
@@ -102,11 +106,72 @@ class HotelDetailsController: UIViewController {
         }
     }
     
+    
+    func searchForLocation () {
+        
+        // Create a Coordinate Locator
+        let geoCoder = CLGeocoder()
+        var coords: CLLocationCoordinate2D?
+        
+        // Determine the zoom level of the map to display
+        let span = MKCoordinateSpanMake(0.01, 0.01)
+        
+        geoCoder.geocodeAddressString (hotelAddress.text!, completionHandler: {(placemarks: [ CLPlacemark]?, error: Error?) -> Void in
+            if let placemark = placemarks?[0]
+            {
+                // Convert the address to a coordinate
+                let location = placemark.location
+                coords = location!.coordinate
+                
+                // Set the map to the coordinate
+                let region = MKCoordinateRegion (center: coords!, span: span)
+                self.mapView.region = region
+                
+                // Add a pin to the address location
+                self.mapView.addAnnotation( MKPlacemark (placemark: placemark))
+            }
+        })
+        
+    }
+    fileprivate let locationManager = CLLocationManager()
+    fileprivate var previousPoint: CLLocation?
+    // How far do you move (in meters) before you receive an update.
+    fileprivate var totalMovementDistance = CLLocationDistance(0)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.do_load()
         Trip.sharedInstance.myCurrentTab = TripTabController.hotel
         
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        // how often do you want to receive updates.
+        locationManager.distanceFilter = 50
         
+        if (hotelAddress.text != "") {
+            searchForLocation()
+        }
+   
+        
+    }
+}
+
+
+extension HotelDetailsController: CLLocationManagerDelegate
+{
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus)
+    {
+        print ( "Authorization status changed to \(status.rawValue) ")
+        switch status
+        {
+        case .authorizedAlways, . authorizedWhenInUse:
+            locationManager.startUpdatingLocation()
+            mapView.showsUserLocation = true
+            
+        default:
+            locationManager.stopUpdatingLocation()
+            mapView.showsUserLocation = false
+        }
     }
 }

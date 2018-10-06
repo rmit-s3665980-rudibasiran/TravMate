@@ -595,6 +595,7 @@
                         <outlet property="hotelName" destination="5nI-w4-r21" id="xQ8-hy-cGP"/>
                         <outlet property="hotelNotes" destination="VHN-xz-hXe" id="yZq-lk-3TB"/>
                         <outlet property="hotelRating" destination="VCP-m0-6Ft" id="YP9-49-fzK"/>
+                        <outlet property="mapView" destination="LX1-7Z-mDB" id="pf7-5K-HAd"/>
                         <outlet property="roomType" destination="ISu-gl-cwN" id="QlI-fn-S7i"/>
                     </connections>
                 </viewController>

@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		6A0A0DAF214E80D90012EDC2 /* TravMateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0A0DAE214E80D90012EDC2 /* TravMateUITests.swift */; };
+		6A31DFEF216844C00022C7B7 /* DBFlight+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFE9216844C00022C7B7 /* DBFlight+CoreDataClass.swift */; };
+		6A31DFF0216844C00022C7B7 /* DBFlight+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFEA216844C00022C7B7 /* DBFlight+CoreDataProperties.swift */; };
+		6A31DFF1216844C00022C7B7 /* DBCafe+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFEB216844C00022C7B7 /* DBCafe+CoreDataClass.swift */; };
+		6A31DFF2216844C00022C7B7 /* DBCafe+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFEC216844C00022C7B7 /* DBCafe+CoreDataProperties.swift */; };
+		6A31DFF3216844C00022C7B7 /* DBHotel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFED216844C00022C7B7 /* DBHotel+CoreDataClass.swift */; };
+		6A31DFF4216844C00022C7B7 /* DBHotel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A31DFEE216844C00022C7B7 /* DBHotel+CoreDataProperties.swift */; };
 		6A3C5347214907F7008A8D45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C5346214907F7008A8D45 /* AppDelegate.swift */; };
 		6A3C5349214907F7008A8D45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3C5348214907F7008A8D45 /* ViewController.swift */; };
 		6A3C534C214907F7008A8D45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6A3C534A214907F7008A8D45 /* Main.storyboard */; };
@@ -46,6 +52,12 @@
 		6A0A0DAC214E80D90012EDC2 /* TravMateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravMateUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A0A0DAE214E80D90012EDC2 /* TravMateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravMateUITests.swift; sourceTree = "<group>"; };
 		6A0A0DB0214E80D90012EDC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A31DFE9216844C00022C7B7 /* DBFlight+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBFlight+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A31DFEA216844C00022C7B7 /* DBFlight+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBFlight+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A31DFEB216844C00022C7B7 /* DBCafe+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBCafe+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A31DFEC216844C00022C7B7 /* DBCafe+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBCafe+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		6A31DFED216844C00022C7B7 /* DBHotel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBHotel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		6A31DFEE216844C00022C7B7 /* DBHotel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DBHotel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		6A3C5343214907F7008A8D45 /* TravMate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravMate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6A3C5346214907F7008A8D45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6A3C5348214907F7008A8D45 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +147,12 @@
 		6A6DBB4221493ECC007FA7C9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6A31DFE9216844C00022C7B7 /* DBFlight+CoreDataClass.swift */,
+				6A31DFEA216844C00022C7B7 /* DBFlight+CoreDataProperties.swift */,
+				6A31DFEB216844C00022C7B7 /* DBCafe+CoreDataClass.swift */,
+				6A31DFEC216844C00022C7B7 /* DBCafe+CoreDataProperties.swift */,
+				6A31DFED216844C00022C7B7 /* DBHotel+CoreDataClass.swift */,
+				6A31DFEE216844C00022C7B7 /* DBHotel+CoreDataProperties.swift */,
 				6AEFC7082167ADBA00B8D41C /* DBTrip+CoreDataClass.swift */,
 				6AEFC7092167ADBA00B8D41C /* DBTrip+CoreDataProperties.swift */,
 				6A6DBB4321493ED8007FA7C9 /* Model.swift */,
@@ -284,6 +302,7 @@
 				6A865AF3214BC7D8009888B6 /* TripDetailsController.swift in Sources */,
 				6ADBFD392149F80D006C09DA /* Trip.swift in Sources */,
 				6A865AED214BB337009888B6 /* Hotel.swift in Sources */,
+				6A31DFF3216844C00022C7B7 /* DBHotel+CoreDataClass.swift in Sources */,
 				6A6DBB4421493ED8007FA7C9 /* Model.swift in Sources */,
 				6AEFC70A2167ADBA00B8D41C /* DBTrip+CoreDataClass.swift in Sources */,
 				6A650A222165A3D700069E95 /* TravMateCoreData.xcdatamodeld in Sources */,
@@ -291,12 +310,17 @@
 				BEF690FE214F604D00C34240 /* TabbyController.swift in Sources */,
 				6A865AF5214BD0E4009888B6 /* FlightDetailsController.swift in Sources */,
 				6A3C5349214907F7008A8D45 /* ViewController.swift in Sources */,
+				6A31DFEF216844C00022C7B7 /* DBFlight+CoreDataClass.swift in Sources */,
+				6A31DFF1216844C00022C7B7 /* DBCafe+CoreDataClass.swift in Sources */,
+				6A31DFF2216844C00022C7B7 /* DBCafe+CoreDataProperties.swift in Sources */,
+				6A31DFF0216844C00022C7B7 /* DBFlight+CoreDataProperties.swift in Sources */,
 				6A3C5347214907F7008A8D45 /* AppDelegate.swift in Sources */,
 				6A4BB72A214B31DB004B7D5B /* TripCollectionViewCell.swift in Sources */,
 				6A456486214E3BE0003229D7 /* RestaurantRatingController.swift in Sources */,
 				6A865AF7214BD127009888B6 /* HotelDetailsController.swift in Sources */,
 				6AEFC70B2167ADBA00B8D41C /* DBTrip+CoreDataProperties.swift in Sources */,
 				6A865AEB214BB32C009888B6 /* Flight.swift in Sources */,
+				6A31DFF4216844C00022C7B7 /* DBHotel+CoreDataProperties.swift in Sources */,
 				6A865AF9214BD145009888B6 /* RestaurantDetailsController.swift in Sources */,
 				6A865AEF214BB344009888B6 /* Restaurant.swift in Sources */,
 			);

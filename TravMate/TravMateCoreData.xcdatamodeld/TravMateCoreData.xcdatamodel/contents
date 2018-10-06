@@ -1,5 +1,43 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="DBCafe" representedClassName="DBCafe" syncable="YES">
+        <attribute name="dbCafeAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafeCost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafefoodItem1" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafefoodItem2" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafefoodItem3" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafefoodItemSmiley1" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dbCafefoodItemSmiley2" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dbCafefoodItemSmiley3" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dbCafeName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafeNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafePax" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbCafeRating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dbCafeType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DBFlight" representedClassName="DBFlight" syncable="YES">
+        <attribute name="dbFlightCost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightDepartDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightDepartNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightDepartTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightDuration" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightPortFrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightPortTo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightReturnDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightReturnNo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightReturnTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbFlightType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="DBHotel" representedClassName="DBHotel" syncable="YES">
+        <attribute name="dbHotelAddress" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelCheckIn" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelCheckOut" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelCost" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelNotes" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dbHotelRating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="dbHotelroomType" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="DBTrip" representedClassName="DBTrip" syncable="YES">
         <attribute name="dbLocationCost" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="dbLocationDays" optional="YES" attributeType="String" syncable="YES"/>
@@ -7,5 +45,8 @@
     </entity>
     <elements>
         <element name="DBTrip" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="DBFlight" positionX="-63" positionY="9" width="128" height="210"/>
+        <element name="DBHotel" positionX="-54" positionY="90" width="128" height="165"/>
+        <element name="DBCafe" positionX="-36" positionY="117" width="128" height="240"/>
     </elements>
 </model>

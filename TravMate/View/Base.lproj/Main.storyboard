@@ -270,15 +270,14 @@
                                 <constraints>
                                     <constraint firstItem="8PE-ci-8Kq" firstAttribute="leading" secondItem="Zbd-dO-ot1" secondAttribute="leading" constant="15" id="6eQ-bd-mzf"/>
                                     <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="15" id="CjK-pS-rhP"/>
-                                    <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="15" id="RWt-jb-L98"/>
                                     <constraint firstItem="8PE-ci-8Kq" firstAttribute="top" secondItem="Zbd-dO-ot1" secondAttribute="top" constant="15" id="UFV-iF-QYt"/>
                                     <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="208" id="nr0-Tz-Yhv"/>
+                                    <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="15" id="sY8-Od-hzk"/>
                                     <constraint firstAttribute="bottom" secondItem="8PE-ci-8Kq" secondAttribute="bottom" id="uZN-Lq-DlN"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="CjK-pS-rhP"/>
-                                        <exclude reference="RWt-jb-L98"/>
                                         <exclude reference="nr0-Tz-Yhv"/>
                                     </mask>
                                 </variation>
@@ -288,21 +287,16 @@
                                         <exclude reference="nr0-Tz-Yhv"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=regular">
-                                    <mask key="constraints">
-                                        <include reference="RWt-jb-L98"/>
-                                    </mask>
-                                </variation>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Zbd-dO-ot1" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="9ae-gN-gmE"/>
+                            <constraint firstItem="Zbd-dO-ot1" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="DKM-NL-bB0"/>
                             <constraint firstAttribute="trailing" secondItem="Zbd-dO-ot1" secondAttribute="trailing" id="I3Z-KR-iLo"/>
-                            <constraint firstItem="Zbd-dO-ot1" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="WoM-cW-lCK"/>
-                            <constraint firstAttribute="bottom" secondItem="Zbd-dO-ot1" secondAttribute="bottom" constant="-302" id="YQI-4A-djW"/>
-                            <constraint firstItem="Zbd-dO-ot1" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="fO8-rf-w1J"/>
+                            <constraint firstAttribute="trailing" secondItem="Zbd-dO-ot1" secondAttribute="trailing" id="WnA-pd-XQJ"/>
+                            <constraint firstAttribute="bottom" secondItem="Zbd-dO-ot1" secondAttribute="bottom" constant="-302" id="nAn-HC-5Je"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="nCG-Oy-lGH"/>
-                            <constraint firstAttribute="trailing" secondItem="Zbd-dO-ot1" secondAttribute="trailing" id="nGP-na-uEs"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="qvK-qa-3SB"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="bottom" secondItem="X6R-4U-KNe" secondAttribute="bottom" id="zpG-B7-qcb"/>
                         </constraints>
@@ -310,11 +304,7 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="I3Z-KR-iLo"/>
-                                <exclude reference="WoM-cW-lCK"/>
-                                <exclude reference="YQI-4A-djW"/>
-                                <exclude reference="fO8-rf-w1J"/>
                                 <exclude reference="nCG-Oy-lGH"/>
-                                <exclude reference="nGP-na-uEs"/>
                                 <exclude reference="qvK-qa-3SB"/>
                                 <exclude reference="zpG-B7-qcb"/>
                             </mask>
@@ -325,14 +315,6 @@
                                 <include reference="nCG-Oy-lGH"/>
                                 <include reference="qvK-qa-3SB"/>
                                 <include reference="zpG-B7-qcb"/>
-                            </mask>
-                        </variation>
-                        <variation key="widthClass=regular">
-                            <mask key="constraints">
-                                <include reference="WoM-cW-lCK"/>
-                                <include reference="YQI-4A-djW"/>
-                                <include reference="fO8-rf-w1J"/>
-                                <include reference="nGP-na-uEs"/>
                             </mask>
                         </variation>
                     </view>

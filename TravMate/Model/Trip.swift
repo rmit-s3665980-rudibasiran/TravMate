@@ -215,6 +215,60 @@ struct Trip {
         
     }
     
+    mutating func saveCafe(
+        tCafeName: String,
+        tCafeAddress: String,
+        tCafeType: String,
+        tCafeCost: String,
+        tCafePax: String,
+        tCafeNotes: String,
+        tCafefoodItem1: String,
+        tCafefoodItem2: String,
+        tCafefoodItem3: String,
+        tCafefoodItemSmiley1: Bool,
+        tCafefoodItemSmiley2: Bool,
+        tCafefoodItemSmiley3: Bool,
+        tCafeRating: Int16) {
+        
+        saveCafeToDB(
+            pCafeName: tCafeName,
+            pCafeAddress: tCafeAddress,
+            pCafeType: tCafeType,
+            pCafeCost: tCafeCost,
+            pCafePax: tCafePax,
+            pCafeNotes: tCafeNotes,
+            pCafefoodItem1: tCafefoodItem1,
+            pCafefoodItem2: tCafefoodItem2,
+            pCafefoodItem3: tCafefoodItem3,
+            pCafefoodItemSmiley1: tCafefoodItemSmiley1,
+            pCafefoodItemSmiley2: tCafefoodItemSmiley2,
+            pCafefoodItemSmiley3: tCafefoodItemSmiley3,
+            pCafeRating: tCafeRating,
+            existing: dCurrentCafe)
+        
+        
+        restaurant.cafeName[myCurrentTrip] = tCafeName
+        restaurant.cafeAddress[myCurrentTrip] = tCafeAddress
+        
+        restaurant.cafeType[myCurrentTrip] = tCafeType
+        restaurant.cafeCost[myCurrentTrip] = tCafeCost
+        
+        restaurant.cafePax[myCurrentTrip] = tCafePax
+        
+        restaurant.foodItem1[myCurrentTrip] = tCafefoodItem1
+        restaurant.foodItem2[myCurrentTrip] = tCafefoodItem2
+        restaurant.foodItem3[myCurrentTrip] = tCafefoodItem3
+        
+        restaurant.cafeNotes[myCurrentTrip] = tCafeNotes
+        restaurant.foodItemSmiley1[myCurrentTrip] = tCafefoodItemSmiley1
+        restaurant.foodItemSmiley2[myCurrentTrip] = tCafefoodItemSmiley2
+        restaurant.foodItemSmiley3[myCurrentTrip] = tCafefoodItemSmiley3
+        
+        restaurant.cafeRating[myCurrentTrip] = Int(tCafeRating)
+        
+        
+    }
+    
     mutating func populateDBfromInitialArray() {
         for (index, value) in locationName.enumerated() {
             saveTripToDB(pLocationName: (value),

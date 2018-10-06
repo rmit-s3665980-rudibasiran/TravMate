@@ -69,25 +69,20 @@ class RestaurantDetailsController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             
-            Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = self.cafeName.text!
-            Trip.sharedInstance.restaurant.cafeAddress[Trip.sharedInstance.myCurrentTrip] = self.cafeAddress.text!
-            
-            Trip.sharedInstance.restaurant.cafeType[Trip.sharedInstance.myCurrentTrip] = self.cafeType.text!
-            Trip.sharedInstance.restaurant.cafeCost[Trip.sharedInstance.myCurrentTrip] = self.cafeCost.text!
-            
-            Trip.sharedInstance.restaurant.cafePax[Trip.sharedInstance.myCurrentTrip] = self.cafePax.text!
-            
-            Trip.sharedInstance.restaurant.foodItem1[Trip.sharedInstance.myCurrentTrip] = self.item1.text!
-            Trip.sharedInstance.restaurant.foodItem2[Trip.sharedInstance.myCurrentTrip] = self.item2.text!
-            Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = self.item3.text!
-            
-            Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = self.cafeNotes.text!
-            Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = self.foodITem1isOn
-            Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = self.foodITem2isOn
-            Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = self.foodITem3isOn
-            
-            Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = self.cafeRating.starsRating
-            
+            Trip.sharedInstance.saveCafe(
+                tCafeName: self.cafeName.text!,
+                tCafeAddress: self.cafeAddress.text!,
+                tCafeType: self.cafeType.text!,
+                tCafeCost: self.cafeCost.text!,
+                tCafePax: self.cafePax.text!,
+                tCafeNotes: self.cafeNotes.text!,
+                tCafefoodItem1: self.item1.text!,
+                tCafefoodItem2: self.item2.text!,
+                tCafefoodItem3: self.item3.text!,
+                tCafefoodItemSmiley1: self.foodITem1isOn,
+                tCafefoodItemSmiley2: self.foodITem2isOn,
+                tCafefoodItemSmiley3: self.foodITem3isOn,
+                tCafeRating: Int16(self.cafeRating.starsRating))
             
         })
         

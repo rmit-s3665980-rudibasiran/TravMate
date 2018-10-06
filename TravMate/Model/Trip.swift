@@ -29,6 +29,9 @@ struct Trip {
     var restaurant:Restaurant = Restaurant ()
     
     var dbTrip = [DBTrip]()
+    var dbFlight = [DBFlight]()
+    var dbHotel = [DBHotel]()
+    var dbCafe = [DBCafe]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let managedContext: NSManagedObjectContext
     
@@ -198,6 +201,27 @@ struct Trip {
         updateDatabase()
     }
     
+    mutating func deleteFlight(_ indexPath: IndexPath) {
+        let flight = dbFlight[indexPath.item]
+        dbFlight.remove(at: indexPath.item)
+        managedContext.delete(flight)
+        updateDatabase()
+    }
+    
+    mutating func deleteHotel(_ indexPath: IndexPath) {
+        let hotel = dbHotel[indexPath.item]
+        dbHotel.remove(at: indexPath.item)
+        managedContext.delete(hotel)
+        updateDatabase()
+    }
+    
+    mutating func deleteCafe(_ indexPath: IndexPath) {
+        let cafe = dbCafe[indexPath.item]
+        dbCafe.remove(at: indexPath.item)
+        managedContext.delete(cafe)
+        updateDatabase()
+    }
+    
     mutating func getTripFromCoreData () {
         do {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBTrip")
@@ -205,11 +229,45 @@ struct Trip {
             dbTrip = results as! [DBTrip]
         }
         catch let error as NSError {
-            print("Could not fetch \(error), \(error.userInfo)")
+            print("Could not fetch trip info: \(error), \(error.userInfo)")
+        }
+    }
+    
+    mutating func getFlightFromCoreData () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBFlight")
+            let results = try managedContext.fetch(fetchRequest)
+            dbFlight = results as! [DBFlight]
+        }
+        catch let error as NSError {
+            print("Could not fetch flight info: \(error), \(error.userInfo)")
+        }
+    }
+    
+    mutating func getHotelFromCoreData () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBHotel")
+            let results = try managedContext.fetch(fetchRequest)
+            dbHotel = results as! [DBHotel]
+        }
+        catch let error as NSError {
+            print("Could not fetch hotel info: \(error), \(error.userInfo)")
+        }
+    }
+    
+    mutating func getCafeFromCoreData () {
+        do {
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "DBCafe")
+            let results = try managedContext.fetch(fetchRequest)
+            dbCafe = results as! [DBCafe]
+        }
+        catch let error as NSError {
+            print("Could not fetch cafe info: \(error), \(error.userInfo)")
         }
     }
     
     mutating func saveTrip(pLocationName: String, pLocationDay: String, pLocationCost: String, existing: DBTrip?) {
+        
         let entity = NSEntityDescription.entity(forEntityName: "DBTrip", in: managedContext)
         
         if let _ = existing {
@@ -229,6 +287,18 @@ struct Trip {
     
     func getTrip(_ indexPath: IndexPath) -> DBTrip {
         return dbTrip[indexPath.row]
+    }
+    
+    func getFlight(_ indexPath: IndexPath) -> DBFlight {
+        return dbFlight[indexPath.row]
+    }
+    
+    func getHotel(_ indexPath: IndexPath) -> DBHotel {
+        return dbHotel[indexPath.row]
+    }
+    
+    func getCafe(_ indexPath: IndexPath) -> DBCafe {
+        return dbCafe[indexPath.row]
     }
     
 }

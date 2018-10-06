@@ -14,6 +14,7 @@ import MapKit
 
 class HotelDetailsController: UIViewController {
   
+    var observedText = Observable<String>(value: "")
     
     @IBOutlet weak var hotelRating: HotelRatingController!
     
@@ -152,11 +153,55 @@ class HotelDetailsController: UIViewController {
         if (hotelAddress.text != "") {
             searchForLocation()
         }
-   
         
+        // function that gets called by the model
+        // remember the observedText variable here has been
+        // added to the model as being an object that wants
+        // to be notified when a change occurs in the model.
+        
+        observedText.observe { (value: String) -> () in
+            if (self.hotelAddress.text != "") {
+                self.searchForLocation()
+            }
+        }
+        
+        // Whenever the text value changes make a change in the model
+        hotelAddress.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
     }
+    
+        @objc func textDidChange() {
+            if (hotelAddress.text != "") {
+                searchForLocation()
+            }
+    }
+    
 }
 
+// This struct is acting as the model.
+// Uses Generics so any object type can be set as the observer type.
+struct Observable<T> {
+    
+    // Holds a collection of objects that want to observe changes
+    // in the model
+    var observers: [(T)->()] = []
+    
+    // Uses a property observer to perform an action whenever the
+    // value changes.  It calls each of the observers with the result.
+    var value: T {
+        didSet {
+            observers.forEach { $0(value) }
+        }
+    }
+    
+    // Allows an object to register itself as an observer.
+    mutating func observe(observer: @escaping (T)->()) {
+        observers.append(observer)
+    }
+    
+    init (value: T) {
+        self.value = value
+    }
+}
 
 extension HotelDetailsController: CLLocationManagerDelegate
 {

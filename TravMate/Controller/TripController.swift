@@ -36,7 +36,6 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.flight.flightType.append("")
         Trip.sharedInstance.flight.flightDuration.append("")
   
-        
         Trip.sharedInstance.hotel.hotelName.append("")
         Trip.sharedInstance.hotel.hotelCheckIn.append("")
         Trip.sharedInstance.hotel.hotelCheckOut.append("")
@@ -60,11 +59,13 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.restaurant.foodItemSmiley3.append(true)
         Trip.sharedInstance.restaurant.cafeRating.append(0)
        
-        print ("Sizeofdata: " + String (Trip.sharedInstance.getSizeofData()))
+        if (Trip.sharedInstance.debugMode) {
+            print ("Sizeofdata: " + String (Trip.sharedInstance.getSizeofData()))
+        }
+        
         Trip.sharedInstance.myCurrentTrip = Trip.sharedInstance.getSizeofData() - 1
         
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
-        
     }
     
     // W: to convert RGB to HEX
@@ -94,19 +95,13 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! TripCollectionViewCell
-   
-        if (Trip.sharedInstance.useCoreData) {
-            let currentVacation = Trip.sharedInstance.dbTrip[indexPath.item]
-            cell.tripName.text = currentVacation.dbLocationName!
-            cell.tripDays.text = currentVacation.dbLocationDays!
-            cell.tripCost.text = currentVacation.dbLocationCost!
-        }
-        else {
-            cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
-            cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
-            cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]
-        }
+        
+        cell.tripName.text = Trip.sharedInstance.locationName[indexPath.row]
+        cell.tripDays.text = Trip.sharedInstance.locationDays[indexPath.row]
+        cell.tripCost.text = Trip.sharedInstance.locationCost[indexPath.row]
+    
       
         let picture = ["icon_london", "icon_newyork", "icon_paris", "icon_melbourne"]
         
@@ -141,6 +136,12 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         Trip.sharedInstance.myCurrentTrip = indexPath.row
+        
+        Trip.sharedInstance.dCurrentTrip = Trip.sharedInstance.getTrip(indexPath)
+        Trip.sharedInstance.dCurrentFlight = Trip.sharedInstance.getFlight(indexPath)
+        Trip.sharedInstance.dCurrentHotel = Trip.sharedInstance.getHotel(indexPath)
+        Trip.sharedInstance.dCurrentCafe = Trip.sharedInstance.getCafe(indexPath)
+        
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
     }
     

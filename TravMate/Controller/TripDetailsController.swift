@@ -76,10 +76,10 @@ class TripDetailsController: UIViewController {
             let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
                 (_)in
             
-                Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = self.tripName.text!
-                Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = self.tripDays.text!
-                Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip] = self.tripCost.text!
+                print ("Entering Save Trip Action")
+                Trip.sharedInstance.saveTrip(tLocationName: self.tripName.text!, tLocationDay: self.tripDays.text!, tLocationCost: self.tripCost.text!)
             
+                print ("Exiting Save Trip Action")
                 self.performSegue(withIdentifier: "GoToTabSegue", sender: self)
             })
         
@@ -105,6 +105,4 @@ class TripDetailsController: UIViewController {
             tripCost.text = Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip]
         }
     }
-    
-    
 }

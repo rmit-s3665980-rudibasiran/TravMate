@@ -17,10 +17,10 @@ struct Trip {
     static var sharedInstance = Trip()
     
     var debugMode = true
-    var startFromScratch = true // change to true to init; false to test persistent data
+    var startFromScratch = false // change to true to init; false to test persistent data
     var myCurrentTrip = 0
     var myCurrentTab = TripTabController.flight
-    var useCoreData = false
+  
     
     var locationName:[String] = []
     var locationDays:[String] = []
@@ -36,6 +36,11 @@ struct Trip {
     var dbCafe = [DBCafe]()
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let managedContext: NSManagedObjectContext
+    
+    var dCurrentTrip = DBTrip()
+    var dCurrentFlight = DBFlight()
+    var dCurrentHotel = DBHotel ()
+    var dCurrentCafe = DBCafe ()
     
   
     init() {
@@ -56,13 +61,13 @@ struct Trip {
             deleteDataFromDB("DBCafe")
             loadDatafromArrayforTesting()
             populateDBfromInitialArray()
-            useCoreData = true
         }
         else {
             getTripFromCoreData()
             getFlightFromCoreData()
             getHotelFromCoreData()
             getCafeFromCoreData()
+            loadDataFromCoreToArray()
         }
         
         if (debugMode) {
@@ -73,15 +78,82 @@ struct Trip {
         }
     }
     
+    mutating func loadDataFromCoreToArray() {
+        
+        // clear array of data
+        for i in 0 ..< locationName.count {
+            deleteArray(i)
+        }
+        
+        for i in 0 ..< dbTrip.count {
+            locationName.append(dbTrip[i].dbLocationName!)
+            locationDays.append(dbTrip[i].dbLocationDays!)
+            locationCost.append(dbTrip[i].dbLocationCost!)
+        }
+        
+        for i in 0 ..< dbFlight.count {
+            flight.flightDepartNo.append(dbFlight[i].dbFlightDepartNo!)
+            flight.flightReturnNo.append(dbFlight[i].dbFlightReturnNo!)
+            flight.flightPortFrom.append(dbFlight[i].dbFlightPortFrom!)
+            flight.flightPortTo.append(dbFlight[i].dbFlightPortTo!)
+            flight.flightDepartDate.append(dbFlight[i].dbFlightDepartDate!)
+            flight.flightDepartTime.append(dbFlight[i].dbFlightDepartTime!)
+            flight.flightReturnDate.append(dbFlight[i].dbFlightReturnDate!)
+            flight.flightReturnTime.append(dbFlight[i].dbFlightReturnTime!)
+            flight.flightCost.append(dbFlight[i].dbFlightCost!)
+            flight.flightType.append(dbFlight[i].dbFlightType!)
+            flight.flightDuration.append(dbFlight[i].dbFlightDuration!)
+        }
+        
+        for i in 0 ..< dbHotel.count {
+            hotel.hotelName.append(dbHotel[i].dbHotelName!)
+            hotel.hotelCheckIn.append(dbHotel[i].dbHotelCheckIn!)
+            hotel.hotelCheckOut.append(dbHotel[i].dbHotelCheckOut!)
+            hotel.hotelCost.append(dbHotel[i].dbHotelCost!)
+            hotel.hotelAddress.append(dbHotel[i].dbHotelAddress!)
+            hotel.roomType.append(dbHotel[i].dbHotelroomType!)
+            hotel.hotelNotes.append(dbHotel[i].dbHotelNotes!)
+            hotel.hotelRating.append(Int(dbHotel[i].dbHotelRating))
+        }
+        for i in 0 ..< dbCafe.count {
+            restaurant.cafeName.append(dbCafe[i].dbCafeName!)
+            restaurant.cafeAddress.append(dbCafe[i].dbCafeAddress!)
+            restaurant.cafeType.append(dbCafe[i].dbCafeType!)
+            restaurant.cafeCost.append(dbCafe[i].dbCafeCost!)
+            restaurant.cafePax.append(dbCafe[i].dbCafePax!)
+            restaurant.cafeNotes.append(dbCafe[i].dbCafeNotes!)
+            restaurant.foodItem1.append(dbCafe[i].dbCafefoodItem1!)
+            restaurant.foodItem2.append(dbCafe[i].dbCafefoodItem2!)
+            restaurant.foodItem3.append(dbCafe[i].dbCafefoodItem3!)
+            restaurant.foodItemSmiley1.append(dbCafe[i].dbCafefoodItemSmiley1)
+            restaurant.foodItemSmiley2.append(dbCafe[i].dbCafefoodItemSmiley2)
+            restaurant.foodItemSmiley3.append(dbCafe[i].dbCafefoodItemSmiley3)
+            restaurant.cafeRating.append(Int(dbCafe[i].dbCafeRating))
+        }
+    }
+    
+    mutating func saveTrip (
+        tLocationName: String,
+        tLocationDay: String,
+        tLocationCost: String) {
+        
+        saveTripToDB(pLocationName: tLocationName, pLocationDay: tLocationDay, pLocationCost: tLocationCost, existing: dCurrentTrip)
+
+        locationName[myCurrentTrip] = tLocationName
+        locationDays[myCurrentTrip] = tLocationDay
+        locationCost[myCurrentTrip] = tLocationCost
+        
+    }
+    
     mutating func populateDBfromInitialArray() {
         for (index, value) in locationName.enumerated() {
-            saveTrip(pLocationName: (value),
+            saveTripToDB(pLocationName: (value),
                      pLocationDay: locationDays[(index)],
                      pLocationCost: locationCost[(index)], existing: nil)
         }
    
         for (indexF, valueF) in flight.flightDepartNo.enumerated() {
-            saveFlight(pFlightDepartNo: (valueF),
+            saveFlightToDB(pFlightDepartNo: (valueF),
                        pFlightReturnNo: flight.flightReturnNo[(indexF)],
                        pFlightPortFrom: flight.flightPortFrom[(indexF)],
                        pFlightPortTo: flight.flightPortTo[(indexF)],
@@ -96,7 +168,7 @@ struct Trip {
         }
        
         for (indexH, valueH) in hotel.hotelName.enumerated() {
-            saveHotel(pHotelName: (valueH),
+            saveHotelToDB(pHotelName: (valueH),
                       pHotelCheckIn: hotel.hotelCheckIn[(indexH)],
                       pHotelCheckOut: hotel.hotelCheckOut[(indexH)],
                       pHotelCost: hotel.hotelCost[(indexH)],
@@ -108,7 +180,7 @@ struct Trip {
         }
         
         for (indexC, valueC) in restaurant.cafeName.enumerated() {
-            saveCafe(pCafeName: (valueC),
+            saveCafeToDB(pCafeName: (valueC),
                      pCafeAddress: restaurant.cafeAddress[(indexC)],
                      pCafeType: restaurant.cafeType[(indexC)],
                      pCafeCost: restaurant.cafeCost[(indexC)],
@@ -141,9 +213,9 @@ struct Trip {
         return locationName.count
     }
     
-    func clearEmptyData() {
+    mutating func clearEmptyData() {
         var i = -1
-        for string in Trip.sharedInstance.locationName {
+        for string in locationName {
             i = i + 1
             if (string == "") {
                 deleteArray(i)
@@ -151,88 +223,88 @@ struct Trip {
         }
     }
     
-    func clearData() {
-        Trip.sharedInstance.locationName[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.locationDays[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.locationCost[Trip.sharedInstance.myCurrentTrip] = ""
+    mutating func clearData() {
+        locationName[myCurrentTrip] = ""
+        locationDays[myCurrentTrip] = ""
+        locationCost[myCurrentTrip] = ""
         
-        Trip.sharedInstance.flight.flightDepartNo[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightReturnNo[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightPortFrom[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightPortTo[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightDepartDate[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightDepartTime[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightReturnDate[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightReturnTime[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightCost[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightType[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.flight.flightDuration[Trip.sharedInstance.myCurrentTrip] = ""
+        flight.flightDepartNo[myCurrentTrip] = ""
+        flight.flightReturnNo[myCurrentTrip] = ""
+        flight.flightPortFrom[myCurrentTrip] = ""
+        flight.flightPortTo[myCurrentTrip] = ""
+        flight.flightDepartDate[myCurrentTrip] = ""
+        flight.flightDepartTime[myCurrentTrip] = ""
+        flight.flightReturnDate[myCurrentTrip] = ""
+        flight.flightReturnTime[myCurrentTrip] = ""
+        flight.flightCost[myCurrentTrip] = ""
+        flight.flightType[myCurrentTrip] = ""
+        flight.flightDuration[myCurrentTrip] = ""
         
         
-        Trip.sharedInstance.hotel.hotelName[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelCheckIn[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelCheckOut[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelCost[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelAddress[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.roomType[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelNotes[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.hotel.hotelRating[Trip.sharedInstance.myCurrentTrip] = 0
+        hotel.hotelName[myCurrentTrip] = ""
+        hotel.hotelCheckIn[myCurrentTrip] = ""
+        hotel.hotelCheckOut[myCurrentTrip] = ""
+        hotel.hotelCost[myCurrentTrip] = ""
+        hotel.hotelAddress[myCurrentTrip] = ""
+        hotel.roomType[myCurrentTrip] = ""
+        hotel.hotelNotes[myCurrentTrip] = ""
+        hotel.hotelRating[myCurrentTrip] = 0
         
-        Trip.sharedInstance.restaurant.cafeName[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.cafeAddress[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.cafeType[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.cafeCost[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.cafePax[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.cafeNotes[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.foodItem1[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.foodItem2[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.foodItem3[Trip.sharedInstance.myCurrentTrip] = ""
-        Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip] = true
-        Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip] = true
-        Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip] = true
-        Trip.sharedInstance.restaurant.cafeRating[Trip.sharedInstance.myCurrentTrip] = 0
+        restaurant.cafeName[myCurrentTrip] = ""
+        restaurant.cafeAddress[myCurrentTrip] = ""
+        restaurant.cafeType[myCurrentTrip] = ""
+        restaurant.cafeCost[myCurrentTrip] = ""
+        restaurant.cafePax[myCurrentTrip] = ""
+        restaurant.cafeNotes[myCurrentTrip] = ""
+        restaurant.foodItem1[myCurrentTrip] = ""
+        restaurant.foodItem2[myCurrentTrip] = ""
+        restaurant.foodItem3[myCurrentTrip] = ""
+        restaurant.foodItemSmiley1[myCurrentTrip] = true
+        restaurant.foodItemSmiley2[myCurrentTrip] = true
+        restaurant.foodItemSmiley3[myCurrentTrip] = true
+        restaurant.cafeRating[myCurrentTrip] = 0
     }
     
-    func deleteArray (_ i:Int) {
+    mutating func deleteArray (_ i:Int) {
         // remove empty data
-        Trip.sharedInstance.locationName.remove(at: i)
-        Trip.sharedInstance.locationDays.remove(at: i)
-        Trip.sharedInstance.locationCost.remove(at: i)
+        locationName.remove(at: i)
+        locationDays.remove(at: i)
+        locationCost.remove(at: i)
         
-        Trip.sharedInstance.flight.flightDepartNo.remove(at: i)
-        Trip.sharedInstance.flight.flightReturnNo.remove(at: i)
-        Trip.sharedInstance.flight.flightPortFrom.remove(at: i)
-        Trip.sharedInstance.flight.flightPortTo.remove(at: i)
-        Trip.sharedInstance.flight.flightDepartDate.remove(at: i)
-        Trip.sharedInstance.flight.flightDepartTime.remove(at: i)
-        Trip.sharedInstance.flight.flightReturnDate.remove(at: i)
-        Trip.sharedInstance.flight.flightReturnTime.remove(at: i)
-        Trip.sharedInstance.flight.flightCost.remove(at: i)
-        Trip.sharedInstance.flight.flightType.remove(at: i)
-        Trip.sharedInstance.flight.flightDuration.remove(at: i)
+        flight.flightDepartNo.remove(at: i)
+        flight.flightReturnNo.remove(at: i)
+        flight.flightPortFrom.remove(at: i)
+        flight.flightPortTo.remove(at: i)
+        flight.flightDepartDate.remove(at: i)
+        flight.flightDepartTime.remove(at: i)
+        flight.flightReturnDate.remove(at: i)
+        flight.flightReturnTime.remove(at: i)
+        flight.flightCost.remove(at: i)
+        flight.flightType.remove(at: i)
+        flight.flightDuration.remove(at: i)
         
-        Trip.sharedInstance.hotel.hotelName.remove(at: i)
-        Trip.sharedInstance.hotel.hotelCheckIn.remove(at: i)
-        Trip.sharedInstance.hotel.hotelCheckOut.remove(at: i)
-        Trip.sharedInstance.hotel.hotelCost.remove(at: i)
-        Trip.sharedInstance.hotel.hotelAddress.remove(at: i)
-        Trip.sharedInstance.hotel.roomType.remove(at: i)
-        Trip.sharedInstance.hotel.hotelNotes.remove(at: i)
-        Trip.sharedInstance.hotel.hotelRating.remove(at: i)
+        hotel.hotelName.remove(at: i)
+        hotel.hotelCheckIn.remove(at: i)
+        hotel.hotelCheckOut.remove(at: i)
+        hotel.hotelCost.remove(at: i)
+        hotel.hotelAddress.remove(at: i)
+        hotel.roomType.remove(at: i)
+        hotel.hotelNotes.remove(at: i)
+        hotel.hotelRating.remove(at: i)
         
-        Trip.sharedInstance.restaurant.cafeName.remove(at: i)
-        Trip.sharedInstance.restaurant.cafeAddress.remove(at: i)
-        Trip.sharedInstance.restaurant.cafeType.remove(at: i)
-        Trip.sharedInstance.restaurant.cafeCost.remove(at: i)
-        Trip.sharedInstance.restaurant.cafePax.remove(at: i)
-        Trip.sharedInstance.restaurant.cafeNotes.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItem1.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItem2.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItem3.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItemSmiley1.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItemSmiley2.remove(at: i)
-        Trip.sharedInstance.restaurant.foodItemSmiley3.remove(at: i)
-        Trip.sharedInstance.restaurant.cafeRating.remove(at: i)
+        restaurant.cafeName.remove(at: i)
+        restaurant.cafeAddress.remove(at: i)
+        restaurant.cafeType.remove(at: i)
+        restaurant.cafeCost.remove(at: i)
+        restaurant.cafePax.remove(at: i)
+        restaurant.cafeNotes.remove(at: i)
+        restaurant.foodItem1.remove(at: i)
+        restaurant.foodItem2.remove(at: i)
+        restaurant.foodItem3.remove(at: i)
+        restaurant.foodItemSmiley1.remove(at: i)
+        restaurant.foodItemSmiley2.remove(at: i)
+        restaurant.foodItemSmiley3.remove(at: i)
+        restaurant.cafeRating.remove(at: i)
     }
 
     mutating func deleteDataFromDB(_ eName:String) {
@@ -249,8 +321,6 @@ struct Trip {
             print("Could not delete all \(eName) \(error), \(error.userInfo)")
         }
     }
-    
-    
     
     func updateDatabase() {
         do {
@@ -333,7 +403,7 @@ struct Trip {
         }
     }
     
-    mutating func saveTrip(
+    mutating func saveTripToDB(
         pLocationName: String,
         pLocationDay: String,
         pLocationCost: String,
@@ -345,6 +415,10 @@ struct Trip {
             existing!.dbLocationName = pLocationName
             existing!.dbLocationDays = pLocationDay
             existing!.dbLocationCost = pLocationCost
+            
+            if (debugMode) {
+                print ("Saving to DB (i): " + pLocationName)
+            }
         }
         else {
             let vacation = NSManagedObject(entity: entity!, insertInto: managedContext) as! DBTrip
@@ -352,11 +426,14 @@ struct Trip {
             vacation.setValue(pLocationDay, forKey: "dbLocationDays")
             vacation.setValue(pLocationCost, forKey: "dbLocationCost")
             dbTrip.append(vacation)
+            if (debugMode) {
+                print ("Saving to DB (ii): " + pLocationName)
+            }
         }
         updateDatabase()
     }
     
-    mutating func saveFlight(
+    mutating func saveFlightToDB(
         pFlightDepartNo: String,
         pFlightReturnNo: String,
         pFlightPortFrom: String,
@@ -404,7 +481,7 @@ struct Trip {
         updateDatabase()
     }
 
-    mutating func saveHotel(
+    mutating func saveHotelToDB(
         pHotelName: String,
         pHotelCheckIn: String,
         pHotelCheckOut: String,
@@ -445,7 +522,7 @@ struct Trip {
     }
     
     
-    mutating func saveCafe(
+    mutating func saveCafeToDB(
         
         pCafeName: String,
         pCafeAddress: String,
@@ -504,7 +581,7 @@ struct Trip {
     func getTrip(_ indexPath: IndexPath) -> DBTrip {
         return dbTrip[indexPath.row]
     }
-    
+       
     func getFlight(_ indexPath: IndexPath) -> DBFlight {
         return dbFlight[indexPath.row]
     }

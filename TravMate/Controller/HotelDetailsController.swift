@@ -15,6 +15,8 @@ import MapKit
 class HotelDetailsController: UIViewController {
   
     var observedText = Observable<String>(value: "")
+    var orientationPortrait: Bool = true
+    
     
     @IBOutlet weak var hotelRating: HotelRatingController!
     
@@ -45,15 +47,29 @@ class HotelDetailsController: UIViewController {
         let OKAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {
             (_)in
             
-            Trip.sharedInstance.saveHotel(
-                tHotelName: self.hotelName.text!,
-                tHotelCheckIn: self.checkInDate.text!,
-                tHotelCheckOut: self.checkOutDate.text!,
-                tHotelCost: self.hotelCost.text!,
-                tHotelAddress: self.hotelAddress.text!,
-                tHotelroomType: self.roomType.text!,
-                tHotelNotes: self.hotelNotes.text!,
-                tHotelRating: Int16(self.hotelRating.starsRating))
+            if (self.orientationPortrait) {
+                Trip.sharedInstance.saveHotel(
+                    tHotelName: self.hotelName.text!,
+                    tHotelCheckIn: self.checkInDate.text!,
+                    tHotelCheckOut: self.checkOutDate.text!,
+                    tHotelCost: self.hotelCost.text!,
+                    tHotelAddress: self.hotelAddress.text!,
+                    tHotelroomType: self.roomType.text!,
+                    tHotelNotes: self.hotelNotes.text!,
+                    tHotelRating: Int16(self.hotelRating.starsRating))
+            }
+            else {
+                Trip.sharedInstance.saveHotel(
+                    tHotelName: self.hotelName.text!,
+                    tHotelCheckIn: self.checkInDate.text!,
+                    tHotelCheckOut: self.checkOutDate.text!,
+                    tHotelCost: self.hiddenHotelCost.text!,
+                    tHotelAddress: self.hotelAddress.text!,
+                    tHotelroomType: self.hiddenRoomType.text!,
+                    tHotelNotes: self.hotelNotes.text!,
+                    tHotelRating: Int16(self.hotelRating.starsRating))
+            }
+            
             
             
             
@@ -167,14 +183,42 @@ class HotelDetailsController: UIViewController {
         
         // Whenever the text value changes make a change in the model
         hotelAddress.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        hotelCost.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        roomType.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        hiddenRoomType.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
+        hiddenHotelCost.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        hiddenHotelCost.addTarget(self, action: #selector(textDidChange), for: .editingChanged)
+        
     }
     
         @objc func textDidChange() {
             if (hotelAddress.text != "") {
                 searchForLocation()
             }
+            
+            if (orientationPortrait) {
+                hiddenHotelCost.text = hotelCost.text
+                hiddenRoomType.text = roomType.text
+                
+            }
+            else {
+                hotelCost.text = hiddenHotelCost.text
+                roomType.text = hiddenRoomType.text
+            }
+          
+          
     }
     
+    override func willTransition(to newCollection: UITraitCollection, with coordinator: UIViewControllerTransitionCoordinator) {
+        coordinator.animate(alongsideTransition: { context in
+            if UIApplication.shared.statusBarOrientation.isLandscape {
+                self.orientationPortrait = false
+            } else {
+                self.orientationPortrait = true
+            }
+        })
+    }
 }
 
 // This struct is acting as the model.

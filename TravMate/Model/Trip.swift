@@ -415,7 +415,6 @@ struct Trip {
             print ("dbHotal [del i]: " + String(dbHotel.count))
             print ("dbCafe [del i]: " + String(dbCafe.count))
         }
-        
 
         managedContext.delete(dCurrentTrip)
         updateDatabase()
@@ -448,6 +447,7 @@ struct Trip {
         locationName[myCurrentTrip] = ""
         locationDays[myCurrentTrip] = ""
         locationCost[myCurrentTrip] = ""
+
         
         flight.flightDepartNo[myCurrentTrip] = ""
         flight.flightReturnNo[myCurrentTrip] = ""

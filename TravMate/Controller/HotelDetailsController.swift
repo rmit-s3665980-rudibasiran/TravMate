@@ -168,6 +168,24 @@ class HotelDetailsController: UIViewController {
         self.do_load()
         Trip.sharedInstance.myCurrentTab = TripTabController.hotel
         
+        if (orientationPortrait) {
+            hiddenHotelCost.text = hotelCost.text
+            hiddenRoomType.text = roomType.text
+            hiddenHotelCost.isHidden = false
+            hiddenRoomType.isHidden = false
+            roomType.isHidden = true
+            hotelCost.isHidden = true
+            
+        }
+        else {
+            hotelCost.text = hiddenHotelCost.text
+            roomType.text = hiddenRoomType.text
+            hiddenHotelCost.isHidden = true
+            hiddenRoomType.isHidden = true
+            roomType.isHidden = false
+            hotelCost.isHidden = false
+        }
+        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         // how often do you want to receive updates.
@@ -207,11 +225,19 @@ class HotelDetailsController: UIViewController {
             if (orientationPortrait) {
                 hiddenHotelCost.text = hotelCost.text
                 hiddenRoomType.text = roomType.text
+                hiddenHotelCost.isHidden = false
+                hiddenRoomType.isHidden = false
+                roomType.isHidden = true
+                hotelCost.isHidden = true
                 
             }
             else {
                 hotelCost.text = hiddenHotelCost.text
                 roomType.text = hiddenRoomType.text
+                hiddenHotelCost.isHidden = true
+                hiddenRoomType.isHidden = true
+                roomType.isHidden = false
+                hotelCost.isHidden = false
             }
           
           

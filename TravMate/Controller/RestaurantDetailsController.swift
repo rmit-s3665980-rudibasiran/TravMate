@@ -259,7 +259,17 @@ class RestaurantDetailsController: UIViewController {
                             do {
                                 let data = try? Data(contentsOf: url!)
                                 self.cafeStockImage.image = UIImage(data: data!)
-                                DispatchQueue.main.async(execute: {self.cafeStockImage.image = UIImage(data: data!)})
+                                DispatchQueue.main.async(execute: {
+                                    let oldImage = self.cafeStockImage.image
+                                    self.cafeStockImage.image = UIImage(data: data!)
+                                    
+                                    UIView.transition(with: self.cafeStockImage,
+                                                      duration: 0.75,
+                                                      options: .transitionCrossDissolve,
+                                                      animations: { self.cafeStockImage.image = oldImage },
+                                                      completion: nil)
+                                    
+                                })
                             }
                             catch let error as NSError {
                                 print("Could not assign new photo: \(error), \(error.userInfo)")

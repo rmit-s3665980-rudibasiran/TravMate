@@ -20,7 +20,14 @@ class TripDetailsController: UIViewController {
             (_)in
             
             Trip.sharedInstance.clearData()
-            Trip.sharedInstance.clearDBofItem()
+            Trip.sharedInstance.clearEmptyData()
+            // Trip.sharedInstance.clearDBofItem()
+            Trip.sharedInstance.deleteDataFromDB("DBTrip")
+            Trip.sharedInstance.deleteDataFromDB("DBFlight")
+            Trip.sharedInstance.deleteDataFromDB("DBHotel")
+            Trip.sharedInstance.deleteDataFromDB("DBCafe")
+            Trip.sharedInstance.populateDBfromArray()
+            
             self.navigationController?.popToRootViewController(animated: true)
       
         })

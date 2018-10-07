@@ -19,13 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" maximumZoomScale="2" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Chp-iH-cff">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="620"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="620" id="apc-9r-bOc"/>
                                 </constraints>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="0.0" sectionInsetReference="safeArea" id="4v6-uR-F8d">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="30" minimumInteritemSpacing="15" sectionInsetReference="safeArea" id="4v6-uR-F8d">
                                     <size key="itemSize" width="375" height="130"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -91,10 +91,14 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="bottom" secondItem="3Em-ZL-3wH" secondAttribute="bottom" id="2ax-tW-zW7"/>
+                            <constraint firstAttribute="trailing" secondItem="Chp-iH-cff" secondAttribute="trailing" id="B6c-tP-We3"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="3Em-ZL-3wH" secondAttribute="leading" id="E46-Vx-1yV"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="3Em-ZL-3wH" secondAttribute="trailing" id="FNq-Ei-vIq"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="Ih3-i5-rXM"/>
+                            <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="E8X-p4-465" secondAttribute="leading" id="IoI-f2-MyS"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="leading" secondItem="E8X-p4-465" secondAttribute="leading" id="NZI-sH-LgI"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="W9X-5l-Hil"/>
+                            <constraint firstAttribute="bottom" secondItem="Chp-iH-cff" secondAttribute="bottom" id="c2p-Xw-LQd"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="top" secondItem="3Em-ZL-3wH" secondAttribute="top" id="pcn-XM-SAE"/>
                             <constraint firstItem="Chp-iH-cff" firstAttribute="trailing" secondItem="E8X-p4-465" secondAttribute="trailing" id="vwM-BF-qtm"/>
                             <constraint firstAttribute="bottom" secondItem="Chp-iH-cff" secondAttribute="bottom" id="wf1-5d-zu3"/>
@@ -103,9 +107,21 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="2ax-tW-zW7"/>
+                                <exclude reference="B6c-tP-We3"/>
+                                <exclude reference="Ih3-i5-rXM"/>
+                                <exclude reference="IoI-f2-MyS"/>
                                 <exclude reference="NZI-sH-LgI"/>
+                                <exclude reference="c2p-Xw-LQd"/>
                                 <exclude reference="pcn-XM-SAE"/>
                                 <exclude reference="vwM-BF-qtm"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="B6c-tP-We3"/>
+                                <include reference="Ih3-i5-rXM"/>
+                                <include reference="IoI-f2-MyS"/>
+                                <include reference="c2p-Xw-LQd"/>
                             </mask>
                         </variation>
                     </view>
@@ -140,40 +156,65 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zbd-dO-ot1">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="672"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8PE-ci-8Kq">
-                                        <rect key="frame" x="15" y="15" width="384" height="590"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="8PE-ci-8Kq">
+                                        <rect key="frame" x="15" y="15" width="384" height="600"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
-                                                <rect key="frame" x="0.0" y="0.0" width="384" height="120"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="dUD-9G-JYE">
+                                                <rect key="frame" x="0.0" y="0.0" width="384" height="130"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Name" borderStyle="roundedRect" placeholder="Where did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ddd-Nc-cPj" userLabel="TripName">
-                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="30"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="33.333333333333336"/>
                                                         <accessibility key="accessibilityConfiguration" label="TripName"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Days" borderStyle="roundedRect" placeholder="How long did you go?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="foN-o2-JGr" userLabel="TripDays">
-                                                        <rect key="frame" x="0.0" y="45" width="384" height="30"/>
+                                                        <rect key="frame" x="0.0" y="48.333333333333329" width="384" height="33.333333333333329"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Trip Cost" borderStyle="roundedRect" placeholder="How much did you spend?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PQc-5j-Tmd" userLabel="TripCost">
-                                                        <rect key="frame" x="0.0" y="90" width="384" height="30"/>
+                                                        <rect key="frame" x="0.0" y="96.666666666666657" width="384" height="33.333333333333343"/>
                                                         <nil key="textColor"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                         <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                     </textField>
                                                 </subviews>
-                                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal" distribution="fillEqually"/>
-                                                <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="vertical"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="130" id="RXS-67-sb2"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="RXS-67-sb2"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="widthClass=compact">
+                                                    <mask key="constraints">
+                                                        <include reference="RXS-67-sb2"/>
+                                                    </mask>
+                                                </variation>
+                                                <variation key="heightClass=compact-widthClass=regular" alignment="center" axis="horizontal" distribution="fillEqually"/>
+                                                <variation key="heightClass=regular-widthClass=compact" alignment="fill" axis="vertical" distribution="fillEqually"/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="seJ-vU-5gJ">
-                                                <rect key="frame" x="0.0" y="150" width="384" height="175"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IjC-xu-ykT">
+                                                <rect key="frame" x="0.0" y="133.33333333333334" width="706" height="103.33333333333334"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWi-xA-TNF">
-                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="80"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-eg-kob">
+                                                        <rect key="frame" x="0.0" y="0.0" width="165.33333333333334" height="103.33333333333333"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="HOTEL" image="add_hotel"/>
+                                                        <connections>
+                                                            <action selector="clickHotel:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="aa4-OC-Xjx"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3IO-bK-Ats">
+                                                        <rect key="frame" x="180.33333333333331" y="0.0" width="165.33333333333331" height="103.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="25" maxX="0.0" maxY="25"/>
@@ -181,29 +222,11 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="FLIGHT" image="add_flight"/>
                                                         <connections>
-                                                            <action selector="clickFlight:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="hGw-GQ-zl2"/>
+                                                            <action selector="clickFlight:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="jGr-gP-ftK"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nwq-kT-CHM">
-                                                        <rect key="frame" x="0.0" y="95" width="384" height="80"/>
-                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
-                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
-                                                        <state key="normal" title="HOTEL" image="add_hotel"/>
-                                                        <connections>
-                                                            <action selector="clickHotel:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="FXC-0W-A7R"/>
-                                                        </connections>
-                                                    </button>
-                                                </subviews>
-                                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
-                                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="IpO-Hz-kWj">
-                                                <rect key="frame" x="0.0" y="355" width="384" height="175"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfc-w8-vES">
-                                                        <rect key="frame" x="0.0" y="0.0" width="384" height="80"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vzu-JK-HSr">
+                                                        <rect key="frame" x="360.66666666666669" y="0.0" width="165.00000000000006" height="103.33333333333333"/>
                                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <inset key="contentEdgeInsets" minX="0.0" minY="25" maxX="0.0" maxY="25"/>
@@ -211,31 +234,84 @@
                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
                                                         <state key="normal" title="RESTAURANT" image="add_restaurant"/>
                                                         <connections>
-                                                            <action selector="clickRestaurant:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="AGz-Y9-3g2"/>
+                                                            <action selector="clickRestaurant:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="93G-ba-rzb"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="piS-rI-oqm">
-                                                        <rect key="frame" x="0.0" y="95" width="384" height="80"/>
-                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Do-YN-Euf">
+                                                        <rect key="frame" x="540.66666666666663" y="0.0" width="165.33333333333337" height="103.33333333333333"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="OTHERS..."/>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="vdy-BX-vQ5">
+                                                <rect key="frame" x="0.0" y="160" width="384" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="center" preservesSuperviewLayoutMargins="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLQ-hr-QOk">
+                                                        <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="80"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="25" maxX="0.0" maxY="25"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="FLIGHT" image="add_flight"/>
+                                                        <connections>
+                                                            <action selector="clickFlight:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="a8g-Sm-PwX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlm-UA-79w">
+                                                        <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="80"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="HOTEL" image="add_hotel"/>
+                                                        <connections>
+                                                            <action selector="clickHotel:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="KdK-sF-dvN"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
+                                                <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="2QJ-NJ-2Bj">
+                                                <rect key="frame" x="0.0" y="270" width="384" height="80"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGz-la-rgl">
+                                                        <rect key="frame" x="0.0" y="0.0" width="184.66666666666666" height="80"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
+                                                        <inset key="contentEdgeInsets" minX="0.0" minY="25" maxX="0.0" maxY="25"/>
+                                                        <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="10" maxY="0.0"/>
+                                                        <state key="normal" title="RESTAURANT" image="add_restaurant"/>
+                                                        <connections>
+                                                            <action selector="clickRestaurant:" destination="pY4-Ud-gxf" eventType="touchUpInside" id="29R-ji-7uX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouf-mp-eN6">
+                                                        <rect key="frame" x="199.66666666666663" y="0.0" width="184.33333333333337" height="80"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="14"/>
                                                         <inset key="titleEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                         <state key="normal" title="OTHERS..."/>
                                                     </button>
                                                 </subviews>
                                                 <variation key="heightClass=compact-widthClass=regular" axis="horizontal"/>
-                                                <variation key="heightClass=regular-widthClass=compact" axis="vertical"/>
+                                                <variation key="heightClass=regular-widthClass=compact" axis="horizontal"/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="QcQ-bl-YKl">
-                                                <rect key="frame" x="0.0" y="560" width="384" height="30"/>
+                                                <rect key="frame" x="0.0" y="380" width="384" height="220"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qd6-nJ-dnu">
-                                                        <rect key="frame" x="177" y="0.0" width="30" height="30"/>
+                                                        <rect key="frame" x="177" y="0.0" width="30" height="220"/>
                                                         <accessibility key="accessibilityConfiguration" identifier="BtnDeleteTrip" label="BtnDeleteTrip">
                                                             <accessibilityTraits key="traits" button="YES" staticText="YES"/>
                                                         </accessibility>
                                                         <constraints>
                                                             <constraint firstAttribute="width" constant="30" id="W42-ae-RWP"/>
-                                                            <constraint firstAttribute="height" constant="30" id="ewt-d6-wmc"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="trash"/>
                                                         <connections>
@@ -247,33 +323,96 @@
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="706" id="0sZ-Zb-kSw"/>
+                                            <constraint firstAttribute="height" constant="672" id="AJk-ez-hxz">
+                                                <variation key="widthClass=compact" constant="600"/>
+                                            </constraint>
                                             <constraint firstAttribute="width" constant="384" id="BjM-PL-olf"/>
+                                            <constraint firstItem="2QJ-NJ-2Bj" firstAttribute="leading" secondItem="8PE-ci-8Kq" secondAttribute="leading" id="BnG-VU-evP"/>
+                                            <constraint firstAttribute="trailing" secondItem="vdy-BX-vQ5" secondAttribute="trailing" id="F0P-9q-qfW"/>
+                                            <constraint firstAttribute="trailing" secondItem="2QJ-NJ-2Bj" secondAttribute="trailing" id="J9z-DV-cWm"/>
+                                            <constraint firstItem="dUD-9G-JYE" firstAttribute="top" secondItem="8PE-ci-8Kq" secondAttribute="top" id="Tyn-8m-ZOj"/>
+                                            <constraint firstAttribute="height" constant="600" id="Wdr-Np-z3J"/>
+                                            <constraint firstAttribute="trailing" secondItem="dUD-9G-JYE" secondAttribute="trailing" id="ZhV-N0-tXE"/>
+                                            <constraint firstItem="vdy-BX-vQ5" firstAttribute="leading" secondItem="8PE-ci-8Kq" secondAttribute="leading" id="atA-8h-PzX"/>
+                                            <constraint firstItem="2QJ-NJ-2Bj" firstAttribute="top" secondItem="vdy-BX-vQ5" secondAttribute="bottom" constant="30" id="blk-j5-xFH"/>
+                                            <constraint firstAttribute="trailing" secondItem="QcQ-bl-YKl" secondAttribute="trailing" id="dPb-yc-quw"/>
+                                            <constraint firstItem="vdy-BX-vQ5" firstAttribute="top" secondItem="dUD-9G-JYE" secondAttribute="bottom" constant="30" id="eCo-st-j9e"/>
+                                            <constraint firstItem="QcQ-bl-YKl" firstAttribute="top" secondItem="2QJ-NJ-2Bj" secondAttribute="bottom" constant="30" id="jNf-Ps-zet"/>
+                                            <constraint firstAttribute="height" constant="370" id="lgf-OY-hO3"/>
+                                            <constraint firstItem="vdy-BX-vQ5" firstAttribute="top" secondItem="dUD-9G-JYE" secondAttribute="bottom" constant="30" id="pp4-l0-hcb"/>
+                                            <constraint firstItem="dUD-9G-JYE" firstAttribute="leading" secondItem="8PE-ci-8Kq" secondAttribute="leading" id="z8B-yw-NNa"/>
+                                            <constraint firstItem="QcQ-bl-YKl" firstAttribute="leading" secondItem="8PE-ci-8Kq" secondAttribute="leading" id="zJL-hL-VS6"/>
                                         </constraints>
                                         <variation key="default">
+                                            <mask key="subviews">
+                                                <exclude reference="IjC-xu-ykT"/>
+                                                <exclude reference="vdy-BX-vQ5"/>
+                                                <exclude reference="2QJ-NJ-2Bj"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <exclude reference="0sZ-Zb-kSw"/>
+                                                <exclude reference="AJk-ez-hxz"/>
                                                 <exclude reference="BjM-PL-olf"/>
+                                                <exclude reference="Wdr-Np-z3J"/>
+                                                <exclude reference="lgf-OY-hO3"/>
+                                                <exclude reference="Tyn-8m-ZOj"/>
+                                                <exclude reference="ZhV-N0-tXE"/>
+                                                <exclude reference="z8B-yw-NNa"/>
+                                                <exclude reference="F0P-9q-qfW"/>
+                                                <exclude reference="atA-8h-PzX"/>
+                                                <exclude reference="eCo-st-j9e"/>
+                                                <exclude reference="pp4-l0-hcb"/>
+                                                <exclude reference="BnG-VU-evP"/>
+                                                <exclude reference="J9z-DV-cWm"/>
+                                                <exclude reference="blk-j5-xFH"/>
+                                                <exclude reference="dPb-yc-quw"/>
+                                                <exclude reference="jNf-Ps-zet"/>
+                                                <exclude reference="zJL-hL-VS6"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=compact">
+                                            <mask key="subviews">
+                                                <include reference="vdy-BX-vQ5"/>
+                                                <include reference="2QJ-NJ-2Bj"/>
+                                            </mask>
                                             <mask key="constraints">
+                                                <exclude reference="AJk-ez-hxz"/>
                                                 <include reference="BjM-PL-olf"/>
+                                                <include reference="Wdr-Np-z3J"/>
+                                                <include reference="Tyn-8m-ZOj"/>
+                                                <include reference="ZhV-N0-tXE"/>
+                                                <include reference="z8B-yw-NNa"/>
+                                                <include reference="F0P-9q-qfW"/>
+                                                <include reference="atA-8h-PzX"/>
+                                                <exclude reference="eCo-st-j9e"/>
+                                                <include reference="pp4-l0-hcb"/>
+                                                <include reference="BnG-VU-evP"/>
+                                                <include reference="J9z-DV-cWm"/>
+                                                <include reference="blk-j5-xFH"/>
+                                                <exclude reference="dPb-yc-quw"/>
+                                                <exclude reference="jNf-Ps-zet"/>
+                                                <exclude reference="zJL-hL-VS6"/>
                                             </mask>
                                         </variation>
                                         <variation key="widthClass=regular">
+                                            <mask key="subviews">
+                                                <include reference="IjC-xu-ykT"/>
+                                            </mask>
                                             <mask key="constraints">
                                                 <include reference="0sZ-Zb-kSw"/>
+                                                <include reference="lgf-OY-hO3"/>
                                             </mask>
                                         </variation>
+                                        <variation key="heightClass=compact-widthClass=regular" distribution="fillEqually"/>
                                     </stackView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="8PE-ci-8Kq" firstAttribute="leading" secondItem="Zbd-dO-ot1" secondAttribute="leading" constant="15" id="6eQ-bd-mzf"/>
                                     <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="15" id="CjK-pS-rhP"/>
-                                    <constraint firstItem="8PE-ci-8Kq" firstAttribute="top" secondItem="Zbd-dO-ot1" secondAttribute="top" constant="15" id="UFV-iF-QYt"/>
+                                    <constraint firstAttribute="bottom" secondItem="8PE-ci-8Kq" secondAttribute="bottom" constant="-15" id="ReA-LK-lwA"/>
+                                    <constraint firstItem="8PE-ci-8Kq" firstAttribute="top" secondItem="Zbd-dO-ot1" secondAttribute="top" constant="15" id="dMP-Hx-h6U"/>
                                     <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="208" id="nr0-Tz-Yhv"/>
                                     <constraint firstAttribute="trailing" secondItem="8PE-ci-8Kq" secondAttribute="trailing" constant="15" id="sY8-Od-hzk"/>
-                                    <constraint firstAttribute="bottom" secondItem="8PE-ci-8Kq" secondAttribute="bottom" id="uZN-Lq-DlN"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -294,8 +433,8 @@
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="9ae-gN-gmE"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="DKM-NL-bB0"/>
                             <constraint firstAttribute="trailing" secondItem="Zbd-dO-ot1" secondAttribute="trailing" id="I3Z-KR-iLo"/>
+                            <constraint firstItem="Zbd-dO-ot1" firstAttribute="bottom" secondItem="X6R-4U-KNe" secondAttribute="bottom" id="K6C-Ie-fCJ"/>
                             <constraint firstAttribute="trailing" secondItem="Zbd-dO-ot1" secondAttribute="trailing" id="WnA-pd-XQJ"/>
-                            <constraint firstAttribute="bottom" secondItem="Zbd-dO-ot1" secondAttribute="bottom" constant="-302" id="nAn-HC-5Je"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="leading" secondItem="MS4-1q-fAy" secondAttribute="leading" id="nCG-Oy-lGH"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="top" secondItem="X6R-4U-KNe" secondAttribute="top" id="qvK-qa-3SB"/>
                             <constraint firstItem="Zbd-dO-ot1" firstAttribute="bottom" secondItem="X6R-4U-KNe" secondAttribute="bottom" id="zpG-B7-qcb"/>

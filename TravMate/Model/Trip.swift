@@ -55,12 +55,27 @@ struct Trip {
             print ("dbHotal [a]: " + String(dbHotel.count))
             print ("dbCafe [a]: " + String(dbCafe.count))
         }
-  
-        // change according to either of these:
-        // loadDummyData, run app, make changes, exit app, doPersistence
-        // spankingNew, run app, make changes, exit app, doPersistence
+        // IMPORTANT Notes | Start
+        // change var startUpType in Trip.swift according to either of these:
+        // Option (A)
+        // 1. startUpType = StartUpType.loadDummyData
+        // 2. run app
+        // 3. make changes
+        // 4. exit app
+        // 5. startUpType = StartUpType.doPersistence
+        // 6. run app again
+        // Option (B)
+        // 1. startUpType = StartUpType.spankingNew
+        // 2. run app
+        // 3. make changes
+        // 4. exit app
+        // 5. startUpType = StartUpType.doPersistence
+        // 6. run app again
+        
         
         startUpType = StartUpType.loadDummyData
+        
+        /// IMPORTANT Notes | End
         
         if (startUpType == StartUpType.loadDummyData) {
             deleteDataFromDB("DBTrip")

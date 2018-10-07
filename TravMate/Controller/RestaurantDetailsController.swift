@@ -73,6 +73,7 @@ class RestaurantDetailsController: UIViewController {
     var centerLongitude = 144.956470
     var findCafeURL = ""
     var zomatoKey = "0b81760c6c459b42e90f4ad888fcd9b5"
+ 
     
     @IBAction func cafeSave(_ sender: Any) {
         
@@ -176,8 +177,8 @@ class RestaurantDetailsController: UIViewController {
                     print("REST URL | End")
                 }
                 self.findNearbyCafes()
-            }
             
+            }
         })
     }
     
@@ -202,7 +203,6 @@ class RestaurantDetailsController: UIViewController {
                     print("\(response) \n response")
                     print("\(error)\n error")
                 }
-      
             }
             else {
                 let parsedResult: Any!
@@ -220,26 +220,57 @@ class RestaurantDetailsController: UIViewController {
                     // print(parsedResult)
                 }
                     
-                    
+                
+                Trip.sharedInstance.recommendedCafes = ""
+                Trip.sharedInstance.newCafeImage = ""
                 if let allCafes = (parsedResult as AnyObject).value(forKey: "restaurants") as? NSArray {
                     for c in allCafes {
                         let cafe = c as! NSDictionary
                         let cName = cafe.value(forKeyPath: "restaurant.name") as? String
-                        let cAddr = cafe.value(forKeyPath: "restaurant.address") as? String
-                        let cPhoto = cafe.value(forKeyPath: "restaurant.photos_url") as? String
+                        // let cAddr = cafe.value(forKeyPath: "restaurant.address") as? String
+                        // let cPhoto = cafe.value(forKeyPath: "restaurant.photos_url") as? String
                         let cThumb = cafe.value(forKeyPath: "restaurant.thumb") as? String
-                        if (cThumb!.isEmpty) {
-                            
+                        
+                        if (cName!.isEmpty) {
+                            // do nothing
                         }
                         else {
-                            let url = URL(string: cThumb!)
+                          
+                            Trip.sharedInstance.recommendedCafes = cName!
+                        
+                            DispatchQueue.main.async(execute: {self.cafeNotes.text =  self.cafeNotes.text + "\nSuggested: " + Trip.sharedInstance.recommendedCafes})
+                            
+                            if (Trip.sharedInstance.debugMode) {
+                                print("Cafes found | Start")
+                                print (Trip.sharedInstance.recommendedCafes)
+                                print("Cafes found | End")
+                            }
+                            
+                        }
+                        
+                        if (cThumb!.isEmpty) {
+                            // do nothing
+                        }
+                        else {
+                            
+                            Trip.sharedInstance.newCafeImage = cThumb!
+                        
+                            let url = URL(string: Trip.sharedInstance.newCafeImage)
                             do {
                                 let data = try? Data(contentsOf: url!)
                                 self.cafeStockImage.image = UIImage(data: data!)
+                                DispatchQueue.main.async(execute: {self.cafeStockImage.image = UIImage(data: data!)})
                             }
                             catch let error as NSError {
                                 print("Could not assign new photo: \(error), \(error.userInfo)")
                             }
+                            
+                            if (Trip.sharedInstance.debugMode) {
+                                print("New Image URL | Start")
+                                print(Trip.sharedInstance.newCafeImage)
+                                print("New Image URL | End")
+                            }
+                            
                         }
                     }
                 }

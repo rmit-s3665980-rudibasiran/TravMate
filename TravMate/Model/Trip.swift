@@ -41,6 +41,11 @@ struct Trip {
     var dCurrentCafe = DBCafe ()
     
     var startUpType:StartUpType    // control what kind of startup to begin with
+    
+    var recommendedCafes = ""
+    var newCafeImage = ""
+  
+    
   
     init() {
         myCurrentTrip = -1

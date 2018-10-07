@@ -41,6 +41,11 @@ struct Trip {
     var dCurrentCafe = DBCafe ()
     
     var startUpType:StartUpType    // control what kind of startup to begin with
+    
+    var recommendedCafes = ""
+    var newCafeImage = ""
+  
+    
   
     init() {
         myCurrentTrip = -1
@@ -865,7 +870,7 @@ struct Trip {
             contentsOf:  ["19 Fulham High St, Fulham, London SW6 3JH, UK",
                           "11 Madison Ave, New York, NY 10010, USA",
                           "31 Avenue George V, 75008 Paris, France",
-                          "284/310 Lonsdale St, Melbourne VIC 3000"])
+                          "284/310 Lonsdale St, Melbourne VIC 3000, Australia"])
         restaurant.cafeType.append(
             contentsOf:  ["Fish & Chips",
                           "Fine Dining",

@@ -155,6 +155,13 @@ class HotelDetailsController: UIViewController {
     // How far do you move (in meters) before you receive an update.
     fileprivate var totalMovementDistance = CLLocationDistance(0)
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.hotel
+        
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()

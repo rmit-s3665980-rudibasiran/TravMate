@@ -878,6 +878,7 @@
                         <outlet property="cafeNotes" destination="BMl-ff-KMS" id="C1S-ew-TAC"/>
                         <outlet property="cafePax" destination="2OO-N6-Iz7" id="gah-Tc-jey"/>
                         <outlet property="cafeRating" destination="b2G-oD-xbn" id="DQe-GU-JcV"/>
+                        <outlet property="cafeStockImage" destination="P11-tn-BX6" id="wnD-Vz-Ncg"/>
                         <outlet property="cafeType" destination="Aah-SG-zoE" id="XcJ-6M-7Vi"/>
                         <outlet property="foodBtn1Img" destination="O8e-HA-54P" id="yIt-MB-lTm"/>
                         <outlet property="foodBtn2Img" destination="B9z-lf-DYG" id="0Rc-aj-jkv"/>

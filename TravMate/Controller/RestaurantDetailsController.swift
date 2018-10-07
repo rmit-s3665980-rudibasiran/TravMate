@@ -35,6 +35,8 @@ class RestaurantDetailsController: UIViewController {
     
     @IBOutlet weak var foodBtn1Img: UIButton!
     
+    @IBOutlet weak var cafeStockImage: UIImageView!
+    
     @IBAction func foodBtn1(_ sender: Any) {
        foodITem1isOn = !foodITem1isOn
         setButtonImage(foodBtn1Img, bool: foodITem1isOn)
@@ -217,7 +219,30 @@ class RestaurantDetailsController: UIViewController {
                     print("Nearby cafes (iii): ")
                     // print(parsedResult)
                 }
-       
+                    
+                    
+                if let allCafes = (parsedResult as AnyObject).value(forKey: "restaurants") as? NSArray {
+                    for c in allCafes {
+                        let cafe = c as! NSDictionary
+                        let cName = cafe.value(forKeyPath: "restaurant.name") as? String
+                        let cAddr = cafe.value(forKeyPath: "restaurant.address") as? String
+                        let cPhoto = cafe.value(forKeyPath: "restaurant.photos_url") as? String
+                        let cThumb = cafe.value(forKeyPath: "restaurant.thumb") as? String
+                        if (cThumb!.isEmpty) {
+                            
+                        }
+                        else {
+                            let url = URL(string: cThumb!)
+                            do {
+                                let data = try? Data(contentsOf: url!)
+                                self.cafeStockImage.image = UIImage(data: data!)
+                            }
+                            catch let error as NSError {
+                                print("Could not assign new photo: \(error), \(error.userInfo)")
+                            }
+                        }
+                    }
+                }
             }
         })
         task.resume()

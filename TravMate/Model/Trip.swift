@@ -45,8 +45,6 @@ struct Trip {
     var recommendedCafes = ""
     var newCafeImage = ""
   
-    
-  
     init() {
         myCurrentTrip = -1
         managedContext = appDelegate.persistentContainer.viewContext
@@ -61,6 +59,7 @@ struct Trip {
         // change according to either of these:
         // loadDummyData, run app, make changes, exit app, doPersistence
         // spankingNew, run app, make changes, exit app, doPersistence
+        
         startUpType = StartUpType.loadDummyData
         
         if (startUpType == StartUpType.loadDummyData) {
@@ -69,7 +68,8 @@ struct Trip {
             deleteDataFromDB("DBHotel")
             deleteDataFromDB("DBCafe")
             loadDatafromArrayforTesting()
-            populateDBfromInitialArray()
+            populateDBfromArray()
+            
         }
         else if (startUpType == StartUpType.doPersistence) {
             getTripFromCoreData()
@@ -187,11 +187,14 @@ struct Trip {
         tLocationDay: String,
         tLocationCost: String) {
         
+        
         saveTripToDB(pLocationName: tLocationName, pLocationDay: tLocationDay, pLocationCost: tLocationCost, existing: dCurrentTrip)
-
+  
         locationName[myCurrentTrip] = tLocationName
         locationDays[myCurrentTrip] = tLocationDay
         locationCost[myCurrentTrip] = tLocationCost
+        
+        
         
     }
     
@@ -208,6 +211,7 @@ struct Trip {
         tFlightType: String,
         tFlightDuration: String) {
         
+ 
         saveFlightToDB(pFlightDepartNo: tFlightDepartNo,
                        pFlightReturnNo: tFlightReturnNo,
                        pFlightPortFrom: tFlightPortFrom,
@@ -220,6 +224,7 @@ struct Trip {
                        pFlightType: tFlightType,
                        pFlightDuration: tFlightDuration,
                        existing: dCurrentFlight)
+        
         
         flight.flightPortFrom[myCurrentTrip] = tFlightPortFrom
         flight.flightDepartNo[myCurrentTrip] = tFlightDepartNo
@@ -244,6 +249,7 @@ struct Trip {
         tHotelNotes: String,
         tHotelRating: Int16) {
         
+        
         saveHotelToDB(
             pHotelName: tHotelName,
             pHotelCheckIn: tHotelCheckIn,
@@ -254,6 +260,8 @@ struct Trip {
             pHotelNotes: tHotelNotes,
             pHotelRating: tHotelRating,
             existing: dCurrentHotel)
+        
+
         
         hotel.hotelNotes[myCurrentTrip] = tHotelNotes
         hotel.roomType[myCurrentTrip] = tHotelroomType
@@ -281,6 +289,7 @@ struct Trip {
         tCafefoodItemSmiley3: Bool,
         tCafeRating: Int16) {
         
+        
         saveCafeToDB(
             pCafeName: tCafeName,
             pCafeAddress: tCafeAddress,
@@ -296,7 +305,6 @@ struct Trip {
             pCafefoodItemSmiley3: tCafefoodItemSmiley3,
             pCafeRating: tCafeRating,
             existing: dCurrentCafe)
-        
         
         restaurant.cafeName[myCurrentTrip] = tCafeName
         restaurant.cafeAddress[myCurrentTrip] = tCafeAddress
@@ -320,11 +328,12 @@ struct Trip {
         
     }
     
-    mutating func populateDBfromInitialArray() {
+    mutating func populateDBfromArray() {
         for (index, value) in locationName.enumerated() {
-            saveTripToDB(pLocationName: (value),
-                     pLocationDay: locationDays[(index)],
-                     pLocationCost: locationCost[(index)], existing: nil)
+            saveTripToDB(
+                pLocationName: (value),
+                pLocationDay: locationDays[(index)],
+                pLocationCost: locationCost[(index)], existing: nil)
         }
    
         for (indexF, valueF) in flight.flightDepartNo.enumerated() {
@@ -631,7 +640,7 @@ struct Trip {
             existing!.dbLocationName = pLocationName
             existing!.dbLocationDays = pLocationDay
             existing!.dbLocationCost = pLocationCost
-            
+           
             if (debugMode) {
                 print ("Saving to DB (i): " + pLocationName)
             }

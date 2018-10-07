@@ -149,39 +149,60 @@ class RestaurantDetailsController: UIViewController {
         }
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+     
+        super.viewWillAppear(true)
+        self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.restaurant
+        doREST ()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.do_load()
         Trip.sharedInstance.myCurrentTab = TripTabController.restaurant
+        doREST ()
 
+        
+    }
+    
+    func doREST () {
         let cuisine = cafeType.text!.escapedParameters()
         let address = cafeAddress.text!
         
-        var foundLatLong = false;
-        let geocoder = CLGeocoder()
-        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
-            if((error) != nil) {
-                print("Error", error ?? "")
-            }
-            let placemark = placemarks?.first
-            let coordinates:CLLocationCoordinate2D = placemark!.location!.coordinate
-            self.centerLatitude = coordinates.latitude
-            self.centerLongitude = coordinates.longitude
-            print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
-            foundLatLong = true
-            if (foundLatLong) {
-                self.findCafeURL = "https://developers.zomato.com/api/v2.1/search?&apikey=\(self.zomatoKey)&lat=\(self.centerLatitude)&lon=\(self.centerLongitude)&cuisines=\(cuisine)"
-                if (Trip.sharedInstance.debugMode) {
-                    print("REST URL | Start")
-                    print(self.findCafeURL)
-                    print("REST URL | End")
+      
+        
+        if (address.isEmpty) {
+            // do nothing
+        }
+        else {
+            var foundLatLong = false;
+            let geocoder = CLGeocoder()
+            geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+                if((error) != nil) {
+                    print("Error", error ?? "")
                 }
-                self.findNearbyCafes()
-            
-            }
-        })
+                let placemark = placemarks?.first
+                let coordinates:CLLocationCoordinate2D = placemark!.location!.coordinate
+                self.centerLatitude = coordinates.latitude
+                self.centerLongitude = coordinates.longitude
+                print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+                foundLatLong = true
+                if (foundLatLong) {
+                    self.findCafeURL = "https://developers.zomato.com/api/v2.1/search?&apikey=\(self.zomatoKey)&lat=\(self.centerLatitude)&lon=\(self.centerLongitude)&cuisines=\(cuisine)"
+                    if (Trip.sharedInstance.debugMode) {
+                        print("REST URL | Start")
+                        print(self.findCafeURL)
+                        print("REST URL | End")
+                    }
+                    self.findNearbyCafes()
+                    
+                }
+            })
+        }
+        
     }
-    
     func findNearbyCafes () {
         
         let session = URLSession.shared
@@ -261,14 +282,14 @@ class RestaurantDetailsController: UIViewController {
                                 self.cafeStockImage.image = UIImage(data: data!)
                                 DispatchQueue.main.async(execute: {
                                     let oldImage = self.cafeStockImage.image
-                                    self.cafeStockImage.image = UIImage(data: data!)
+                                    
                                     
                                     UIView.transition(with: self.cafeStockImage,
-                                                      duration: 0.75,
+                                                      duration: 10.0,
                                                       options: .transitionCrossDissolve,
                                                       animations: { self.cafeStockImage.image = oldImage },
                                                       completion: nil)
-                                    
+                                    self.cafeStockImage.image = UIImage(data: data!)
                                 })
                             }
                             catch let error as NSError {

@@ -114,4 +114,12 @@ class FlightDetailsController: UIViewController {
         self.do_load()
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.do_load()
+        Trip.sharedInstance.myCurrentTab = TripTabController.flight
+       
+    }
+    
 }

@@ -23,6 +23,8 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         Trip.sharedInstance.locationName.append("")
         Trip.sharedInstance.locationDays.append("")
         Trip.sharedInstance.locationCost.append("")
+        
+        // Trip.sharedInstance.saveTrip(tLocationName: "", tLocationDay: "", tLocationCost: "")
 
         Trip.sharedInstance.flight.flightDepartNo.append("")
         Trip.sharedInstance.flight.flightReturnNo.append("")
@@ -64,7 +66,7 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         }
         
         Trip.sharedInstance.myCurrentTrip = Trip.sharedInstance.getSizeofData() - 1
-        
+        Trip.sharedInstance.myCurrentTab = TripTabController.flight
         performSegue(withIdentifier: "TripDetlSegue", sender: self)
     }
     
@@ -130,6 +132,12 @@ class TripController: UIViewController, UICollectionViewDataSource, UICollection
         cell.layer.shadowOpacity = 0.5
         cell.layer.masksToBounds = false
         cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).cgPath
+        
+        
+        if (Trip.sharedInstance.debugMode) {
+            print (indexPath.row)
+            print (indexPath.item)
+        }
         
         return cell
     }

@@ -860,13 +860,16 @@ struct Trip {
             contentsOf:[1,2,3,4])
         
         restaurant.cafeName.append(
-            contentsOf:  ["Le Clec", "Spudbar", "Coup du Poullet", "McDonalds"])
+            contentsOf:  ["Fischers", "Eleven Madison Park", "Le Cinq", "McDonalds"])
         restaurant.cafeAddress.append(
-            contentsOf:  ["727 Glenferrie Road", "36 Swanston Street", "45 Champ Elyse","2 Hay Street"])
+            contentsOf:  ["19 Fulham High St, Fulham, London SW6 3JH, UK",
+                          "11 Madison Ave, New York, NY 10010, USA",
+                          "31 Avenue George V, 75008 Paris, France",
+                          "284/310 Lonsdale St, Melbourne VIC 3000"])
         restaurant.cafeType.append(
-            contentsOf:  ["Fusion, Coffee and Tea, Cafe Food",
-                          "Healthy Food, Fast Food, Salad",
-                          "French Nandos" ,
+            contentsOf:  ["Fish & Chips",
+                          "Fine Dining",
+                          "Gourmet, Michelin" ,
                           "American, Fast Food"])
         restaurant.cafeCost.append(
             contentsOf:  ["$100", "$50", "$45", "$10"])

@@ -10,6 +10,8 @@
 
 import Foundation
 import UIKit
+import CoreLocation
+
 
 class RestaurantDetailsController: UIViewController {
     
@@ -59,9 +61,16 @@ class RestaurantDetailsController: UIViewController {
     }
     
     @IBOutlet weak var cafeRating: RestaurantRatingController!
+    
     var foodITem1isOn =  Trip.sharedInstance.restaurant.foodItemSmiley1[Trip.sharedInstance.myCurrentTrip]
     var foodITem2isOn =  Trip.sharedInstance.restaurant.foodItemSmiley2[Trip.sharedInstance.myCurrentTrip]
     var foodITem3isOn =  Trip.sharedInstance.restaurant.foodItemSmiley3[Trip.sharedInstance.myCurrentTrip]
+    
+    typealias JSON = [String: Any]
+    var centerLatitude = -37.811270
+    var centerLongitude = 144.956470
+    var findCafeURL = ""
+    var zomatoKey = "0b81760c6c459b42e90f4ad888fcd9b5"
     
     @IBAction func cafeSave(_ sender: Any) {
         
@@ -141,8 +150,79 @@ class RestaurantDetailsController: UIViewController {
         super.viewDidLoad()
         self.do_load()
         Trip.sharedInstance.myCurrentTab = TripTabController.restaurant
+
+        let cuisine = cafeType.text!.escapedParameters()
+        let address = cafeAddress.text!
         
+        var foundLatLong = false;
+        let geocoder = CLGeocoder()
+        geocoder.geocodeAddressString(address, completionHandler: {(placemarks, error) -> Void in
+            if((error) != nil) {
+                print("Error", error ?? "")
+            }
+            let placemark = placemarks?.first
+            let coordinates:CLLocationCoordinate2D = placemark!.location!.coordinate
+            self.centerLatitude = coordinates.latitude
+            self.centerLongitude = coordinates.longitude
+            print("Lat: \(coordinates.latitude) -- Long: \(coordinates.longitude)")
+            foundLatLong = true
+            if (foundLatLong) {
+                self.findCafeURL = "https://developers.zomato.com/api/v2.1/search?&apikey=\(self.zomatoKey)&lat=\(self.centerLatitude)&lon=\(self.centerLongitude)&cuisines=\(cuisine)"
+                if (Trip.sharedInstance.debugMode) {
+                    print("REST URL | Start")
+                    print(self.findCafeURL)
+                    print("REST URL | End")
+                }
+                self.findNearbyCafes()
+            }
+            
+        })
     }
+    
+    func findNearbyCafes () {
+        
+        let session = URLSession.shared
+        let urlCafe = URL(string: findCafeURL)
+        let request = URLRequest(url: urlCafe!)
+        
+        if (Trip.sharedInstance.debugMode) {
+            print("Nearby cafes (i): ")
+        }
+        let task = session.dataTask(with: request, completionHandler: {data, response, downloadError in
+            
+            if (Trip.sharedInstance.debugMode) {
+                print("Nearby cafes (ii): ")
+            }
+            
+            if let error = downloadError {
+                if (Trip.sharedInstance.debugMode) {
+                    print("\(data) \n data")
+                    print("\(response) \n response")
+                    print("\(error)\n error")
+                }
+      
+            }
+            else {
+                let parsedResult: Any!
+                do {
+                    parsedResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.allowFragments)
+                }
+                catch let error as NSError {
+                    parsedResult = nil
+                }
+                catch {
+                    fatalError()
+                }
+                if (Trip.sharedInstance.debugMode) {
+                    print("Nearby cafes (iii): ")
+                    // print(parsedResult)
+                }
+       
+            }
+        })
+        task.resume()
+    }
+    
     
     func setButtonImage(_ btn:UIButton, bool:Bool) {
         let imgName = bool ? "smile" : "sad"
